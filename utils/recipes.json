@@ -1464,7 +1464,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 1.9,
+                "units_to_infect": 1.9,
                 "notes": [
                     "Infects the victim with robotics transformation. The transformation is obvious and a slow process. Rather tricky poison to use effectively, but an easy option for borging yourself."
                 ]
@@ -1477,7 +1477,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 4.9,
+                "units_to_infect": 4.9,
                 "notes": [
                     "Infects the victim with kuru. Kuru is incurable and will paralyze somebody within seconds of injection. Death will follow within a couple of minutes."
                 ]
@@ -1490,7 +1490,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 2.9,
+                "units_to_infect": 2.9,
                 "notes": [
                     "Infects the victim with a non-contagious version of GBS. Another evil disease reagent. Unless countered quickly with cryoxadone, death is inevitable and permanent without a backup copy of the victim's DNA."
                 ]
@@ -1503,7 +1503,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 2.9,
+                "units_to_infect": 2.9,
                 "notes": [
                     "Infects the victim with parasites. Each successful infection rips the host apart and spawns a couple of baby ice spiders, which are extremely aggressive and will attack nearby humans and monkeys. By doing so, they in turn mature and become even more dangerous. This chain reaction can be devastating and quite often depopulates entire stations."
                 ]
@@ -1516,7 +1516,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 4.9,
+                "units_to_infect": 4.9,
                 "notes": [
                     "100% chance to cause cardiac failure, which can be a very serious condition without easy access to epinephrine or another stimulant."
                 ]
@@ -1529,7 +1529,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 4.9,
+                "units_to_infect": 4.9,
                 "notes": [
                     "100% chance to cause cardiac arrest. This reagent lets you skip cardiac failure (and thus its RNG) entirely for a faster death."
                 ]
@@ -1542,7 +1542,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 4.9,
+                "units_to_infect": 4.9,
                 "notes": [
                     "100% chance to cause cardiac abscondment. Generally lethal without an immediate heart transplant."
                 ]
@@ -1554,7 +1554,7 @@
             "info": {
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 4.9,
+                "units_to_infect": 4.9,
                 "notes": [
                     "Infects the victim with teleportitis. It repeatedly warps your character to random nearby tiles, so long as the target tile has flooring. The teleportation also causes sparks to fly from the destination, which can be very bad if you land on something ignitable."
                 ]
@@ -2976,7 +2976,7 @@
                 ],
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
-                "Units to infect (adjusted)": 0.8
+                "units_to_infect": 0.8
             }
         },
         {
