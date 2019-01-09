@@ -196,7 +196,7 @@
         {
             "name": "Ice",
             "ingredients": ["Water", "Heat"],
-            "heat_to": "Cool to 273 K.",
+            "heat_to": 273,
             "tags": ["base"],
             "info": {
                 "penetrates_skin": false,
@@ -350,7 +350,7 @@
         {
             "name": "Ammonia",
             "ingredients": ["Water", "Urine", "Heat"],
-            "heat_to": "Heat to 354 K.",
+            "heat_to": 354,
             "reaction_message": "The mixture bubbles and gives off a sharp odor.",
             "info": {
                 "depletion_rate": 0.4,
@@ -377,7 +377,7 @@
         {
             "name": "Ash",
             "ingredients": ["Oil", "Heat"],
-            "heat_to": "Heat to 474 K.",
+            "heat_to": 474,
             "info": {
                 "depletion_rate": 0.4,
                 "penetrates_skin": false,
@@ -427,7 +427,7 @@
         {
             "name": "Diethylamine",
             "ingredients": ["Ammonia", "Ethanol", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "A horrible smell pours forth from the mixture.",
             "info": {
                 "depletion_rate": 0.4,
@@ -480,7 +480,7 @@
         {
             "name": "Potash",
             "ingredients": ["Ash", "Water", "Heat"],
-            "heat_to": "Heat to 354 K.",
+            "heat_to": 354,
             "reaction_message": "A white crystalline residue forms as the water boils off.",
             "info": {
                 "depletion_rate": 0.4,
@@ -526,7 +526,7 @@
         {
             "name": "Charcoal",
             "ingredients": ["Ash", "Salt", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The mixture yields a fine black powder.",
             "sources": ["Extracted from any venne fibers."],
             "tags": ["medical", "tox", "heal", "depletion", "plant"],
@@ -655,7 +655,7 @@
         {
             "name": "Calomel",
             "ingredients": ["Mercury", "Chlorine", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "Stinging vapors rise from the solution.",
             "tags": ["medical", "depletion", "tox", "damage"],
             "info": {
@@ -903,7 +903,7 @@
         {
             "name": "Perfluorodecalin",
             "ingredients": ["Hydrogen", "Fluorine", "Oil", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The mixture rapidly turns into a dense pink liquid.",
             "tags": ["medical", "oxy", "losebreath", "brute", "burn", "heal", "addictive"],
             "info": {
@@ -1177,7 +1177,7 @@
         {
             "name": "Embalming Fluid (Formaldehyde)",
             "ingredients": ["Ethanol", "Oxygen", "Silver", "Heat"],
-            "heat_to": "Heat to 424 K.",
+            "heat_to": 424,
             "reaction_message": "Ugh, it smells like the morgue in here.",
             "tags": ["damage", "tox", "allergy", "plant"],
             "info": {
@@ -1242,7 +1242,7 @@
         {
             "name": "Neurotoxin",
             "ingredients": ["Space Drugs", "Heat"],
-            "heat_to": "Heat to 674 K.",
+            "heat_to": 674,
             "sources": ["Changeling stings.", "Some poison/drug decay products.", "A couple of medical interactions."],
             "tags": ["jitter", "dizziness", "drowsiness", "movement", "damage", "tox", "brain", "ko"],
             "info": {
@@ -1368,7 +1368,7 @@
         {
             "name": "Cyanide",
             "ingredients": ["Oil", "Ammonia", "Oxygen", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "sources": ["Poison bottles.", "Extracted or distilled from black cannabis leaves."],
             "tags": ["damage", "tox", "losebreath", "stun"],
             "reaction_message": "The mixture gives off a faint scent of almonds.",
@@ -1446,7 +1446,7 @@
         {
             "name": "Acetaldehyde",
             "ingredients": ["Chromium", "Oxygen", "Copper", "Ethanol", "Heat"],
-            "heat_to": "Heat to 549 K.",
+            "heat_to": 549,
             "reaction_message": "It smells like a bad hangover in here.",
             "tags": ["burn", "damage", "plant"],
             "info": {
@@ -1840,7 +1840,7 @@
         {
             "name": "Nitrogen Dioxide",
             "ingredients": ["Copper Nitrate", "Heat"],
-            "heat_to": "Heat to 454 K.",
+            "heat_to": 454,
             "reaction_message": "The mixture gives off a biting odor.",
             "tags": ["tox", "damage", "plant"],
             "info": {
@@ -1853,7 +1853,7 @@
         {
             "name": "Allyl Chloride",
             "ingredients": ["<Oil> (1)", "<Chlorine> (2)", "Heat"],
-            "heat_to": "Heat to 774 K.",
+            "heat_to": 774,
             "reaction_message": "The mixture becomes colorless.",
             "tags": ["burn", "damage", "plant"],
             "info": {
@@ -1923,7 +1923,7 @@
         {
             "name": "Fluorosulphuric Acid",
             "ingredients": ["Sulphuric Acid", "Fluorine", "Hydrogen", "Potassium", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "tags": ["tox", "burn", "damage", "plant"],
             "reaction_message": "The mixture deepens to a dark blue, and slowly begins to corrode its container.",
             "info": {
@@ -2066,7 +2066,7 @@
         {
             "name": "Chlorine Trifluoride (CLF3)",
             "ingredients": ["<Chlorine> (1)", "<Fluorine> (3)", "Heat"],
-            "heat_to": "Heat to 424 K.",
+            "heat_to": 424,
             "reaction_message": "The mixture gives off significant heat.",
             "tags": ["burning", "explode", "damage", "burn"],
             "info": {
@@ -2238,22 +2238,6 @@
             }
         },
         {
-            "name": "Argine",
-            "heat_to": "Cool to low temperature.",
-            "sources": ["Magical beans."],
-            "tags": ["explode", "ignite"],
-            "info": {
-                "penetrates_skin": false,
-                "depletion_rate": 0.4,
-                "notes": [
-                    "Explodes at low temperatures, for instance when mixed with cryostylane. When used in a mob, body temperature alone can be sufficient to set argine off."
-                ],
-                "ignition_temp": "272 K",
-                "ignition_effect": ["Medium-sized explosion (4x4, high severity). Does not scale with volume."],
-                "application_effect": ["Cannot be applied to floor tiles."]
-            }
-        },
-        {
             "name": "Sorium",
             "unsorted": true,
             "ingredients": ["Mercury", "Carbon", "Nitrogen", "Oxygen", "Stabilizing agent (Stabilizer)"],
@@ -2347,7 +2331,7 @@
             "name": "Cat drugs",
             "sources": ["Extracted or distilled from omega cannabis leaves."],
             "ingredients": ["Catonium", "Psilocybin", "Ammonia", "Welding Fuel", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The mixture hisses oddly.",
             "tags": ["drug", "hallucinate"],
             "info": {
@@ -2495,7 +2479,7 @@
                 "Welding Fuel",
                 "Heat"
             ],
-            "heat_to": "Heat to 374 K",
+            "heat_to": 374,
             "reaction_message": "The mixture violently reacts, leaving behind a few crystalline shards.",
             "tags": [
                 "drug",
@@ -2539,7 +2523,7 @@
                 "Welding Fuel",
                 "Heat"
             ],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The mixture dries into a pale blue powder.",
             "tags": [
                 "drug",
@@ -2571,7 +2555,7 @@
             "name": "Methamphetamine",
             "sources": ["Extracted from robust asomna barks.", "Extracted or distilled from omega cannabis leaves."],
             "ingredients": ["Ephedrine", "Iodine", "Phosphorous", "Hydrogen", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The solution fizzes and gives off toxic fumes.",
             "tags": [
                 "drug",
@@ -2613,7 +2597,7 @@
                 "Denatured Enzyme",
                 "Heat"
             ],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "Tiny cubic crystals precipitate out of the mixture. Huh.",
             "tags": [
                 "drug",
@@ -2709,7 +2693,7 @@
         {
             "name": "Corn Syrup",
             "ingredients": ["Corn starch", "Sulphuric Acid", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The mixture forms a viscous, clear fluid!",
             "info": {
                 "depletion_rate": 0.4,
@@ -2788,7 +2772,7 @@
         {
             "name": "Life",
             "ingredients": ["Synthflesh", "Blood", "Strange Reagent", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The substance begins to wriggle disgustingly and climbs out of its container!",
             "info": {
                 "notes": [
@@ -2800,7 +2784,7 @@
         {
             "name": "Partially Hydrogenated Space-Soybean Oil",
             "ingredients": ["Space-Soybean Oil", "Hydrogen", "Heat"],
-            "heat_to": "Heat to 524 K.",
+            "heat_to": 524,
             "reaction_message": "The mixture emits a burnt, oily smell.",
             "tags": ["overdose", "damage", "oxy", "stun"],
             "info": {
@@ -2922,7 +2906,7 @@
         {
             "name": "Flaptonium",
             "ingredients": ["Egg", "Colorful Reagent", "Chicken Soup", "Strange Reagent", "Blood", "Heat"],
-            "heat_to": "Heat to 374 K.",
+            "heat_to": 374,
             "reaction_message": "The substance turns an airy sky-blue and foams up into a new shape.",
             "info": {
                 "notes": ["Makes a parrot upon synthesis, similar to life. Squawk!"]
