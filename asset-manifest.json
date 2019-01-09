@@ -1,14 +1,11 @@
 {
-  "main.css": "/chemhelper/static/css/main.dd30ccf4.chunk.css",
-  "main.js": "/chemhelper/static/js/main.dbaa514b.chunk.js",
-  "main.js.map": "/chemhelper/static/js/main.dbaa514b.chunk.js.map",
-  "static/js/1.f7e84482.chunk.js": "/chemhelper/static/js/1.f7e84482.chunk.js",
-  "static/js/1.f7e84482.chunk.js.map": "/chemhelper/static/js/1.f7e84482.chunk.js.map",
+  "main.js": "/chemhelper/static/js/main.7c546e10.chunk.js",
+  "main.js.map": "/chemhelper/static/js/main.7c546e10.chunk.js.map",
+  "static/js/1.30a8ad62.chunk.js": "/chemhelper/static/js/1.30a8ad62.chunk.js",
+  "static/js/1.30a8ad62.chunk.js.map": "/chemhelper/static/js/1.30a8ad62.chunk.js.map",
   "runtime~main.js": "/chemhelper/static/js/runtime~main.f0636d74.js",
   "runtime~main.js.map": "/chemhelper/static/js/runtime~main.f0636d74.js.map",
-  "static/media/logo.svg": "/chemhelper/static/media/logo.5d5d9eef.svg",
-  "static/css/main.dd30ccf4.chunk.css.map": "/chemhelper/static/css/main.dd30ccf4.chunk.css.map",
   "index.html": "/chemhelper/index.html",
-  "precache-manifest.a4019c7b03660913962fd3c813ff8acc.js": "/chemhelper/precache-manifest.a4019c7b03660913962fd3c813ff8acc.js",
+  "precache-manifest.b21dd394eebcb81c47ae8762b121666d.js": "/chemhelper/precache-manifest.b21dd394eebcb81c47ae8762b121666d.js",
   "service-worker.js": "/chemhelper/service-worker.js"
 }
