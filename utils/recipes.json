@@ -77,7 +77,7 @@
                     "100+ UNITS - 8% chance of +1/+2 TOX, slurred speech, dizziness, drowsiness, blurred vision and other effects.",
                     "300+ UNITS - 5% chance of extra +1/+2 TOX."
                 ],
-                "Addiction probability (INGEST)": "4%",
+                "addiction_probability_ingest": 0.04,
                 "overdose_threshold": 100,
                 "notes": [
                     "Every single brand of alcohol decays into this. The more potent the alcohol, the more ethanol it builds up in you. Higher amounts of ethanol have more severe consequences."
@@ -642,7 +642,7 @@
                 "depletion_rate": 0.2,
                 "penetrates_skin": false,
                 "overdose_threshold": 30,
-                "Addiction probability (INGEST)": "5%",
+                "addiction_probability_ingest": 0.05,
                 "per_cycle": [
                     "-2 BRUTE, -2 BURN, -1 TOX, -1 OXY. 50% chance of -1 LOSEBREATH, 33% of -1 BLEEDING.",
                     "OVERDOSE - Stuttering, dizziness, jitteriness, random stuns and confused movement. 8% chance of +1/+2 TOX."
@@ -746,7 +746,7 @@
             "info": {
                 "depletion_rate": 0.3,
                 "penetrates_skin": false,
-                "Addiction probability (INGEST)": "25%",
+                "addiction_probability_ingest": 0.25,
                 "overdose_threshold": 35,
                 "per_cycle": [
                     "1x stun reduction, minor stamina regeneration buff, causes jitteriness, reduces drowsiness, warms you up slightly. Attempts to cap LOSEBREATH at 3. Heals 1 OXY if OXY damage > 75.",
@@ -865,7 +865,7 @@
                 "depletion_rate": 0.4,
                 "penetrates_skin": false,
                 "overdose_threshold": 20,
-                "Addiction probability (INGEST)": "50%",
+                "addiction_probability_ingest": 0.5,
                 "per_cycle": [
                     "Dramatically counters movement reduction from severe injury, severe stamina regeneration penalty, reduces jitteriness. Will knock you out on 36th cycle.",
                     "OVERDOSE - 8% chance of +1/+2 TOX."
@@ -909,7 +909,7 @@
             "info": {
                 "depletion_rate": 0.4,
                 "penetrates_skin": false,
-                "Addiction probability (INGEST)": "20%",
+                "addiction_probability_ingest": 0.2,
                 "per_cycle": [
                     "-25 OXY, 33% chance of -1 BRUTE and -1 BURN. Increases LOSEBREATH to and caps it at 6.",
                     "You can't talk, but it prevents any suffocation damage from racking up despite that."
@@ -980,7 +980,7 @@
                     "Reduces jitteriness, significant stamina regeneration nerf. Increases depletion rates of histamine and itching powder by 3. ",
                     "3% chance of stunning briefly and causing drowsiness."
                 ],
-                "Addiction probability (INGEST)": "10%",
+                "addiction_probability_ingest": 0.1,
                 "notes": [
                     "Mostly used as a precursor to a couple of the illegal drugs. Might be needed for bee stings, histamine poisonings or itching powder."
                 ]
@@ -1088,7 +1088,7 @@
                 ],
                 "depletion_rate": 0.4,
                 "penetrates_skin": false,
-                "Addiction probability (INGEST)": "20%",
+                "addiction_probability_ingest": 0.2,
                 "overdose_threshold": 50,
                 "notes": ["Not really ever used much, but spacewalking cocktails might need it."]
             }
@@ -1116,7 +1116,7 @@
                 "per_cycle": [
                     "Attempts to return body temp to normal in ten degree increments. Prevents OXY damage (but not LOSEBREATH). 20% chance of +1 BRAIN."
                 ],
-                "Addiction probability (INGEST)": "20%",
+                "addiction_probability_ingest": 0.2,
                 "notes": ["Another legacy spacewalking chem."]
             }
         },
@@ -1782,7 +1782,7 @@
                     "TOUCH - Causes blurred vision, confused movement, short stun (blocked by masks). 50% chance of temporary blindness.",
                     "INGEST - Stuttering. 80+ UNITS = medium-duration stun"
                 ],
-                "Addiction probability (INGEST)": "1%",
+                "addiction_probability_ingest": 0.01,
                 "notes": ["Crowd dispersal grenades contain this."]
             }
         },
@@ -2321,7 +2321,7 @@
                     "Slight stamina regeneration buff, 50% chance of 1x stun reduction and jitteriness.",
                     "OVERDOSE - Does +1 TOX, 8% chance of extra +1/+2 TOX. Scales with dose. Effects can be confused movement, stuns, body temperature increase, jitteriness, up to +6 TOX (additional), up to +20 OXY."
                 ],
-                "Addiction probability (INGEST)": "70%",
+                "addiction_probability_ingest": 0.7,
                 "notes": [
                     "Slapping a whole bunch of nicotine patches on someone can kill them with escalating TOX and OXY damage."
                 ]
@@ -2363,7 +2363,7 @@
                 "depletion_rate": 0.2,
                 "penetrates_skin": false,
                 "per_cycle": ["Pretty lights, confused movement."],
-                "Addiction probability (INGEST)": "65%",
+                "addiction_probability_ingest": 0.65,
                 "notes": [
                     "Heat it to create neurotoxin. Otherwise, it just makes everything flash colors like the bar's party button."
                 ]
@@ -2407,7 +2407,7 @@
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
                 "per_cycle": ["Causes dizziness. 10% chance of +1 TOX"],
-                "Addiction probability (INGEST)": "30%",
+                "addiction_probability_ingest": 0.3,
                 "notes": [
                     "Low-quality sewage drug. Mostly harmless, but the constant screen-shaking is irritating and makes it hard to click on objects."
                 ]
@@ -2504,7 +2504,7 @@
                     "2x stun reduction. 8% chance of decaying into up to 2 units of meth, 6% of increasing body temperature, 4% of causing jitteriness and +1 TOX.",
                     "OVERDOSE - 8% chance of +1/+2 TOX. Scales with dose. Effects can be confused movement, jitteriness, stuns, contracting non-contagious berserker, additional body temperature increase, up to extra +5 TOX, up to +8 BRAIN, +5 BRUTE."
                 ],
-                "Addiction probability (INGEST)": "50%",
+                "addiction_probability_ingest": 0.5,
                 "notes": [
                     "Warms you up, makes you jittery as hell. Very addictive, but the stun reduction effect is pretty nice for fighting.",
                     "Mixing crank comes with an explosion (2x2, low severity), which cannot be prevented by stabilizing agent."
@@ -2545,7 +2545,7 @@
                     "Reduces jitteriness. 25% of +1 BRAIN, 15% of reducing body temperature, 5% of short stun and +1 TOX, +1 BRAIN, 2% of +2 BRUTE.",
                     "OVERDOSE - 8% chance of +1/+2 TOX. Scales with dose. Effects can be additional body temp reduction, stuns, up to extra +3 TOX, up to +3 BRAIN, up to +25 BRUTE. Can even make all your skin rot off."
                 ],
-                "Addiction probability (INGEST)": "50%",
+                "addiction_probability_ingest": 0.5,
                 "notes": [
                     "Overdose can be very lethal and leave you looking like a half-rotten corpse, but can potentially heal back from that and just wander around being terrifying."
                 ]
@@ -2578,7 +2578,7 @@
                     "2.5x stun reduction, significant stamina regeneration buff, increases movement speed. Causes jitteriness, reduces drowsiness. 50% chance of +1 BRAIN.",
                     "OVERDOSE - 8% chance of +1/+2 TOX. Scales with dose. Effects can be jitteriness, stuns, confused movement or chance of dropping items hold in either hand."
                 ],
-                "Addiction probability (INGEST)": "60%",
+                "addiction_probability_ingest": 0.6,
                 "notes": [
                     "Extremely addictive and overdose can make you flail around uncontrollably and drop your stuff, but it's the best thing short of stimulants or bath salts for shrugging off stuns, KOs and paralysis. People will have a hard time containing you."
                 ]
@@ -2625,7 +2625,7 @@
                     "OVERDOSE - 8% chance of +1/+2 TOX. Scales with dose. Effects can be confused movement, blurred vision, jitteriness, stuns, contracting non-contagious berserker, extra +2 TOX, +1 BRAIN, +5 BRUTE."
                 ],
                 "application_effect": ["INGEST - Does +5 RAD, +5 TOX, +10 BRAIN"],
-                "Addiction probability (INGEST)": "80%",
+                "addiction_probability_ingest": 0.8,
                 "notes": [
                     "Dump all the Discount Dan's flavours into a bathtub and heat it with a welder, you'll probably find it. Makes you nearly impervious to stuns, but you'll be a nearly uncontrollable tramp-bearded raving lunatic.",
                     "Overdose will likely kill you from a half dozen different types of escalating damage, even taking too many occasional doses can easily be lethal."
@@ -2845,7 +2845,7 @@
                 "depletion_rate": 0.2,
                 "penetrates_skin": false,
                 "overdose_threshold": 15,
-                "Addiction probability (INGEST)": "10%",
+                "addiction_probability_ingest": 0.1,
                 "per_cycle": [
                     "1.5x stun reduction, slight stamina regeneration buff. Spins your mob constantly. Causes jitteriness, reduces drowsiness.",
                     " ",
@@ -2862,7 +2862,7 @@
                 "depletion_rate": 0.1,
                 "penetrates_skin": false,
                 "overdose_threshold": 30,
-                "Addiction probability (INGEST)": "5%",
+                "addiction_probability_ingest": 0.05,
                 "per_cycle": ["Makes you flip off nearby people.", "OVERDOSE - 8% chance of +1/+2 TOX."]
             }
         },
