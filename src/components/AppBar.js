@@ -1,15 +1,40 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
 
+const styles = theme => ({
+    text: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+    },
+    toolbar: {
+        // minHeight: 31,
+    },
+    content: {
+        position: 'absolute',
+        display: 'flex',
+    },
+});
+
 const AppBar = props => {
-    const { classes } = props;
-    const { root, container } = classes;
+    const { classes, mainClasses } = props;
     return (
-        <div className={root}>
+        <div className={mainClasses.root}>
             <MuiAppBar position="static">
-                <Toolbar variant="dense">
-                    <div className={container}>
-                        <Typography align="center">Breakpoints are c00l</Typography>
+                <Toolbar className={classes.toolbar} variant="dense">
+                    <div className={mainClasses.container}>
+                        <div className={classes.content}>
+                            <Typography
+                                className={classes.text}
+                                style={{ transform: `translate(0px, -6px)` }}
+                                variant="h5"
+                            >
+                                Breakpoints are c00l
+                            </Typography>
+                            <Typography className={classes.text} variant="subtitle1">
+                                This is a test of the emergency test system
+                            </Typography>
+                        </div>
                     </div>
                 </Toolbar>
             </MuiAppBar>
@@ -17,4 +42,4 @@ const AppBar = props => {
     );
 };
 
-export default AppBar;
+export default withStyles(styles)(AppBar);

@@ -4,12 +4,15 @@ import AppBar from '../components/AppBar';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     },
     container: {
+        position: 'relative',
         marginLeft: 'auto',
         marginRight: 'auto',
-        minHeight: '100%',
+        height: '100%',
         [theme.breakpoints.up('md')]: {
             width: 1140,
         },
@@ -20,7 +23,7 @@ const Main = props => {
     const { classes } = props;
     return (
         <>
-            <AppBar classes={classes} />
+            <AppBar mainClasses={classes} />
         </>
     );
 };
