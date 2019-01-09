@@ -3,11 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '../components/AppBar';
 
 const styles = theme => ({
-    root: {
-        [theme.breakpoints.down('sm')]: {
-            display: 'none',
-        },
-    },
     container: {
         position: 'relative',
         marginLeft: 'auto',

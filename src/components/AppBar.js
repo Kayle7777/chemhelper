@@ -3,12 +3,14 @@ import { withStyles } from '@material-ui/core/styles';
 import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
 
 const styles = theme => ({
+    root: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
+    },
     text: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-    },
-    toolbar: {
-        // minHeight: 31,
     },
     content: {
         position: 'absolute',
@@ -19,9 +21,9 @@ const styles = theme => ({
 const AppBar = props => {
     const { classes, mainClasses } = props;
     return (
-        <div className={mainClasses.root}>
+        <div className={classes.root}>
             <MuiAppBar position="static">
-                <Toolbar className={classes.toolbar} variant="dense">
+                <Toolbar variant="dense">
                     <div className={mainClasses.container}>
                         <div className={classes.content}>
                             <Typography
