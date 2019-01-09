@@ -11,11 +11,15 @@ const styles = theme => ({
     },
     container: {
         position: 'relative',
+        display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
         height: '100%',
         [theme.breakpoints.up('md')]: {
             width: 1140,
+        },
+        [theme.breakpoints.up('xl')]: {
+            width: 1750,
         },
     },
     text: {
@@ -24,6 +28,8 @@ const styles = theme => ({
     },
     content: {
         position: 'absolute',
+        left: 0,
+        top: 0,
         display: 'flex',
     },
 });
@@ -43,7 +49,11 @@ const AppBar = props => {
                             >
                                 Breakpoints are c00l
                             </Typography>
-                            <Typography className={classes.text} variant="subtitle1">
+                            <Typography
+                                className={classes.text}
+                                variant="subtitle1"
+                                style={{ transform: `translate(0px, -2px)` }}
+                            >
                                 This is a test of the emergency test system
                             </Typography>
                         </div>

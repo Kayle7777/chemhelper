@@ -9,9 +9,12 @@ const styles = theme => ({
     container: {
         margin: 'auto',
         [theme.breakpoints.up('md')]: {
-            width: 1140,
+            width: 1140 + theme.spacing.unit * 4,
             display: 'flex',
             marginTop: '2rem',
+        },
+        [theme.breakpoints.up('xl')]: {
+            width: 1750 + theme.spacing.unit * 4,
         },
         [theme.breakpoints.down('md')]: {
             width: '100%',
