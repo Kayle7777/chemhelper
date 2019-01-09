@@ -4,8 +4,18 @@ import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
 
 const styles = theme => ({
     root: {
+        width: '100%',
         [theme.breakpoints.down('sm')]: {
             display: 'none',
+        },
+    },
+    container: {
+        position: 'relative',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        height: '100%',
+        [theme.breakpoints.up('md')]: {
+            width: 1140,
         },
     },
     text: {
@@ -19,12 +29,12 @@ const styles = theme => ({
 });
 
 const AppBar = props => {
-    const { classes, mainClasses } = props;
+    const { classes } = props;
     return (
         <div className={classes.root}>
             <MuiAppBar position="static">
                 <Toolbar variant="dense">
-                    <div className={mainClasses.container}>
+                    <div className={classes.container}>
                         <div className={classes.content}>
                             <Typography
                                 className={classes.text}
