@@ -1852,7 +1852,7 @@
         },
         {
             "name": "Allyl Chloride",
-            "ingredients": ["<Oil> (1)", "<Chlorine> (2)", "Heat"],
+            "ingredients": [{ "Oil": 1 }, { "Chlorine": 2 }, "Heat"],
             "heat_to": 774,
             "reaction_message": "The mixture becomes colorless.",
             "tags": ["burn", "damage", "plant"],
@@ -1865,7 +1865,7 @@
         },
         {
             "name": "Acetic Acid",
-            "ingredients": ["<Acetaldehyde> (1)", "<Oxygen> (1)", "<Nitrogen> (4)"],
+            "ingredients": [{ "Acetaldehyde": 1 }, { "Oxygen": 1 }, { "Nitrogen": 4 }],
             "tags": ["brute", "burn", "damage", "plant"],
             "reaction_message": "It smells like vinegar and a bad hangover in here.",
             "info": {
@@ -1911,7 +1911,7 @@
         },
         {
             "name": "Nitric Acid",
-            "ingredients": ["<Nitrogen Dioxide> (3)", "<Water> (1)"],
+            "ingredients": [{ "Nitrogen Dioxide": 3 }, { "Water": 1 }],
             "tags": ["brute", "damage", "burn", "plant"],
             "reaction_message": "The mixture gives off a sharp acidic tang.",
             "info": {
@@ -2065,7 +2065,7 @@
         },
         {
             "name": "Chlorine Trifluoride (CLF3)",
-            "ingredients": ["<Chlorine> (1)", "<Fluorine> (3)", "Heat"],
+            "ingredients": [{ "Chlorine": 1 }, { "Fluorine": 3 }, "Heat"],
             "heat_to": 424,
             "reaction_message": "The mixture gives off significant heat.",
             "tags": ["burning", "explode", "damage", "burn"],
@@ -2929,7 +2929,7 @@
         },
         {
             "name": "Copper Nitrate",
-            "ingredients": ["<Copper> (1)", "<Nitrogen> (1)", "<Oxygen> (3)"],
+            "ingredients": [{ "Copper": 1 }, { "Nitrogen": 1 }, { "Oxygen": 3 }],
             "reaction_message": "The mixture forms into a blue crystalline solid.",
             "info": {
                 "depletion_rate": 0.4,
