@@ -1,11 +1,11 @@
 {
-  "main.js": "/chemhelper/static/js/main.854d7c2f.chunk.js",
-  "main.js.map": "/chemhelper/static/js/main.854d7c2f.chunk.js.map",
-  "static/js/1.6577c24a.chunk.js": "/chemhelper/static/js/1.6577c24a.chunk.js",
-  "static/js/1.6577c24a.chunk.js.map": "/chemhelper/static/js/1.6577c24a.chunk.js.map",
+  "main.js": "/chemhelper/static/js/main.97c71b57.chunk.js",
+  "main.js.map": "/chemhelper/static/js/main.97c71b57.chunk.js.map",
+  "static/js/1.6f245d00.chunk.js": "/chemhelper/static/js/1.6f245d00.chunk.js",
+  "static/js/1.6f245d00.chunk.js.map": "/chemhelper/static/js/1.6f245d00.chunk.js.map",
   "runtime~main.js": "/chemhelper/static/js/runtime~main.f0636d74.js",
   "runtime~main.js.map": "/chemhelper/static/js/runtime~main.f0636d74.js.map",
   "index.html": "/chemhelper/index.html",
-  "precache-manifest.a7498ccd1c4774ac4ec3c33d47c3a431.js": "/chemhelper/precache-manifest.a7498ccd1c4774ac4ec3c33d47c3a431.js",
+  "precache-manifest.3adfc5b07777cb1e061fba4821c750c6.js": "/chemhelper/precache-manifest.3adfc5b07777cb1e061fba4821c750c6.js",
   "service-worker.js": "/chemhelper/service-worker.js"
 }
