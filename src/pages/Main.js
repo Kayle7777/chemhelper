@@ -69,7 +69,7 @@ const Main = props => {
                                 color="secondary"
                                 className={classes.button}
                             >
-                                Test
+                                Show Search
                             </Button>
                         )}
                         <InfoPanel />
