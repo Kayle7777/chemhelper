@@ -5,6 +5,8 @@ import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemList from '../components/ChemList';
+// import Recipes from '../utils/recipes';
+// const { tags, recipes } = Recipes;
 
 const styles = theme => ({
     container: {
@@ -60,20 +62,18 @@ const Main = props => {
                     </div>
                 )}
                 <div className={classes.infoPanel}>
-                    <>
-                        {!hideButton && (
-                            <Button
-                                fullWidth
-                                onClick={() => doHideButton(prev => !prev)}
-                                variant="outlined"
-                                color="secondary"
-                                className={classes.button}
-                            >
-                                Show Search
-                            </Button>
-                        )}
-                        <InfoPanel />
-                    </>
+                    {!hideButton && (
+                        <Button
+                            fullWidth
+                            onClick={() => doHideButton(prev => !prev)}
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.button}
+                        >
+                            Show Search
+                        </Button>
+                    )}
+                    <InfoPanel />
                 </div>
             </div>
         </>
