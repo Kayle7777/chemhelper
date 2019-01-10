@@ -18,7 +18,10 @@ const ChemList = props => {
         <Paper className={classes.card}>
             <List>
                 {recipes.map(recipe => (
-                    <ListItem button key={recipe.name}>
+                    <ListItem
+                        button
+                        key={`${recipe.name}_${recipe.ingredients ? recipe.ingredients.toString() : 'no_ingredients'}`}
+                    >
                         <ListItemText>{recipe.name}</ListItemText>
                     </ListItem>
                 ))}
