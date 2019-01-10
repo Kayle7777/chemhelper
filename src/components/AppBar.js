@@ -35,24 +35,22 @@ const styles = theme => ({
 const AppBar = props => {
     const { classes } = props;
     return (
-        <div className={classes.root}>
-            <MuiAppBar position="static">
-                <Toolbar className={classes.container} variant="dense">
-                    <div className={classes.content}>
-                        <Typography className={classes.text} variant="h5">
-                            ChemHelper
-                        </Typography>
-                        <Typography
-                            className={classes.text}
-                            variant="subtitle1"
-                            style={{ transform: `translate(0px, 6px)` }}
-                        >
-                            A chemistry helper app for Space Station 13 Goonstation
-                        </Typography>
-                    </div>
-                </Toolbar>
-            </MuiAppBar>
-        </div>
+        <MuiAppBar className={classes.root} position="static">
+            <Toolbar className={classes.container} variant="dense">
+                <div className={classes.content}>
+                    <Typography className={classes.text} variant="h5">
+                        ChemHelper
+                    </Typography>
+                    <Typography
+                        className={classes.text}
+                        variant="subtitle1"
+                        style={{ transform: `translate(0px, 6px)` }}
+                    >
+                        A chemistry helper app for Space Station 13 Goonstation
+                    </Typography>
+                </div>
+            </Toolbar>
+        </MuiAppBar>
     );
 };
 

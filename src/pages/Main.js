@@ -5,12 +5,13 @@ import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemList from '../components/ChemList';
-// import Recipes from '../utils/recipes';
-// const { tags, recipes } = Recipes;
+import Recipes from '../utils/recipes';
+const { tags, recipes } = Recipes;
 
 const styles = theme => ({
     container: {
         margin: 'auto',
+        height: '82vh',
         [theme.breakpoints.up('md')]: {
             width: 1140 + theme.spacing.unit * 4,
             display: 'flex',
@@ -58,7 +59,7 @@ const Main = props => {
                 {hideButton && (
                     <div className={classes.leftContainer}>
                         <SearchBar doHideButton={doHideButton} />
-                        <ChemList />
+                        <ChemList recipes={recipes} />
                     </div>
                 )}
                 <div className={classes.infoPanel}>
