@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
 import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
@@ -34,20 +35,45 @@ const styles = theme => ({
             marginRight: theme.spacing.unit * 3,
         },
     },
+    button: {
+        [theme.breakpoints.up('md')]: {
+            marginBottom: theme.spacing.unit * 2,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: `calc(100% - ${theme.spacing.unit * 4}px)`,
+            margin: theme.spacing.unit * 2,
+        },
+    },
 });
 
 const Main = props => {
     const { classes } = props;
+    const [hideButton, doHideButton] = useState(true);
     return (
         <>
             <AppBar />
             <div className={classes.container}>
-                <div className={classes.leftContainer}>
-                    <SearchBar />
-                    <ChemList />
-                </div>
+                {hideButton && (
+                    <div className={classes.leftContainer}>
+                        <SearchBar doHideButton={doHideButton} />
+                        <ChemList />
+                    </div>
+                )}
                 <div className={classes.infoPanel}>
-                    <InfoPanel />
+                    <>
+                        {!hideButton && (
+                            <Button
+                                fullWidth
+                                onClick={() => doHideButton(prev => !prev)}
+                                variant="outlined"
+                                color="secondary"
+                                className={classes.button}
+                            >
+                                Test
+                            </Button>
+                        )}
+                        <InfoPanel />
+                    </>
                 </div>
             </div>
         </>

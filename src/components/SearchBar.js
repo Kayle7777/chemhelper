@@ -19,12 +19,14 @@ const styles = theme => ({
 });
 
 const SearchBar = props => {
-    const { classes } = props;
+    const { classes, doHideButton } = props;
     return (
         <div className={classes.container}>
             <Button>Filter</Button>
             <Input fullWidth />
-            <Button>Hide</Button>
+            <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
+                Hide
+            </Button>
             <Button>Reset</Button>
         </div>
     );

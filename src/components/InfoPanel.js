@@ -7,6 +7,7 @@ const styles = theme => ({
         height: '25rem',
         [theme.breakpoints.down('sm')]: {
             margin: theme.spacing.unit * 2,
+            marginTop: 0,
         },
     },
 });
