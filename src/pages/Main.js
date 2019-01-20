@@ -5,6 +5,7 @@ import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemList from '../components/ChemList';
+import ChemTable from '../components/ChemTable';
 import Recipes from '../utils/recipes';
 const { tags, recipes } = Recipes;
 
@@ -59,7 +60,8 @@ const Main = props => {
                 {hideButton && (
                     <div className={classes.leftContainer}>
                         <SearchBar doHideButton={doHideButton} />
-                        <ChemList recipes={recipes} />
+                        {/* <ChemList recipes={recipes} /> */}
+                        <ChemTable recipes={recipes} />
                     </div>
                 )}
                 <div className={classes.infoPanel}>

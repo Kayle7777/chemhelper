@@ -2033,7 +2033,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.3, classnames@^2.2.5:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -2779,7 +2779,7 @@ dom-converter@~0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.2.1, dom-helpers@^3.3.1:
+"dom-helpers@^2.4.0 || ^3.0.0", dom-helpers@^3.2.1, dom-helpers@^3.3.1:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
   dependencies:
@@ -5395,7 +5395,7 @@ loglevel@^1.4.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.1.tgz#e0fc95133b6ef276cdc8887cdaf24aa6f156f8fa"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   dependencies:
@@ -5701,6 +5701,16 @@ ms@2.0.0:
 ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
+
+mui-virtualized-table@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mui-virtualized-table/-/mui-virtualized-table-2.1.0.tgz#02c3d410259efd5aee7ca84cb33c236c9a4dcb80"
+  integrity sha512-lAuRPZH2jFDdR8qHRnaumNt7P32kC07XrIJRyDt7uz3nuljHpxel7BuPZgB9iIrRtgZsmYbeJyduf0QRE6NuoQ==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+    react-draggable "^3.0.5"
+    react-virtualized "^9.18.0"
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
@@ -6967,7 +6977,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -7155,6 +7165,14 @@ react-dom@^16.7.0-alpha.2:
     prop-types "^15.6.2"
     scheduler "^0.12.0-alpha.2"
 
+react-draggable@^3.0.5:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-3.1.1.tgz#ed1db43e09b146805f6d158296e58eae4f768d36"
+  integrity sha512-tqIgDUm4XPSFbxelYpcsnayPU79P26ChnszDl5/RDFKfMuHnRxypS+OFfEyAEO1CtqaB3lrecQ2dyNIE2G0TlQ==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+
 react-error-overlay@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.2.tgz#888957b884d4b25b083a82ad550f7aad96585394"
@@ -7242,6 +7260,18 @@ react-transition-group@^2.2.1:
     dom-helpers "^3.3.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+
+react-virtualized@^9.18.0, react-virtualized@^9.21.0:
+  version "9.21.0"
+  resolved "https://registry.yarnpkg.com/react-virtualized/-/react-virtualized-9.21.0.tgz#8267c40ffb48db35b242a36dea85edcf280a6506"
+  integrity sha512-duKD2HvO33mqld4EtQKm9H9H0p+xce1c++2D5xn59Ma7P8VT7CprfAe5hwjd1OGkyhqzOZiTMlTal7LxjH5yBQ==
+  dependencies:
+    babel-runtime "^6.26.0"
+    classnames "^2.2.3"
+    dom-helpers "^2.4.0 || ^3.0.0"
+    loose-envify "^1.3.0"
+    prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
 react@^16.7.0-alpha.2:
