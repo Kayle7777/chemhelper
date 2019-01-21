@@ -48,6 +48,14 @@ const styles = theme => ({
             margin: theme.spacing.unit * 2,
         },
     },
+    recipeBox: {
+        overflowY: 'hidden',
+        height: '100%',
+        [theme.breakpoints.down('sm')]: {
+            height: '50vh',
+            margin: theme.spacing.unit * 2,
+        },
+    },
 });
 
 const Main = props => {
@@ -61,7 +69,9 @@ const Main = props => {
                     <div className={classes.leftContainer}>
                         <SearchBar doHideButton={doHideButton} />
                         {/* <ChemList recipes={recipes} /> */}
-                        <ChemTable recipes={recipes} />
+                        <div className={classes.recipeBox}>
+                            <ChemTable recipes={recipes} />
+                        </div>
                     </div>
                 )}
                 <div className={classes.infoPanel}>

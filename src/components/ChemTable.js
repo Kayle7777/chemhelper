@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
 
-const styles = theme => ({
-    card: {
-        overflowY: 'auto',
-        maxHeight: '100%',
-        [theme.breakpoints.down('sm')]: {
-            margin: theme.spacing.unit * 2,
-        },
-    },
-});
+const styles = theme => ({});
 
 const ChemTable = props => {
     const { classes, recipes } = props;
-    console.log(
-        recipes.map((e, i) => {
-            e.id = i + 1;
-            return e;
-        })
-    );
     return (
-        <MuiTable
-            className={classes.card}
-            data={recipes.map((e, i) => {
-                e.id = i + 1;
-                return e;
-            })}
-            columns={[{ name: 'id' }, { name: 'name' }, { name: 'sources' }]}
-            width={1000}
-        />
+        <AutoSizer>
+            {({ width, height }) => (
+                <MuiTable
+                    data={recipes.map((e, i) => {
+                        e.id = i + 1;
+                        return e;
+                    })}
+                    columns={[
+                        { name: 'name', cell: data => <Typography>{data.name}</Typography> },
+                        {
+                            name: 'sources',
+                            cell: data => <Typography>{data.sources ? data.sources.toString() : ''}</Typography>,
+                        },
+                    ]}
+                    width={width}
+                    height={height}
+                />
+            )}
+        </AutoSizer>
     );
 };
 

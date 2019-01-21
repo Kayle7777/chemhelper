@@ -7,6 +7,7 @@ const styles = theme => ({
         overflowY: 'auto',
         maxHeight: '100%',
         [theme.breakpoints.down('sm')]: {
+            maxHeight: '50vh',
             margin: theme.spacing.unit * 2,
         },
     },
