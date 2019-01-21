@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemTable from '../components/ChemTable';
 import Recipes from '../utils/recipes';
+// eslint-disable-next-line
 const { tags, recipes } = Recipes;
 
 const styles = theme => ({

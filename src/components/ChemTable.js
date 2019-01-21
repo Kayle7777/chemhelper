@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import MuiTable from 'mui-virtualized-table';
@@ -32,6 +32,7 @@ const ChemTable = props => {
         <AutoSizer>
             {({ width, height }) => (
                 <MuiTable
+                    data-testid="autosizer-table"
                     data={recipes.map((e, i) => {
                         e.id = i + 1;
                         return e;

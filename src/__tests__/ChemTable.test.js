@@ -1,7 +1,13 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
 import ChemTable from '../components/ChemTable';
-describe('what is wrong with this damn component', () => {
-    const utils = render(<ChemTable recipes={[{ id: 1, name: 'test', sources: ['nothing'] }]} />);
-    test('why wont it render', () => {});
+import Recipes from '../utils/recipes.json';
+
+describe('testing React MUI Autosizing table', () => {
+    const utils = render(<ChemTable recipes={Recipes.recipes} />);
+    test('click it to give focus', () => {
+        const findTable = utils.getByTestId('autosizer-table');
+        // fireEvent.scroll(findTable, { y: -100 });
+        // expect(utils.getByText('Aluminium')).toBe('Aluminium');
+    });
 });
