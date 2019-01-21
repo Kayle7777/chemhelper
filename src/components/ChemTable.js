@@ -27,7 +27,7 @@ const styles = theme => ({
 });
 
 const ChemTable = props => {
-    const { classes, recipes } = props;
+    const { recipes } = props;
     return (
         <AutoSizer>
             {({ width, height }) => (
