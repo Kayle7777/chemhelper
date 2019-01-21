@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
 
@@ -28,28 +27,59 @@ const styles = theme => ({
 
 const ChemTable = props => {
     const { recipes } = props;
+    const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
     return (
         <AutoSizer>
             {({ width, height }) => (
                 <MuiTable
                     data-testid="autosizer-table"
-                    data={recipes.map((e, i) => {
-                        e.id = i + 1;
-                        return e;
-                    })}
+                    data={recipeSort(
+                        recipes.map((e, i) => {
+                            e.id = i + 1;
+                            return e;
+                        }),
+                        orderBy
+                    )}
                     columns={[
-                        { name: 'name', cell: data => <Typography>{data.name}</Typography> },
+                        {
+                            name: 'name',
+                            header: 'Chemical',
+                        },
                         {
                             name: 'sources',
-                            cell: data => <Typography>{data.sources ? data.sources.toString() : ''}</Typography>,
                         },
                     ]}
+                    fitHeightToRows
+                    orderBy={orderBy.name}
+                    orderDirection={orderBy.direction ? 'desc' : 'asc'}
+                    onHeaderClick={headerClick}
+                    includeHeaders={true}
+                    // fixedRowCount={1}
                     width={width}
                     height={height}
                 />
             )}
         </AutoSizer>
     );
+
+    function headerClick(header) {
+        return changeOrder(orderBy => {
+            orderBy.name = header.name;
+            orderBy.direction = !orderBy.direction;
+            return orderBy;
+        });
+    }
+
+    function recipeSort(recipes, orderBy) {
+        const sortDir = orderBy.direction ? -1 : 1;
+        return recipes.sort((a, b) => {
+            const nameA = a.name.toLowerCase(),
+                nameB = b.name.toLowerCase();
+            if (nameA < nameB) return sortDir;
+            if (nameA > nameB) return -sortDir;
+            return 0;
+        });
+    }
 };
 
 export default withStyles(styles)(ChemTable);
