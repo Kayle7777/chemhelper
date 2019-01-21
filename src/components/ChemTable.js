@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
@@ -34,6 +35,7 @@ const styles = theme => ({
                   color: theme.palette.text.primary,
                   backgroundColor: theme.palette.secondary.dark,
               },
+    paperContainer: {},
 });
 
 const ChemTable = props => {
@@ -43,29 +45,32 @@ const ChemTable = props => {
     return (
         <AutoSizer>
             {({ width, height }) => (
-                <MuiTable
-                    data-testid="autosizer-table"
-                    data={recipeSort(recipes, orderBy)}
-                    columns={[
-                        {
-                            name: 'name',
-                            header: 'Chemical',
-                        },
-                    ]}
-                    fitHeightToRows
-                    orderBy={orderBy.name}
-                    // eslint-disable-next-line
-                    isCellSelected={(column, rowData) => selectedChem.id === rowData.id}
-                    isCellHovered={(column, rowData, hoveredColumn, hoveredRowData) =>
-                        rowData.id && rowData.id === hoveredRowData.id
-                    }
-                    orderDirection={orderBy.direction ? 'desc' : 'asc'}
-                    onCellClick={cellClick}
-                    onHeaderClick={headerClick}
-                    includeHeaders={true}
-                    width={width}
-                    height={height}
-                />
+                <Paper>
+                    <MuiTable
+                        data-testid="autosizer-table"
+                        data={recipeSort(recipes, orderBy)}
+                        columns={[
+                            {
+                                name: 'name',
+                                header: 'Chemical',
+                            },
+                        ]}
+                        fitHeightToRows
+                        orderBy={orderBy.name}
+                        // eslint-disable-next-line
+                        fixedRowCount={1}
+                        isCellSelected={(column, rowData) => selectedChem.id === rowData.id}
+                        isCellHovered={(column, rowData, hoveredColumn, hoveredRowData) =>
+                            rowData.id && rowData.id === hoveredRowData.id
+                        }
+                        orderDirection={orderBy.direction ? 'desc' : 'asc'}
+                        onCellClick={cellClick}
+                        onHeaderClick={headerClick}
+                        includeHeaders={true}
+                        width={width}
+                        height={height}
+                    />
+                </Paper>
             )}
         </AutoSizer>
     );
