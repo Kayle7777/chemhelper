@@ -15,6 +15,9 @@ const styles = theme => ({
         marginRight: 'auto',
         height: '100%',
         [theme.breakpoints.up('md')]: {
+            width: 1024 - theme.spacing.unit * 6,
+        },
+        [theme.breakpoints.up('lg')]: {
             width: 1140,
         },
         [theme.breakpoints.up('xl')]: {
