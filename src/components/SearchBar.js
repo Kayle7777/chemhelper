@@ -22,7 +22,6 @@ const styles = theme => ({
 });
 
 const TagPopover = props => {
-    // eslint-disable-next-line
     const { classes, tags, anchorState } = props;
     const [popoverAnchor, controlPopover] = anchorState;
     return (
@@ -37,26 +36,35 @@ const TagPopover = props => {
             }}
         >
             <Card>
-                <CardContent>Test</CardContent>
+                <CardContent>{JSON.stringify(tags)}</CardContent>
             </Card>
         </Popover>
     );
 };
 
 const SearchBar = props => {
-    const { classes, doHideButton, tags } = props;
+    const { classes, doHideButton, tags, inputState } = props;
     const [popoverAnchor, controlPopover] = useState(null);
+    const [searchInput, typeSearch] = inputState;
+
     return (
         <div className={classes.container}>
             <TagPopover classes={classes} tags={tags} anchorState={[popoverAnchor, controlPopover]} />
             <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
-            <Input fullWidth />
+            <Input fullWidth value={searchInput} onChange={inputType} />
             <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
                 Hide
             </Button>
             <Button>Reset</Button>
         </div>
     );
+
+    function inputType(e) {
+        const {
+            target: { value },
+        } = e;
+        return typeSearch(value);
+    }
 };
 
 export default withStyles(styles)(SearchBar);

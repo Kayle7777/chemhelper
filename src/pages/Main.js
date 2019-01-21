@@ -60,15 +60,17 @@ const styles = theme => ({
 const Main = props => {
     const { classes } = props;
     const [hideButton, doHideButton] = useState(true);
-    const filteredRecipes = filterRecipes(recipes);
+    const [searchInput, typeSearch] = useState('');
+    const filteredRecipes = filterRecipes(recipes, searchInput);
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
+
     return (
         <>
             <AppBar />
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
-                        <SearchBar doHideButton={doHideButton} tags={tags} />
+                        <SearchBar doHideButton={doHideButton} tags={tags} inputState={[searchInput, typeSearch]} />
                         <div className={classes.recipeBox}>
                             <ChemTable recipes={filteredRecipes} controlSelectChem={controlSelectChem} />
                         </div>
@@ -92,7 +94,11 @@ const Main = props => {
         </>
     );
 
-    function filterRecipes(recipes) {
+    function filterRecipes(recipes, searchInput) {
+        if (!searchInput) return recipes;
+        recipes = recipes.filter(each => each.name.toLowerCase().includes(searchInput.toLowerCase()));
+        // More here to sort via tags from popover in searchBar
+
         return recipes;
     }
 };
