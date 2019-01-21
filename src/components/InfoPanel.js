@@ -4,7 +4,7 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 
 const styles = theme => ({
     card: {
-        height: '25rem',
+        minHeight: '25rem',
         [theme.breakpoints.down('sm')]: {
             margin: theme.spacing.unit * 2,
             marginTop: 0,
