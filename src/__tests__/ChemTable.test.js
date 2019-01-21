@@ -4,7 +4,7 @@ import ChemTable from '../components/ChemTable';
 import Recipes from '../utils/recipes.json';
 
 describe('testing React MUI Autosizing table', () => {
-    const utils = render(<ChemTable recipes={Recipes.recipes} />);
+    const utils = render(<ChemTable recipes={Recipes.recipes} chemState={[{}, () => {}]} />);
     test('click it to give focus', () => {
         const findTable = utils.getByTestId('autosizer-table');
         // fireEvent.scroll(findTable, { y: -100 });
