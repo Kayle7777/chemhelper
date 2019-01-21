@@ -26,41 +26,36 @@ const styles = theme => ({
 });
 
 const ChemTable = props => {
-    const { recipes } = props;
+    const { recipes, controlSelectChem } = props;
     const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
     return (
         <AutoSizer>
             {({ width, height }) => (
                 <MuiTable
                     data-testid="autosizer-table"
-                    data={recipeSort(
-                        recipes.map((e, i) => {
-                            e.id = i + 1;
-                            return e;
-                        }),
-                        orderBy
-                    )}
+                    data={recipeSort(recipes, orderBy)}
                     columns={[
                         {
                             name: 'name',
                             header: 'Chemical',
                         },
-                        {
-                            name: 'sources',
-                        },
                     ]}
                     fitHeightToRows
                     orderBy={orderBy.name}
                     orderDirection={orderBy.direction ? 'desc' : 'asc'}
+                    onCellClick={cellClick}
                     onHeaderClick={headerClick}
                     includeHeaders={true}
-                    // fixedRowCount={1}
                     width={width}
                     height={height}
                 />
             )}
         </AutoSizer>
     );
+
+    function cellClick(column, cell) {
+        return controlSelectChem(cell);
+    }
 
     function headerClick(header) {
         return changeOrder(orderBy => {
@@ -72,13 +67,18 @@ const ChemTable = props => {
 
     function recipeSort(recipes, orderBy) {
         const sortDir = orderBy.direction ? -1 : 1;
-        return recipes.sort((a, b) => {
-            const nameA = a.name.toLowerCase(),
-                nameB = b.name.toLowerCase();
-            if (nameA < nameB) return sortDir;
-            if (nameA > nameB) return -sortDir;
-            return 0;
-        });
+        return recipes
+            .sort((a, b) => {
+                const nameA = a.name.toLowerCase(),
+                    nameB = b.name.toLowerCase();
+                if (nameA < nameB) return sortDir;
+                if (nameA > nameB) return -sortDir;
+                return 0;
+            })
+            .map((e, i) => {
+                e.id = i + 1;
+                return e;
+            });
     }
 };
 

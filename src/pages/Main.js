@@ -6,7 +6,6 @@ import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemTable from '../components/ChemTable';
 import Recipes from '../utils/recipes';
-// eslint-disable-next-line
 const { tags, recipes } = Recipes;
 
 const styles = theme => ({
@@ -61,16 +60,17 @@ const styles = theme => ({
 const Main = props => {
     const { classes } = props;
     const [hideButton, doHideButton] = useState(true);
+    const filteredRecipes = filterRecipes(recipes);
+    const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
     return (
         <>
             <AppBar />
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
-                        <SearchBar doHideButton={doHideButton} />
-                        {/* <ChemList recipes={recipes} /> */}
+                        <SearchBar doHideButton={doHideButton} tags={tags} />
                         <div className={classes.recipeBox}>
-                            <ChemTable recipes={recipes} />
+                            <ChemTable recipes={filteredRecipes} controlSelectChem={controlSelectChem} />
                         </div>
                     </div>
                 )}
@@ -86,11 +86,15 @@ const Main = props => {
                             Show Search
                         </Button>
                     )}
-                    <InfoPanel />
+                    <InfoPanel content={selectedChem} />
                 </div>
             </div>
         </>
     );
+
+    function filterRecipes(recipes) {
+        return recipes;
+    }
 };
 
 export default withStyles(styles)(Main);

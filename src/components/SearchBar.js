@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Input } from '@material-ui/core';
+import { Button, Input, Popover, Card, CardContent } from '@material-ui/core';
 
 const styles = theme => ({
     container: {
@@ -16,13 +16,40 @@ const styles = theme => ({
             margin: theme.spacing.unit * 2,
         },
     },
+    popover: {
+        marginTop: theme.spacing.unit,
+    },
 });
 
+const TagPopover = props => {
+    // eslint-disable-next-line
+    const { classes, tags, anchorState } = props;
+    const [popoverAnchor, controlPopover] = anchorState;
+    return (
+        <Popover
+            className={classes.popover}
+            open={Boolean(popoverAnchor)}
+            anchorEl={popoverAnchor}
+            onClose={() => controlPopover(null)}
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+            }}
+        >
+            <Card>
+                <CardContent>Test</CardContent>
+            </Card>
+        </Popover>
+    );
+};
+
 const SearchBar = props => {
-    const { classes, doHideButton } = props;
+    const { classes, doHideButton, tags } = props;
+    const [popoverAnchor, controlPopover] = useState(null);
     return (
         <div className={classes.container}>
-            <Button>Filter</Button>
+            <TagPopover classes={classes} tags={tags} anchorState={[popoverAnchor, controlPopover]} />
+            <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
             <Input fullWidth />
             <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
                 Hide

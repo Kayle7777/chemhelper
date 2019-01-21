@@ -13,11 +13,11 @@ const styles = theme => ({
 });
 
 const InfoPanel = props => {
-    const { classes } = props;
+    const { classes, content } = props;
     return (
         <Card className={classes.card}>
             <CardContent>
-                <Typography>Test</Typography>
+                <Typography>{JSON.stringify(content)}</Typography>
             </CardContent>
         </Card>
     );
