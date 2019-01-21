@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
 
 const styles = theme => ({
-    paper: {
+    drag: {
         position: 'absolute',
-        width: 200,
-        height: 200,
     },
 });
 
@@ -25,17 +22,9 @@ const Draggable = props => {
 
     return (
         <>
-            {!props.children && (
-                <Paper
-                    className={classes.paper}
-                    style={containerStyles}
-                    onMouseMove={mouseMove}
-                    onMouseDown={mouseDown}
-                    onMouseUp={() => toggleClick(false)}
-                    onMouseLeave={() => toggleClick(false)}
-                />
-            )}
-            {props.children && props.children}
+            <div className={classes.drag} style={containerStyles}>
+                {props.children}
+            </div>
         </>
     );
 
@@ -55,7 +44,6 @@ const Draggable = props => {
         if (!clickedDown) return;
         const { clientX, clientY } = e;
         return transform(prev => {
-            console.log(imgCoords(clientX, clientY, tf.initialCoords));
             tf.pos = imgCoords(clientX, clientY, tf.initialCoords);
             return tf;
         });

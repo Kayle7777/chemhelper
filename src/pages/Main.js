@@ -4,9 +4,7 @@ import { Button } from '@material-ui/core';
 import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
-import ChemList from '../components/ChemList';
 import ChemTable from '../components/ChemTable';
-import Draggable from '../components/Draggable';
 import Recipes from '../utils/recipes';
 const { tags, recipes } = Recipes;
 
@@ -90,7 +88,6 @@ const Main = props => {
                     <InfoPanel />
                 </div>
             </div>
-            <Draggable />
         </>
     );
 };

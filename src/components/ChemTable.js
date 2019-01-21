@@ -4,7 +4,27 @@ import { Typography } from '@material-ui/core';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
 
-const styles = theme => ({});
+const styles = theme => ({
+    '@global': {
+        '*::-webkit-scrollbar': {
+            width: '7px',
+            height: '0px',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            '-webkit-border-radius': '100px',
+        },
+        '*::-webkit-scrollbar:hover': {
+            backgroundColor: 'rgba(0, 0, 0, 0.09)',
+        },
+        '*::-webkit-scrollbar-thumb:vertical': {
+            background: 'rgba(0, 0, 0, 0.5)',
+            '-webkit-border-radius': '100px',
+        },
+        '*::-webkit-scrollbar-thumb:vertical:active': {
+            background: 'rgba(0, 0, 0, 0.61)',
+            '-webkit-border-radius': '100px',
+        },
+    },
+});
 
 const ChemTable = props => {
     const { classes, recipes } = props;
