@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { lighten } from '@material-ui/core/styles/colorManipulator';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
 
@@ -23,6 +24,16 @@ const styles = theme => ({
             '-webkit-border-radius': '100px',
         },
     },
+    highlight:
+        theme.palette.type === 'light'
+            ? {
+                  color: theme.palette.secondary.main,
+                  backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+              }
+            : {
+                  color: theme.palette.text.primary,
+                  backgroundColor: theme.palette.secondary.dark,
+              },
 });
 
 const ChemTable = props => {
@@ -42,6 +53,10 @@ const ChemTable = props => {
                     ]}
                     fitHeightToRows
                     orderBy={orderBy.name}
+                    // eslint-disable-next-line
+                    isCellHovered={(column, rowData, hoveredColumn, hoveredRowData) =>
+                        rowData.id && rowData.id === hoveredRowData.id
+                    }
                     orderDirection={orderBy.direction ? 'desc' : 'asc'}
                     onCellClick={cellClick}
                     onHeaderClick={headerClick}

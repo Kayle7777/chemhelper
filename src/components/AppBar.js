@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar as MuiAppBar, Toolbar, Typography, Switch, FormControlLabel } from '@material-ui/core';
+import { ToggleContext } from '../App';
 
 const styles = theme => ({
     root: {
@@ -33,10 +34,15 @@ const styles = theme => ({
         position: 'absolute',
         bottom: 0,
     },
+    nightModeSwitch: {
+        position: 'absolute',
+        right: 0,
+    },
 });
 
 const AppBar = props => {
     const { classes } = props;
+    const [paletteType, toggleType] = useContext(ToggleContext);
     return (
         <MuiAppBar className={classes.root} position="static">
             <Toolbar className={classes.container} variant="dense">
@@ -52,6 +58,14 @@ const AppBar = props => {
                         A chemistry helper app for Space Station 13 Goonstation
                     </Typography>
                 </div>
+                <FormControlLabel
+                    className={classes.nightModeSwitch}
+                    color="primary"
+                    control={
+                        <Switch checked={paletteType} onChange={() => toggleType(!paletteType)} value={paletteType} />
+                    }
+                    label="Night Mode"
+                />
             </Toolbar>
         </MuiAppBar>
     );

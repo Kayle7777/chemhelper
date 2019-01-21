@@ -27,8 +27,12 @@ const styles = theme => ({
     leftContainer: {
         width: '100%',
         [theme.breakpoints.up('md')]: {
+            width: '40%',
             marginLeft: theme.spacing.unit * 3,
             marginRight: theme.spacing.unit * 1.5,
+        },
+        [theme.breakpoints.up('xl')]: {
+            width: '25%',
         },
     },
     infoPanel: {
