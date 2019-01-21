@@ -37,7 +37,8 @@ const styles = theme => ({
 });
 
 const ChemTable = props => {
-    const { recipes, controlSelectChem } = props;
+    const { recipes, chemState } = props;
+    const [selectedChem, controlSelectChem] = chemState;
     const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
     return (
         <AutoSizer>
@@ -54,6 +55,7 @@ const ChemTable = props => {
                     fitHeightToRows
                     orderBy={orderBy.name}
                     // eslint-disable-next-line
+                    isCellSelected={(column, rowData) => selectedChem.id === rowData.id}
                     isCellHovered={(column, rowData, hoveredColumn, hoveredRowData) =>
                         rowData.id && rowData.id === hoveredRowData.id
                     }

@@ -25,7 +25,7 @@ function switchTheme(paletteType) {
     };
     if (paletteType) {
         bg.palette = { type: 'dark' };
-        bg.palette.grey = { 200: '#424242' };
+        bg.palette.grey = { 100: '#424242', 200: '#424242' };
     }
     return createMuiTheme(bg);
 }

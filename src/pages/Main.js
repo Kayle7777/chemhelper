@@ -76,7 +76,7 @@ const Main = props => {
                     <div className={classes.leftContainer}>
                         <SearchBar doHideButton={doHideButton} tags={tags} inputState={[searchInput, typeSearch]} />
                         <div className={classes.recipeBox}>
-                            <ChemTable recipes={filteredRecipes} controlSelectChem={controlSelectChem} />
+                            <ChemTable recipes={filteredRecipes} chemState={[selectedChem, controlSelectChem]} />
                         </div>
                     </div>
                 )}
