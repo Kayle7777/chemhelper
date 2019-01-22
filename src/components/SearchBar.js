@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Input, Popover, Card, CardContent } from '@material-ui/core';
+import {
+    Button,
+    Input,
+    Popover,
+    Card,
+    CardContent,
+    FormGroup,
+    FormControl,
+    FormLabel,
+    FormControlLabel,
+    FormHelperText,
+    Checkbox,
+} from '@material-ui/core';
 
 const styles = theme => ({
     container: {
@@ -19,10 +31,14 @@ const styles = theme => ({
     popover: {
         marginTop: theme.spacing.unit,
     },
+    cardContainer: {
+        position: 'relative',
+    },
 });
 
 const TagPopover = props => {
-    const { classes, tags, anchorState } = props;
+    const { classes, tags, anchorState, tagStatePassed } = props;
+    const [tagState, doTags] = tagStatePassed;
     const [popoverAnchor, controlPopover] = anchorState;
     return (
         <Popover
@@ -35,21 +51,58 @@ const TagPopover = props => {
                 horizontal: 'left',
             }}
         >
-            <Card>
-                <CardContent>{JSON.stringify(tags)}</CardContent>
+            <Card className={classes.cardContainer}>
+                <CardContent>
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend">Filter by Tags</FormLabel>
+                        <FormGroup>
+                            {Object.keys(tags).map(e => {
+                                return (
+                                    <FormControlLabel
+                                        key={`${e}-form-control`}
+                                        control={
+                                            <Checkbox
+                                                checked={tagState.includes(e)}
+                                                onChange={tagCheckChange}
+                                                value={e}
+                                            />
+                                        }
+                                        label={e.replace(/./, match => match.toUpperCase())}
+                                    />
+                                );
+                            })}
+                        </FormGroup>
+                    </FormControl>
+                </CardContent>
             </Card>
         </Popover>
     );
+
+    function tagCheckChange(e) {
+        const {
+            target: { value },
+        } = e;
+        return doTags(tagState => {
+            if (tagState.includes(value)) tagState = tagState.filter(tag => tag !== value);
+            else tagState.push(value);
+            return tagState;
+        });
+    }
 };
 
 const SearchBar = props => {
-    const { classes, doHideButton, tags, inputState } = props;
+    const { classes, doHideButton, tags, inputState, tagStatePassed } = props;
     const [popoverAnchor, controlPopover] = useState(null);
     const [searchInput, typeSearch] = inputState;
 
     return (
         <div className={classes.container}>
-            <TagPopover classes={classes} tags={tags} anchorState={[popoverAnchor, controlPopover]} />
+            <TagPopover
+                tagStatePassed={tagStatePassed}
+                classes={classes}
+                tags={tags}
+                anchorState={[popoverAnchor, controlPopover]}
+            />
             <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
             <Input fullWidth value={searchInput} onChange={inputType} />
             <Button onClick={() => doHideButton(prev => !prev)} color="secondary">

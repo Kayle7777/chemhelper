@@ -66,7 +66,8 @@ const Main = props => {
     const { classes } = props;
     const [hideButton, doHideButton] = useState(true);
     const [searchInput, typeSearch] = useState('');
-    const filteredRecipes = filterRecipes(recipes, searchInput);
+    const [tagState, doTags] = useState([]);
+    const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
 
     return (
@@ -75,7 +76,12 @@ const Main = props => {
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
-                        <SearchBar doHideButton={doHideButton} tags={tags} inputState={[searchInput, typeSearch]} />
+                        <SearchBar
+                            tagStatePassed={[tagState, doTags]}
+                            doHideButton={doHideButton}
+                            tags={tags}
+                            inputState={[searchInput, typeSearch]}
+                        />
                         <div className={classes.recipeBox}>
                             <ChemTable recipes={filteredRecipes} chemState={[selectedChem, controlSelectChem]} />
                         </div>
@@ -99,12 +105,21 @@ const Main = props => {
         </>
     );
 
-    function filterRecipes(recipes, searchInput) {
-        if (!searchInput) return recipes;
-        recipes = recipes.filter(each => each.name.toLowerCase().includes(searchInput.toLowerCase()));
-        // More here to sort via tags from popover in searchBar
-
+    function filterRecipes(recipes, searchInput, tagList) {
+        recipes = recipes.filter(recipe => {
+            return checkInput(searchInput, recipe) &&
+                    tagList.every(tag => {
+                        if (recipe.tags) return recipe.tags.includes(tag);
+                        else return false;
+                    })
+            );
+        });
         return recipes;
+
+        function checkInput(searchInput, recipe) {
+            if (searchInput) return recipe.name.includes(searchInput.toLowerCase());
+            else return true;
+        }
     }
 };
 
