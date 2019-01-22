@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import {
-    Button,
-    Input,
-    Popover,
-    Card,
-    CardContent,
-    FormGroup,
-    FormControl,
-    FormLabel,
-    FormControlLabel,
-    FormHelperText,
-    Checkbox,
-} from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
+import TagPopover from './TagPopover';
 
 const styles = theme => ({
     container: {
@@ -28,12 +17,6 @@ const styles = theme => ({
             margin: theme.spacing.unit * 2,
         },
     },
-    popover: {
-        marginTop: theme.spacing.unit,
-    },
-    cardContainer: {
-        position: 'relative',
-    },
 });
 
 const SearchBar = props => {
@@ -44,12 +27,7 @@ const SearchBar = props => {
 
     return (
         <div className={classes.container} data-testid="searchbar">
-            <TagPopover
-                tagStatePassed={tagState}
-                classes={classes}
-                tags={tags}
-                anchorState={[popoverAnchor, controlPopover]}
-            />
+            <TagPopover tagStatePassed={tagState} tags={tags} anchorState={[popoverAnchor, controlPopover]} />
             <Button onClick={filterPopover}>Filter</Button>
             <Input fullWidth value={searchInput} onChange={inputType} />
             <Button onClick={hideButton} color="secondary">
@@ -77,61 +55,6 @@ const SearchBar = props => {
     function resetButton() {
         typeSearch('');
         return doTags([]);
-    }
-};
-
-const TagPopover = props => {
-    const { classes, tags, anchorState, tagStatePassed } = props;
-    const [tagState, doTags] = tagStatePassed;
-    const [popoverAnchor, controlPopover] = anchorState;
-    return (
-        <Popover
-            data-testid={'popover'}
-            className={classes.popover}
-            open={Boolean(popoverAnchor)}
-            anchorEl={popoverAnchor}
-            onClose={() => controlPopover(null)}
-            anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-            }}
-        >
-            <Card className={classes.cardContainer}>
-                <CardContent>
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">Filter by Tags</FormLabel>
-                        <FormGroup>
-                            {Object.keys(tags).map(e => {
-                                return (
-                                    <FormControlLabel
-                                        key={`${e}-form-control`}
-                                        control={
-                                            <Checkbox
-                                                checked={tagState.includes(e)}
-                                                onChange={tagCheckChange}
-                                                value={e}
-                                            />
-                                        }
-                                        label={e.replace(/./, match => match.toUpperCase())}
-                                    />
-                                );
-                            })}
-                        </FormGroup>
-                    </FormControl>
-                </CardContent>
-            </Card>
-        </Popover>
-    );
-
-    function tagCheckChange(e) {
-        const {
-            target: { value },
-        } = e;
-        return doTags(tagState => {
-            if (tagState.includes(value)) tagState = tagState.filter(tag => tag !== value);
-            else tagState = [...tagState, value];
-            return tagState;
-        });
     }
 };
 

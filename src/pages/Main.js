@@ -110,15 +110,15 @@ const Main = props => {
     function filterRecipes(recipes, searchInput, stateTags) {
         return recipes.filter(recipe => {
             const { name, tags: recipeTagsList } = recipe;
-            return checkMatchInput(searchInput, name) && checkMatchTags(stateTags, recipeTagsList);
+            return checkMatchingInput(searchInput, name) && checkMatchingTags(stateTags, recipeTagsList);
         });
 
-        function checkMatchInput(searchInput, name) {
+        function checkMatchingInput(searchInput, name) {
             if (!searchInput) return true;
             else return name.toLowerCase().includes(searchInput.toLowerCase());
         }
 
-        function checkMatchTags(stateTags, recipeTagsList) {
+        function checkMatchingTags(stateTags, recipeTagsList) {
             if (!stateTags.length) return true;
             if (!recipeTagsList) return false;
             else return stateTags.every(stateTag => recipeTagsList.some(recipeTag => recipeTag === stateTag));

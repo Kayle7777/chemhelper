@@ -22,7 +22,7 @@ const Draggable = props => {
 
     return (
         <>
-            <div className={classes.drag} style={containerStyles}>
+            <div className={classes.drag} style={containerStyles} mouseDown={mouseDown} mouseMove={mouseMove}>
                 {props.children}
             </div>
         </>
