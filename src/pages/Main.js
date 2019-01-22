@@ -11,7 +11,7 @@ const { tags, recipes } = Recipes;
 const styles = theme => ({
     container: {
         margin: 'auto',
-        height: '82vh',
+        height: '80vh',
         [theme.breakpoints.up('md')]: {
             width: 1140 + theme.spacing.unit * 4,
             display: 'flex',
@@ -20,8 +20,9 @@ const styles = theme => ({
         [theme.breakpoints.up('xl')]: {
             width: 1750 + theme.spacing.unit * 4,
         },
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             width: '100%',
+            height: '70vh',
         },
     },
     leftContainer: {

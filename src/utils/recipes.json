@@ -1749,7 +1749,6 @@
         },
         {
             "name": "Stable Mutagen",
-            "unsorted": true,
             "ingredients": ["Lithium", "Acetone", "Unstable Mutagen", "Bromine"],
             "tags": ["damage", "rad", "mutation", "plant"],
             "reaction_message": "The substance turns a drab green and begins to bubble.",
@@ -2021,7 +2020,6 @@
         },
         {
             "name": "Phlogiston",
-            "unsorted": true,
             "sources": ["Extracted from burning commol roots."],
             "ingredients": ["Phosphorous", "Sulphuric Acid", "Plasma", "Stabilizing agent (Stabilizer)"],
             "reaction_message": "The substance becomes sticky and extremely warm.",
@@ -2088,7 +2086,6 @@
         },
         {
             "name": "Smoke Powder",
-            "unsorted": true,
             "ingredients": ["Potassium", "Phosphorous", "Sugar", "Stabilizing agent (Stabilizer)"],
             "reaction_message": "The mixture sets into a greyish powder! / The mixture quickly turns into a pall of smoke!",
             "tags": ["ignite"],
@@ -2107,7 +2104,6 @@
         },
         {
             "name": "Fluorosurfactant",
-            "unsorted": true,
             "ingredients": ["Fluorine", "Carbon", "Sulphuric Acid", "Heat"],
             "reaction_message": "A head of foam results from the mixture's constant fizzing. / The mixture quickly and violently erupts into bubbles!",
             "tags": ["slippery"],
@@ -2127,7 +2123,6 @@
         },
         {
             "name": "Flash Powder",
-            "unsorted": true,
             "ingredients": ["Aluminium", "Potassium", "Chlorine", "Sulfur", "Stabilizing agent (Stabilizer)"],
             "reaction_message": "The chemicals hiss and fizz briefly before falling still.",
             "tags": ["ignite", "stun", "eye", "blindness", "damage"],
@@ -2143,7 +2138,6 @@
         },
         {
             "name": "Sonic Powder (Hootingium)",
-            "unsorted": true,
             "ingredients": ["Oxygen", "Cola", "Phosphorous", "Stabilizing agent (Stabilizer)"],
             "tags": ["ignite", "stun", "deaf", "ear", "damage", "movement", "brain"],
             "reaction_message": "The mixture begins to bubble slighly! / The mixture begins to bubble furiously!",
@@ -2239,7 +2233,6 @@
         },
         {
             "name": "Sorium",
-            "unsorted": true,
             "ingredients": ["Mercury", "Carbon", "Nitrogen", "Oxygen", "Stabilizing agent (Stabilizer)"],
             "reaction_message": "The mixture pops and crackles before settling down.",
             "tags": ["explode", "ignite"],
@@ -2258,7 +2251,6 @@
         },
         {
             "name": "Liquid Dark Matter",
-            "unsorted": true,
             "ingredients": ["Plasma", "Radium", "Carbon", "Stabilizing agent (Stabilizer)"],
             "reaction_message": "The begins to glow in a dark purple.",
             "tags": ["explode", "ignite"],
@@ -2469,7 +2461,6 @@
         },
         {
             "name": "Crank",
-            "unsorted": true,
             "sources": ["Extracted or distilled from omega cannabis leaves."],
             "ingredients": [
                 "Diphenhydramine (Antihistamine)",
@@ -2758,7 +2749,6 @@
         },
         {
             "name": "Foamed Metal",
-            "unsorted": true,
             "ingredients": ["Fluorosurfactant", "Sulphuric acid", "<Aluminium> OR <Iron>"],
             "reaction_message": "The metal begins to foam up! / The metal begins to foam up, becoming rigid and tough!",
             "tags": ["floor", "wall"],
@@ -2883,7 +2873,6 @@
         },
         {
             "name": "Colorful Reagent",
-            "unsorted": true,
             "ingredients": [
                 "Plasma",
                 "Radium",
