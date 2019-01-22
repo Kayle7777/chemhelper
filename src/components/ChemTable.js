@@ -58,11 +58,9 @@ const ChemTable = props => {
                         fitHeightToRows
                         orderBy={orderBy.name}
                         fixedRowCount={1}
-                        // eslint-disable-next-line
-                        isCellSelected={(column, rowData) => selectedChem.id === rowData.id}
-                        // eslint-disable-next-line
-                        isCellHovered={(column, rowData, hoveredColumn, hoveredRowData) =>
-                            rowData.id && rowData.id === hoveredRowData.id
+                        isCellSelected={(_column, rowData) => rowData === selectedChem}
+                        isCellHovered={(_column, rowData, _hoveredColumn, hoveredRowData) =>
+                            rowData !== undefined && rowData.id && rowData.id === hoveredRowData.id
                         }
                         orderDirection={orderBy.direction ? 'desc' : 'asc'}
                         onCellClick={cellClick}

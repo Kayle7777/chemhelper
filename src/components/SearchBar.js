@@ -36,6 +36,44 @@ const styles = theme => ({
     },
 });
 
+const SearchBar = props => {
+    const { classes, doHideButton, tags, inputState, tagState } = props;
+    const [popoverAnchor, controlPopover] = useState(null);
+    const [searchInput, typeSearch] = inputState;
+    const [tagStates, doTags] = tagState;
+
+    return (
+        <div className={classes.container}>
+            <TagPopover
+                tagStatePassed={tagState}
+                classes={classes}
+                tags={tags}
+                anchorState={[popoverAnchor, controlPopover]}
+            />
+            <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
+            <Input fullWidth value={searchInput} onChange={inputType} />
+            <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
+                Hide
+            </Button>
+            <Button
+                onClick={() => {
+                    typeSearch('');
+                    return doTags([]);
+                }}
+            >
+                Reset
+            </Button>
+        </div>
+    );
+
+    function inputType(e) {
+        const {
+            target: { value },
+        } = e;
+        return typeSearch(value);
+    }
+};
+
 const TagPopover = props => {
     const { classes, tags, anchorState, tagStatePassed } = props;
     const [tagState, doTags] = tagStatePassed;
@@ -84,39 +122,9 @@ const TagPopover = props => {
         } = e;
         return doTags(tagState => {
             if (tagState.includes(value)) tagState = tagState.filter(tag => tag !== value);
-            else tagState.push(value);
+            else tagState = [...tagState, value];
             return tagState;
         });
-    }
-};
-
-const SearchBar = props => {
-    const { classes, doHideButton, tags, inputState, tagStatePassed } = props;
-    const [popoverAnchor, controlPopover] = useState(null);
-    const [searchInput, typeSearch] = inputState;
-
-    return (
-        <div className={classes.container}>
-            <TagPopover
-                tagStatePassed={tagStatePassed}
-                classes={classes}
-                tags={tags}
-                anchorState={[popoverAnchor, controlPopover]}
-            />
-            <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
-            <Input fullWidth value={searchInput} onChange={inputType} />
-            <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
-                Hide
-            </Button>
-            <Button>Reset</Button>
-        </div>
-    );
-
-    function inputType(e) {
-        const {
-            target: { value },
-        } = e;
-        return typeSearch(value);
     }
 };
 

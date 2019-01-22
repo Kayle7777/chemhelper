@@ -65,9 +65,10 @@ const styles = theme => ({
 const Main = props => {
     const { classes } = props;
     const [hideButton, doHideButton] = useState(true);
-    const [searchInput, typeSearch] = useState('');
-    const [tagState, doTags] = useState([]);
+    const [searchInput, typeSearch] = useState('syn');
+    const [tagState, doTags] = useState(['heal']);
     const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
+
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
 
     return (
@@ -77,7 +78,7 @@ const Main = props => {
                 {hideButton && (
                     <div className={classes.leftContainer}>
                         <SearchBar
-                            tagStatePassed={[tagState, doTags]}
+                            tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
                             tags={tags}
                             inputState={[searchInput, typeSearch]}
@@ -105,20 +106,23 @@ const Main = props => {
         </>
     );
 
-    function filterRecipes(recipes, searchInput, tagList) {
-        recipes = recipes.filter(recipe => {
-            return checkInput(searchInput, recipe) &&
-                    tagList.every(tag => {
-                        if (recipe.tags) return recipe.tags.includes(tag);
-                        else return false;
-                    })
-            );
+    function filterRecipes(recipes, searchInput, stateTags) {
+        return recipes.filter(recipe => {
+            const { name, tags: recipeTagsList } = recipe;
+            return checkMatchInput(searchInput, name) && checkMatchTags(stateTags, recipeTagsList);
         });
-        return recipes;
 
-        function checkInput(searchInput, recipe) {
-            if (searchInput) return recipe.name.includes(searchInput.toLowerCase());
-            else return true;
+        function checkMatchInput(searchInput, name) {
+            if (!searchInput) return true;
+            else {
+                return name.toLowerCase().includes(searchInput.toLowerCase());
+            }
+        }
+
+        function checkMatchTags(stateTags, recipeTagsList) {
+            if (!stateTags.length) return true;
+            if (!recipeTagsList) return false;
+            else return stateTags.every(stateTag => recipeTagsList.some(recipeTag => recipeTag === stateTag));
         }
     }
 };
