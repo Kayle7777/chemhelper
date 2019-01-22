@@ -43,34 +43,40 @@ const SearchBar = props => {
     const [tagStates, doTags] = tagState;
 
     return (
-        <div className={classes.container}>
+        <div className={classes.container} data-testid="searchbar">
             <TagPopover
                 tagStatePassed={tagState}
                 classes={classes}
                 tags={tags}
                 anchorState={[popoverAnchor, controlPopover]}
             />
-            <Button onClick={e => controlPopover(e.currentTarget)}>Filter</Button>
+            <Button onClick={filterPopover}>Filter</Button>
             <Input fullWidth value={searchInput} onChange={inputType} />
-            <Button onClick={() => doHideButton(prev => !prev)} color="secondary">
+            <Button onClick={hideButton} color="secondary">
                 Hide
             </Button>
-            <Button
-                onClick={() => {
-                    typeSearch('');
-                    return doTags([]);
-                }}
-            >
-                Reset
-            </Button>
+            <Button onClick={resetButton}>Reset</Button>
         </div>
     );
+
+    function filterPopover(e) {
+        return controlPopover(e.currentTarget);
+    }
 
     function inputType(e) {
         const {
             target: { value },
         } = e;
         return typeSearch(value);
+    }
+
+    function hideButton(_e) {
+        return doHideButton(prev => !prev);
+    }
+
+    function resetButton() {
+        typeSearch('');
+        return doTags([]);
     }
 };
 

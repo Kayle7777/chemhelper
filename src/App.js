@@ -1,32 +1,24 @@
-import React, { useState, createContext } from 'react';
+import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Main from './pages/Main';
 
-export const ToggleContext = createContext();
-
 const App = props => {
-    const [paletteType, toggleType] = useState(true);
     return (
-        <MuiThemeProvider theme={switchTheme(paletteType)}>
+        <MuiThemeProvider theme={switchTheme()}>
             <CssBaseline />
-            <ToggleContext.Provider value={[paletteType, toggleType]}>
-                <Main />
-            </ToggleContext.Provider>
+            <Main />
         </MuiThemeProvider>
     );
 };
 
-function switchTheme(paletteType) {
+function switchTheme() {
     const bg = {
         typography: {
             useNextVariants: true,
         },
+        palette: { type: 'dark', grey: { 100: '#424242', 200: '#424242' } },
     };
-    if (paletteType) {
-        bg.palette = { type: 'dark' };
-        bg.palette.grey = { 100: '#424242', 200: '#424242' };
-    }
     return createMuiTheme(bg);
 }
 

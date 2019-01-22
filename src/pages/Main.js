@@ -65,8 +65,8 @@ const styles = theme => ({
 const Main = props => {
     const { classes } = props;
     const [hideButton, doHideButton] = useState(true);
-    const [searchInput, typeSearch] = useState('syn');
-    const [tagState, doTags] = useState(['heal']);
+    const [searchInput, typeSearch] = useState('');
+    const [tagState, doTags] = useState([]);
     const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
 
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
@@ -91,6 +91,7 @@ const Main = props => {
                 <div className={classes.infoPanel}>
                     {!hideButton && (
                         <Button
+                            data-testid="showsearch"
                             fullWidth
                             onClick={() => doHideButton(prev => !prev)}
                             variant="outlined"
@@ -114,9 +115,7 @@ const Main = props => {
 
         function checkMatchInput(searchInput, name) {
             if (!searchInput) return true;
-            else {
-                return name.toLowerCase().includes(searchInput.toLowerCase());
-            }
+            else return name.toLowerCase().includes(searchInput.toLowerCase());
         }
 
         function checkMatchTags(stateTags, recipeTagsList) {

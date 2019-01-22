@@ -47,7 +47,7 @@ const ChemTable = props => {
             {({ width, height }) => (
                 <Paper>
                     <MuiTable
-                        data-testid="autosizer-table"
+                        data-testid="chemtable"
                         data={recipeSort(recipes, orderBy)}
                         columns={[
                             {
@@ -66,8 +66,8 @@ const ChemTable = props => {
                         onCellClick={cellClick}
                         onHeaderClick={headerClick}
                         includeHeaders={true}
-                        width={width}
-                        height={height}
+                        width={width || 100}
+                        height={height || 100}
                     />
                 </Paper>
             )}
