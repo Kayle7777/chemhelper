@@ -74,7 +74,7 @@ const ChemTable = props => {
         </AutoSizer>
     );
 
-    function cellClick(column, cell) {
+    function cellClick(_column, cell) {
         return controlSelectChem(cell);
     }
 

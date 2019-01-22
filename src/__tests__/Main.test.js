@@ -1,41 +1,50 @@
 import React from 'react';
 import Main from '../pages/Main.js';
-import { render, fireEvent, waitForElement, waitForDomChange } from 'react-testing-library';
+import { render, fireEvent, waitForElement, waitForDomChange, cleanup } from 'react-testing-library';
 
-describe('Testing Main JS search and tags', () => {
-    const testUtils = render(<Main />);
-    const [filterButton, searchBar, hideButton, resetButton] = testUtils.getByTestId('searchbar').children;
+describe('testing Main.js search and tags', () => {
+    const { getByTestId, getByText, queryByText, queryByTestId } = render(<Main />);
+    const [filterButton, searchBar, hideButton, resetButton] = getByTestId('searchbar').children;
 
-    test('Can we see the search bar', () => {
+    test('should see the search bar', () => {
         expect(filterButton.textContent).toBe('Filter');
+        expect(searchBar).toBeTruthy();
     });
 
-    test('Can we open and close the tag filter', async () => {
+    test('should open the tag filter popover', async () => {
+        expect(queryByTestId('popover')).toBe(null);
         fireEvent.click(filterButton);
-        await waitForElement(() => [
-            expect(testUtils.getByText('Filter by Tags').textContent).toBe('Filter by Tags'),
-            expect(testUtils.getByText('Bleeding').textContent).toBe('Bleeding'),
-        ]);
+        await waitForElement(() => getByTestId('popover'));
+        expect(getByText(/filter by tags/i).textContent).toBeTruthy();
     });
 
-    test('Can we see the chemtable', () => {
-        expect(testUtils.getByText('Aluminium').textContent).toBe('Aluminium');
+    describe('testing the hide and show search buttons', () => {
+        test('should click hide button and not see chemtable, see show search button', async () => {
+            expect(getByText(/acetone/i).textContent).toBeTruthy();
+            expect(queryByText(/show search/i)).toBe(null);
+            fireEvent.click(hideButton);
+            await waitForElement(() => [getByText(/show search/i)]);
+            expect(getByText(/show search/i).textContent).toBeTruthy();
+            expect(queryByText(/acetone/i)).toBe(null);
+        });
+
+        test('should see only show search button, click it and see chemtable', async () => {
+            expect(getByText(/show search/i).textContent).toBeTruthy();
+            expect(queryByText(/acetone/i)).toBe(null);
+            fireEvent.click(getByText(/show search/i));
+            await waitForElement(() => [getByText(/acetone/i)]);
+            expect(getByText(/acetone/i).textContent).toBeTruthy();
+            expect(queryByText(/show search/i)).toBe(null);
+        });
     });
 
-    test('Can we perform a name search', async () => {
-        expect(testUtils.getByText('Aluminium').textContent).toBeTruthy();
-        fireEvent.keyPress(searchBar, { key: 's' });
-        await waitForDomChange(() => [
-            expect(testUtils.getByText('Aluminium')).toBeUndefined(),
-            expect(testUtils.getByText('Synthflesh').textContent).toBe('Synthflesh'),
-        ]);
-        console.log(testUtils.getByText('Aluminium'));
-        // fireEvent.click(resetButton);
-        // await waitForElement(() => [expect(testUtils.getByText('Aluminium').textContent).toBe('Aluminium')]);
-    });
+    test('should perform a search in searchBar', () => {
+        const input = searchBar.firstChild;
 
-    test('Does the hide button work', async () => {
-        fireEvent.click(hideButton);
-        await waitForElement(() => [expect(testUtils.getByTestId('showsearch').innerHTML).toContain('Show Search')]);
+        expect(getByText(/acetone/i).textContent).toBeTruthy();
+        expect(input.value).toBe('');
+        fireEvent.change(input, { target: { value: 's ' } });
+        expect(input.value).toBe('s ');
+        // Need to wait here. ARG
     });
 });

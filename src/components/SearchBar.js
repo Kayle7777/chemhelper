@@ -86,6 +86,7 @@ const TagPopover = props => {
     const [popoverAnchor, controlPopover] = anchorState;
     return (
         <Popover
+            data-testid={'popover'}
             className={classes.popover}
             open={Boolean(popoverAnchor)}
             anchorEl={popoverAnchor}
