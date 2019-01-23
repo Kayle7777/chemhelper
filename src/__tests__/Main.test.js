@@ -11,10 +11,10 @@ describe('testing Main.js search and tags', () => {
         expect(searchBar).toBeTruthy();
     });
 
-    test('should open the tag filter popover', async () => {
-        expect(queryByTestId('popover')).toBe(null);
+    test('should open the tag filter collapse', async () => {
+        expect(queryByTestId('collapse')).toBe(null);
         fireEvent.click(filterButton);
-        await waitForElement(() => getByTestId('popover'));
+        await waitForElement(() => getByTestId('collapse'));
         expect(getByText(/filter by tags/i).textContent).toBeTruthy();
     });
 

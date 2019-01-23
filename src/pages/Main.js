@@ -32,9 +32,6 @@ const styles = theme => ({
             marginLeft: theme.spacing.unit * 3,
             marginRight: theme.spacing.unit * 1.5,
         },
-        [theme.breakpoints.up('xl')]: {
-            width: '25%',
-        },
     },
     infoPanel: {
         width: '100%',
