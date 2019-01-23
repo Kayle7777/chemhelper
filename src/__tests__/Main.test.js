@@ -11,13 +11,6 @@ describe('testing Main.js search and tags', () => {
         expect(searchBar).toBeTruthy();
     });
 
-    test('should open the tag filter collapse', async () => {
-        expect(queryByTestId('collapse')).toBe(null);
-        fireEvent.click(filterButton);
-        await waitForElement(() => getByTestId('collapse'));
-        expect(getByText(/filter by tags/i).textContent).toBeTruthy();
-    });
-
     describe('testing the hide and show search buttons', () => {
         test('should click hide button and not see chemtable, see show search button', async () => {
             expect(getByText(/acetone/i).textContent).toBeTruthy();
