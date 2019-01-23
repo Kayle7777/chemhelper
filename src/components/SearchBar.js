@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Input } from '@material-ui/core';
+import { Button, Input, Tooltip } from '@material-ui/core';
 import TagPopover from './TagPopover';
 
 const styles = theme => ({
@@ -17,6 +17,12 @@ const styles = theme => ({
             margin: theme.spacing.unit * 2,
         },
     },
+    tagSearchButton: {
+        marginRight: theme.spacing.unit,
+    },
+    inputNoText: {
+        fontStyle: 'italic',
+    },
 });
 
 const SearchBar = props => {
@@ -28,12 +34,22 @@ const SearchBar = props => {
     return (
         <div className={classes.container} data-testid="searchbar">
             <TagPopover tagStatePassed={tagState} tags={tags} anchorState={[popoverAnchor, controlPopover]} />
-            <Button onClick={filterPopover}>Filter</Button>
-            <Input fullWidth value={searchInput} onChange={inputType} />
+            <Tooltip title="Filter by Tags" placement="top">
+                <Button className={classes.tagSearchButton} variant="outlined" onClick={filterPopover}>
+                    Tags
+                </Button>
+            </Tooltip>
+            <Input
+                className={!searchInput ? classes.inputNoText : ''}
+                placeholder="Search by name"
+                fullWidth
+                value={searchInput}
+                onChange={inputType}
+            />
+            <Button onClick={resetButton}>Reset</Button>
             <Button onClick={hideButton} color="secondary">
                 Hide
             </Button>
-            <Button onClick={resetButton}>Reset</Button>
         </div>
     );
 
