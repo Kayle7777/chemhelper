@@ -43,6 +43,7 @@ const TagPopover = props => {
                         <FormLabel className={classes.filterMsg} component="legend">
                             Filter by Tags
                         </FormLabel>
+                        <hr />
                         {Object.keys(tags).map(category => {
                             return (
                                 <Fragment key={`${category}-formgroup`}>
