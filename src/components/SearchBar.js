@@ -29,6 +29,7 @@ const SearchBar = props => {
     const { classes, doHideButton, tags, inputState, tagState } = props;
     const [popoverAnchor, controlPopover] = useState(null);
     const [searchInput, typeSearch] = inputState;
+    // eslint-disable-next-line
     const [tagStates, doTags] = tagState;
 
     return (
