@@ -7,7 +7,7 @@ describe('testing Main.js search and tags', () => {
     const [filterButton, searchBar, resetButton, hideButton] = getByTestId('searchbar').children;
 
     test('should see the search bar', () => {
-        expect(filterButton.textContent).toBe('Filter');
+        expect(filterButton.textContent).toBe('Tags');
         expect(searchBar).toBeTruthy();
     });
 
