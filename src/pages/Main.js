@@ -66,7 +66,7 @@ const Main = props => {
     const [tagState, doTags] = useState([]);
     const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
 
-    const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
+    const [selectedChem, controlSelectChem] = useState(undefined);
 
     return (
         <>
