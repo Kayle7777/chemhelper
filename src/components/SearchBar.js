@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Input, Tooltip, Collapse, Paper } from '@material-ui/core';
+import { Button, Input, Tooltip } from '@material-ui/core';
 import TagCollapse from './TagCollapse';
-import { relative } from 'upath';
 
 const styles = theme => ({
     container: {

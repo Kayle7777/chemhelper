@@ -36,7 +36,6 @@ const TagCollapse = props => {
         <ClickAwayListener onClickAway={() => doCollapse(false)}>
             <Collapse
                 data-testid={'collapse'}
-                className={classes.collapse}
                 className={collapseIn ? `${classes.collapse} ${classes.collapseIn}` : classes.collapse}
                 in={collapseIn}
             >
