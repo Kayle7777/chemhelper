@@ -17,8 +17,9 @@ const InfoPanel = props => {
     console.log(content);
     return (
         <Card className={classes.card}>
-            <CardContent>
-                {/* 
+            {content && (
+                <CardContent>
+                    {/* 
                     DATA SCHEMA
 
                     id: integer
@@ -41,8 +42,14 @@ const InfoPanel = props => {
                     __OPTIONAL__ sources: array of strings of sources
                     __OPTIONAL__ heat_to: integer
                 */}
-                <Typography>{content && JSON.stringify(content)}</Typography>
-            </CardContent>
+                    <Typography gutterBottom variant="h5">
+                        {content.name}
+                    </Typography>
+                    <Typography variant="subtitle1">
+                        {content.info.notes ? content.info.notes.join(' ') : ''}
+                    </Typography>
+                </CardContent>
+            )}
         </Card>
     );
 };
