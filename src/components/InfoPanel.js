@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography, Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core';
 
 const styles = theme => ({
     card: {
@@ -14,7 +14,6 @@ const styles = theme => ({
 
 const InfoPanel = props => {
     const { classes, content } = props;
-    console.log(content);
     return (
         <Card className={classes.card}>
             {content && (
@@ -45,13 +44,31 @@ const InfoPanel = props => {
                     <Typography gutterBottom variant="h5">
                         {content.name}
                     </Typography>
-                    <Typography variant="subtitle1">
-                        {content.info.notes ? content.info.notes.join(' ') : ''}
-                    </Typography>
+                    {ifContent(content.info.notes)}
+                    {content.info && (
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Depletion Rate</TableCell>
+                                    <TableCell>Skin Penetration</TableCell>
+                                    <TableCell>Per Cycle</TableCell>
+                                    <TableCell>Overdose Threshhold</TableCell>
+                                    <TableCell>Per Plant Cycle</TableCell>
+                                    <TableCell>Units to Infect</TableCell>
+                                    <TableCell>Addiction Probability</TableCell>
+                                    <TableCell>Application Effect</TableCell>
+                                </TableRow>
+                            </TableHead>
+                        </Table>
+                    )}
                 </CardContent>
             )}
         </Card>
     );
+
+    function ifContent(optional, variant = 'subtitle1') {
+        return optional ? <Typography variant={variant}>{optional}</Typography> : '';
+    }
 };
 
 export default withStyles(styles)(InfoPanel);

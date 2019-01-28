@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ChemTable from '../components/ChemTable';
 import Recipes from '../utils/recipes';
+import TagCollapse from '../components/TagCollapse';
 const { tags, recipes } = Recipes;
 
 const styles = theme => ({
@@ -65,8 +66,8 @@ const Main = props => {
     const [searchInput, typeSearch] = useState('');
     const [tagState, doTags] = useState([]);
     const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
-
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
+    const [collapseIn, doCollapse] = useState(false);
 
     return (
         <>
@@ -77,11 +78,15 @@ const Main = props => {
                         <SearchBar
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
-                            tags={tags}
                             inputState={[searchInput, typeSearch]}
                         />
+                        <TagCollapse tagStatePassed={[tagState, doTags]} tags={tags} open={collapseIn} />
                         <div className={classes.recipeBox}>
-                            <ChemTable recipes={filteredRecipes} chemState={[selectedChem, controlSelectChem]} />
+                            <ChemTable
+                                collapseState={[collapseIn, doCollapse]}
+                                recipes={filteredRecipes}
+                                chemState={[selectedChem, controlSelectChem]}
+                            />
                         </div>
                     </div>
                 )}

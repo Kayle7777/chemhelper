@@ -28,15 +28,14 @@ const styles = theme => ({
 });
 
 const TagCollapse = props => {
-    const { classes, tags, tagStatePassed, collapseState } = props;
+    const { classes, tags, tagStatePassed, open } = props;
     const [tagState, doTags] = tagStatePassed;
-    // eslint-disable-next-line
-    const [collapseIn, doCollapse] = collapseState;
+
     return (
         <Collapse
             data-testid={'collapse'}
-            className={collapseIn ? `${classes.collapse} ${classes.collapseIn}` : classes.collapse}
-            in={collapseIn}
+            className={open ? `${classes.collapse} ${classes.collapseIn}` : classes.collapse}
+            in={open}
         >
             <Card>
                 <CardContent>

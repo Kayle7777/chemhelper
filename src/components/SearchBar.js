@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Input, Tooltip } from '@material-ui/core';
-import TagCollapse from './TagCollapse';
+import { Button, Input } from '@material-ui/core';
 
 const styles = theme => ({
     container: {
@@ -26,39 +25,31 @@ const styles = theme => ({
 });
 
 const SearchBar = props => {
-    const { classes, doHideButton, tags, inputState, tagState } = props;
-    const [collapseIn, doCollapse] = useState(false);
+    const { classes, doHideButton, inputState, tagState } = props;
     const [searchInput, typeSearch] = inputState;
     // eslint-disable-next-line
     const [tagStates, doTags] = tagState;
 
     return (
-        <>
-            <TagCollapse tagStatePassed={tagState} tags={tags} collapseState={[collapseIn, doCollapse]} />
-            <div className={classes.container} data-testid="searchbar">
-                <Tooltip title="Filter by Tags" placement="top">
-                    <Button className={classes.tagSearchButton} variant="outlined" onClick={filterPopover}>
+        <div className={classes.container} data-testid="searchbar">
+            {/* <Tooltip title="Filter by Tags" placement="top">
+                    <Button className={classes.tagSearchButton} variant="outlined" onClick={filterCollapse}>
                         Tags
                     </Button>
-                </Tooltip>
-                <Input
-                    className={!searchInput ? classes.inputNoText : ''}
-                    placeholder="Search by name"
-                    fullWidth
-                    value={searchInput}
-                    onChange={inputType}
-                />
-                <Button onClick={resetButton}>Reset</Button>
-                <Button onClick={hideButton} color="secondary">
-                    Hide
-                </Button>
-            </div>
-        </>
+                </Tooltip> */}
+            <Input
+                className={!searchInput ? classes.inputNoText : ''}
+                placeholder="Search by name"
+                fullWidth
+                value={searchInput}
+                onChange={inputType}
+            />
+            <Button onClick={resetButton}>Reset</Button>
+            <Button onClick={hideButton} color="secondary">
+                Hide
+            </Button>
+        </div>
     );
-
-    function filterPopover(e) {
-        return doCollapse(!collapseIn);
-    }
 
     function inputType(e) {
         const {
