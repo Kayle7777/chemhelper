@@ -4,10 +4,9 @@ import { render, fireEvent, waitForElement, waitForDomChange, cleanup } from 're
 
 describe('testing Main.js search and tags', () => {
     const { getByTestId, getByText, queryByText, queryByTestId } = render(<Main />);
-    const [filterButton, searchBar, resetButton, hideButton] = getByTestId('searchbar').children;
+    const [searchBar, resetButton, hideButton] = getByTestId('searchbar').children;
 
     test('should see the search bar', () => {
-        expect(filterButton.textContent).toBe('Tags');
         expect(searchBar).toBeTruthy();
     });
 
