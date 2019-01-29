@@ -52,9 +52,10 @@ const SearchBar = props => {
     );
 
     function inputType(e) {
-        const {
+        let {
             target: { value },
         } = e;
+        value = value.replace(/bee/g, '🐝');
         return typeSearch(value);
     }
 

@@ -922,7 +922,7 @@
                 ],
                 "addiction_probability_ingest": 0.1,
                 "notes": [
-                    "Mostly used as a precursor to a couple of the illegal drugs. Might be needed for bee stings, histamine poisonings or itching powder."
+                    "Mostly used as a precursor to a couple of the illegal drugs. Might be needed for 🐝 stings, histamine poisonings or itching powder."
                 ]
             }
         },
@@ -1351,7 +1351,7 @@
         },
         {
             "name": "Sodium Thiopental",
-            "sources": ["Poison bottles.", "Derelict medbot injections.", "Space bee stings."],
+            "sources": ["Poison bottles.", "Derelict medbot injections.", "Space 🐝 stings."],
             "tags": ["stamina", "jitter", "stun", "movement", "drowsiness", "damage", "brain", "ko"],
             "info": {
                 "depletion_rate": 0.7,
@@ -1534,7 +1534,7 @@
             }
         },
         {
-            "name": "Initrobeedril (Royal)",
+            "name": "Initro🐝dril (Royal)",
             "sources": ["Poison bottles."],
             "reaction_message": "A sweet and sugary scent drifts from the royal purple substance.",
             "tags": ["damage", "tox", "stun", "losebreath", "oxy", "gib", "heart"],
@@ -1542,10 +1542,10 @@
                 "penetrates_skin": false,
                 "depletion_rate": 0.2,
                 "per_cycle": [
-                    "+1 TOX, turns the victim yellow. 10-33% chances of stuns, +1 LOSEBREATH and up to +5 OXY. Gibs the victim on 26th cycle and leaves a queen bee behind."
+                    "+1 TOX, turns the victim yellow. 10-33% chances of stuns, +1 LOSEBREATH and up to +5 OXY. Gibs the victim on 26th cycle and leaves a queen 🐝 behind."
                 ],
                 "notes": [
-                    "Royal initro essentially turns the victim's heart into a monstrous bee bearing their name. A very reliable killing method, though at least 5 units are required for a guaranteed kill and the giant red bee bearing the name of the victim is a huge red flag for the crew.",
+                    "Royal initro essentially turns the victim's heart into a monstrous 🐝 bearing their name. A very reliable killing method, though at least 5 units are required for a guaranteed kill and the giant red 🐝 bearing the name of the victim is a huge red flag for the crew.",
                     "The only cure is to inject something that forces it to deplete before it hits cycle 26."
                 ]
             }
@@ -1728,7 +1728,7 @@
         {
             "name": "Ants",
             "sources": [
-                "It accumulates on floor tiles that foodstuffs have been left on, indicated with a animated sprite."
+                "It accumulates on floor tiles that foodstuffs have 🐝n left on, indicated with a animated sprite."
             ],
             "tags": ["brute", "damage"],
             "info": {
@@ -2895,13 +2895,13 @@
             "tags": ["none"]
         },
         {
-            "name": "Bee",
-            "sources": ["Extracted from space bee eggs.", "Use a space bee egg on a drinking glass."],
+            "name": "Bee (🐝)",
+            "sources": ["Extracted from space 🐝 eggs.", "Use a space 🐝 egg on a drinking glass."],
             "tags": ["disease"],
             "info": {
                 "notes": [
-                    "Infects the host with a space bee larva, which will eventually be coughed up (causing some TOX damage) unless removed surgically. ",
-                    "Not implicitly a deadly disease, this instead gives you a bee pet! Bees are quite protective of their owners and will come to the rescue when they're under attack if you show them some TLC. It can take either a moment or a while for the bee to emerge depending on the RNG."
+                    "Infects the host with a space 🐝 larva, which will eventually bee coughed up (causing some TOX damage) unless removed surgically. ",
+                    "Not implicitly a deadly disease, this instead gives you a 🐝 pet! 🐝s are quite protective of their owners and will come to the rescue when they're under attack if you show them some TLC. It can take either a moment or a while for the 🐝 to emerge depending on the RNG."
                 ],
                 "penetrates_skin": false,
                 "depletion_rate": 0.4,
