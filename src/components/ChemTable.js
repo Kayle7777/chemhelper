@@ -52,6 +52,7 @@ const ChemTable = props => {
     const { classes, recipes, chemState, collapseState } = props;
     const [selectedChem, controlSelectChem] = chemState;
     const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
+    const [hovered, mouseOver] = useState(false);
     const [collapseIn, doCollapse] = collapseState;
 
     return (
@@ -71,7 +72,11 @@ const ChemTable = props => {
             </Toolbar>
             <AutoSizer>
                 {({ width, height }) => (
-                    <Paper>
+                    <Paper
+                        onKeyDown={arrowMove}
+                        onMouseEnter={() => mouseOver(true)}
+                        onMouseLeave={() => mouseOver(false)}
+                    >
                         <MuiTable
                             data-testid="chemtable"
                             data={recipeSort(recipes, orderBy)}
@@ -100,6 +105,22 @@ const ChemTable = props => {
             </AutoSizer>
         </>
     );
+
+    function arrowMove(e) {
+        if (!hovered) return;
+        const { key } = e;
+        // e.preventDefault();
+        if (key === 'ArrowUp') return controlSelectChem(findChemById(selectedChem.id - 1));
+        if (key === 'ArrowDown') return controlSelectChem(findChemById(selectedChem.id + 1));
+
+        function findChemById(id, arr = recipes) {
+            if (id < 1) return arr[0];
+            if (id > arr.length - 1) return arr[arr.length - 1];
+            for (let i = 0; i < arr.length; i++) {
+                if (id === arr[i].id) return arr[i];
+            }
+        }
+    }
 
     function filterCollapse() {
         return doCollapse(!collapseIn);

@@ -51,14 +51,29 @@ const InfoPanel = props => {
                                 <TableRow>
                                     <TableCell>Depletion Rate</TableCell>
                                     <TableCell>Skin Penetration</TableCell>
-                                    <TableCell>Per Cycle</TableCell>
+                                    {/* <TableCell>Per Cycle</TableCell> */}
                                     <TableCell>Overdose Threshhold</TableCell>
-                                    <TableCell>Per Plant Cycle</TableCell>
+                                    {/* <TableCell>Per Plant Cycle</TableCell> */}
                                     <TableCell>Units to Infect</TableCell>
                                     <TableCell>Addiction Probability</TableCell>
-                                    <TableCell>Application Effect</TableCell>
+                                    {/* <TableCell>Application Effect</TableCell> */}
                                 </TableRow>
                             </TableHead>
+                            <TableBody>
+                                <TableRow>
+                                    {[
+                                        'depletion_rate',
+                                        'penetrates_skin',
+                                        'overdose_threshhold',
+                                        'units_to_infect',
+                                        'addiction_probability_ingest',
+                                    ].map(value => (
+                                        <TableCell key={`${content}_${value}`}>
+                                            {ifContent(content.info[value])}
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            </TableBody>
                         </Table>
                     )}
                 </CardContent>
@@ -67,7 +82,13 @@ const InfoPanel = props => {
     );
 
     function ifContent(optional, variant = 'subtitle1') {
-        return optional ? <Typography variant={variant}>{optional}</Typography> : '';
+        if (!optional) return '';
+        else
+            return (
+                <Typography variant={variant}>
+                    {Array.isArray(optional) ? optional.join(' ') : String(optional)}
+                </Typography>
+            );
     }
 };
 
