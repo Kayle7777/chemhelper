@@ -45,6 +45,9 @@ const InfoPanel = props => {
                         {content.name}
                     </Typography>
                     {ifContent(content.info.notes)}
+                    <hr />
+                    {ifContent(content.ingredients, undefined, 'INGREDIENTS: ')}
+                    {ifContent(content.sources, 'overline', 'SOURCES: ')}
                     {content.info && (
                         <Table>
                             <TableHead>
@@ -81,14 +84,23 @@ const InfoPanel = props => {
         </Card>
     );
 
-    function ifContent(optional, variant = 'subtitle1') {
+    function ifContent(optional, variant = 'subtitle1', precedingText = '') {
         if (!optional) return '';
-        else
-            return (
-                <Typography variant={variant}>
-                    {Array.isArray(optional) ? optional.join(' ') : String(optional)}
-                </Typography>
-            );
+        else {
+            if (Array.isArray(optional)) {
+                if (optional.some(each => typeof each === 'object'))
+                    optional = optional.reduce((accu, ing, i) => {
+                        if (typeof ing === 'object') {
+                            const name = Object.keys(ing)[0];
+                            ing = `${name}: ${ing[name]} parts`;
+                        }
+                        accu += ing + (i + 1 !== optional.length ? ', ' : '.');
+                        return accu;
+                    }, '');
+                else optional = optional.join(', ');
+            }
+            return <Typography variant={variant}>{precedingText + String(optional)}</Typography>;
+        }
     }
 };
 

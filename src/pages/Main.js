@@ -95,7 +95,7 @@ const Main = props => {
                         <Button
                             data-testid="showsearch"
                             fullWidth
-                            onClick={() => doHideButton(prev => !prev)}
+                            onClick={() => doHideButton(hide => !hide)}
                             variant="outlined"
                             color="secondary"
                             className={classes.button}

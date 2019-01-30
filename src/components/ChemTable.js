@@ -83,7 +83,6 @@ const ChemTable = props => {
                             columns={[
                                 {
                                     name: 'name',
-                                    header: 'Chemical',
                                 },
                             ]}
                             fitHeightToRows
