@@ -8,11 +8,11 @@ self.__precacheManifest = [
     "url": "/chemhelper/static/js/main.62ec7f33.chunk.js"
   },
   {
-    "revision": "42a76a9a2a7dd2076951",
-    "url": "/chemhelper/static/js/1.42a76a9a.chunk.js"
+    "revision": "dcdd896e21fbd1d114fe",
+    "url": "/chemhelper/static/js/1.dcdd896e.chunk.js"
   },
   {
-    "revision": "59d7de6c4e8228865e67df2e64c3123a",
+    "revision": "82a872d3de32a686e0ac10587850edbc",
     "url": "/chemhelper/index.html"
   }
 ];
