@@ -130,11 +130,7 @@ const ItemTable = props => {
     }
 
     function headerClick(header) {
-        return changeOrder(orderBy => {
-            orderBy.name = header.name;
-            orderBy.direction = !orderBy.direction;
-            return orderBy;
-        });
+        return changeOrder(orderBy => ({ ...orderBy, name: header.name, direction: !orderBy.direction }));
     }
 
     function recipeSort(recipes, orderBy) {
