@@ -44,7 +44,7 @@ const InfoPanel = props => {
                     <Typography gutterBottom variant="h5">
                         {content.name}
                     </Typography>
-                    {ifContent(content.info.notes)}
+                    {getSafe(() => ifContent(content.info.notes))}
                     <hr />
                     {ifContent(content.ingredients, undefined, 'INGREDIENTS: ')}
                     {ifContent(content.sources, 'overline', 'SOURCES: ')}
@@ -72,7 +72,7 @@ const InfoPanel = props => {
                                         'addiction_probability_ingest',
                                     ].map(value => (
                                         <TableCell key={`${content}_${value}`}>
-                                            {ifContent(content.info[value])}
+                                            {getSafe(() => ifContent(content.info[value]))}
                                         </TableCell>
                                     ))}
                                 </TableRow>
@@ -84,8 +84,16 @@ const InfoPanel = props => {
         </Card>
     );
 
+    function getSafe(fn, defaultVal = '') {
+        try {
+            return fn();
+        } catch (err) {
+            return defaultVal;
+        }
+    }
+
     function ifContent(optional, variant = 'subtitle1', precedingText = '') {
-        if (!optional) return '';
+        if (optional === undefined) return '';
         else {
             if (Array.isArray(optional)) {
                 if (optional.some(each => typeof each === 'object'))

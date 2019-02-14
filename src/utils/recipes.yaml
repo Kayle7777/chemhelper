@@ -74,7 +74,7 @@
 #      - Carbon
 #      - Hydrogen
 #      - Fuel @chemical,burn # The Fuel reagent has to have the chemical and burn tags
-#      - !step Heat the beaker to 300 degrees # Custom step
+#      - Heat the beaker to 300 degrees # Custom step
 #    heat_to: Heat to 300 K# Recipe requires heating
 #    reaction_message: Message that shows up when you create the reagent
 #    info: # information section, shows up as the Information tab
@@ -273,7 +273,7 @@ recipes:
     - name: Ice
       ingredients:
           - Water
-          - !step Cool to 273 K.
+          - Cool to 273 K.
       heat_to: Cool to 273 K.
       tags: [base]
       info:
@@ -411,7 +411,7 @@ recipes:
       ingredients:
           - Water
           - Urine
-          - !step Heat to 354 K.
+          - Heat to 354 K.
       heat_to: Heat to 354 K.
       reaction_message: The mixture bubbles and gives off a sharp odor.
       info:
@@ -426,8 +426,8 @@ recipes:
     - name: Ash
       ingredients:
           - Paper
-          - !step Burn the paper.
-          - !step Collect the ash with a beaker.
+          - Burn the paper.
+          - Collect the ash with a beaker.
       info:
           depletion_rate: 0.4
           penetrates_skin: No
@@ -438,7 +438,7 @@ recipes:
     - name: Ash
       ingredients:
           - Oil
-          - !step Heat to 474 K.
+          - Heat to 474 K.
       heat_to: Heat to 474 K.
       info:
           depletion_rate: 0.4
@@ -489,7 +489,7 @@ recipes:
       ingredients:
           - Ammonia
           - Ethanol
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: A horrible smell pours forth from the mixture.
       info:
@@ -544,7 +544,7 @@ recipes:
       ingredients:
           - Ash
           - Water
-          - !step Heat to 354 K.
+          - Heat to 354 K.
       heat_to: Heat to 354 K.
       reaction_message: A white crystalline residue forms as the water boils off.
       info:
@@ -594,7 +594,7 @@ recipes:
       ingredients:
           - Ash
           - Salt
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The mixture yields a fine black powder.
       sources:
@@ -715,7 +715,7 @@ recipes:
       ingredients:
           - Mercury
           - Chlorine
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: Stinging vapors rise from the solution.
       tags: [medical, depletion, tox, damage]
@@ -982,7 +982,7 @@ recipes:
           - Hydrogen
           - Fluorine
           - Oil
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The mixture rapidly turns into a dense pink liquid.
       tags: [medical, oxy, losebreath, brute, burn, heal, addictive]
@@ -1254,7 +1254,7 @@ recipes:
           - Ethanol
           - Oxygen
           - Silver
-          - !step Heat to 424 K.
+          - Heat to 424 K.
       heat_to: Heat to 424 K.
       reaction_message: Ugh, it smells like the morgue in here.
       tags: [damage, tox, allergy, plant]
@@ -1309,7 +1309,7 @@ recipes:
     - name: Neurotoxin
       ingredients:
           - Space Drugs
-          - !step Heat to 674 K.
+          - Heat to 674 K.
       heat_to: Heat to 674 K.
       sources:
           - Changeling stings.
@@ -1424,7 +1424,7 @@ recipes:
           - Oil
           - Ammonia
           - Oxygen
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       sources:
           - Poison bottles.
@@ -1502,7 +1502,7 @@ recipes:
           - Oxygen
           - Copper
           - Ethanol
-          - !step Heat to 549 K.
+          - Heat to 549 K.
       heat_to: Heat to 549 K.
       reaction_message: It smells like a bad hangover in here.
       tags: [burn, damage, plant]
@@ -1818,7 +1818,7 @@ recipes:
       ingredients:
           - Unstable Mutagen
           - Ants
-          - !step Ingest both and perform a *dance.
+          - Ingest both and perform a *dance.
       reaction_message: The ants arachnify.
       tags: [damage, brute, stun]
       info:
@@ -1849,7 +1849,7 @@ recipes:
     - name: Nitrogen Dioxide
       ingredients:
           - Copper Nitrate
-          - !step Heat to 454 K.
+          - Heat to 454 K.
       heat_to: Heat to 454 K.
       reaction_message: The mixture gives off a biting odor.
       tags: [tox, damage, plant]
@@ -1863,7 +1863,7 @@ recipes:
       ingredients:
           - <Oil> (1)
           - <Chlorine> (2)
-          - !step Heat to 774 K.
+          - Heat to 774 K.
       heat_to: Heat to 774 K.
       reaction_message: The mixture becomes colorless.
       tags: [burn, damage, plant]
@@ -1941,7 +1941,7 @@ recipes:
           - Fluorine
           - Hydrogen
           - Potassium
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       tags: [tox, burn, damage, plant]
       reaction_message: The mixture deepens to a dark blue, and slowly begins to corrode its container.
@@ -2086,7 +2086,7 @@ recipes:
       ingredients:
           - <Chlorine> (1)
           - <Fluorine> (3)
-          - !step Heat to 424 K.
+          - Heat to 424 K.
       heat_to: Heat to 424 K.
       reaction_message: The mixture gives off significant heat.
       tags: [burning, explode, damage, burn]
@@ -2130,7 +2130,7 @@ recipes:
           - Fluorine
           - Carbon
           - Sulphuric Acid
-          - !step Activate with water.
+          - Activate with water.
       reaction_message: A head of foam results from the mixture's constant fizzing. / The mixture quickly and violently erupts into bubbles!
       tags: [slippery]
       info:
@@ -2219,7 +2219,7 @@ recipes:
           - Plasma
           - Radium
           - Phosphorous
-          - !step Active with oxygen.
+          - Active with oxygen.
       reaction_message: The resultant gel begins to emit significant heat.
       tags: [heat]
       info:
@@ -2234,7 +2234,7 @@ recipes:
           - Water
           - Plasma
           - Nitrogen
-          - !step Active with oxygen.
+          - Active with oxygen.
       reaction_message: A light layer of frost forms on top of the mixture.
       sources:
           - Extracted from chilly peppers.
@@ -2346,7 +2346,7 @@ recipes:
           - Psilocybin
           - Ammonia
           - Welding Fuel
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The mixture hisses oddly.
       tags: [drug, hallucinate]
@@ -2362,7 +2362,7 @@ recipes:
       ingredients:
           - Catnip
           - Still
-          - !step Stuff the catnip in the still.
+          - Stuff the catnip in the still.
       tags: [drug, hallucinate]
       info:
           depletion_rate: 0.4
@@ -2470,7 +2470,7 @@ recipes:
           - Lithium
           - Sulphuric Acid
           - Welding Fuel
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K
       reaction_message: The mixture violently reacts, leaving behind a few crystalline shards.
       tags:
@@ -2498,7 +2498,7 @@ recipes:
           - Potassium
           - Phosphorous
           - Welding Fuel
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The mixture dries into a pale blue powder.
       tags: [drug, jitter, damage, brain, temperature, stun, tox, brute, overdose, addictive]
@@ -2522,7 +2522,7 @@ recipes:
           - Iodine
           - Phosphorous
           - Hydrogen
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The solution fizzes and gives off toxic fumes.
       tags: [drug, overdose, addictive, stun, stamina, speed, jitter, drowsiness, damage, brain, movement]
@@ -2548,7 +2548,7 @@ recipes:
           - Space Cleaner
           - Mugwort
           - Denatured Enzyme
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: Tiny cubic crystals precipitate out of the mixture. Huh.
       tags:
@@ -2628,7 +2628,7 @@ recipes:
       ingredients:
           - Corn starch
           - Sulphuric Acid
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The mixture forms a viscous, clear fluid!
       info:
@@ -2711,7 +2711,7 @@ recipes:
           - Synthflesh
           - Blood
           - Strange Reagent
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The substance begins to wriggle disgustingly and climbs out of its container!
       info:
@@ -2724,7 +2724,7 @@ recipes:
       ingredients:
           - Space-Soybean Oil
           - Hydrogen
-          - !step Heat to 524 K.
+          - Heat to 524 K.
       heat_to: Heat to 524 K.
       reaction_message: The mixture emits a burnt, oily smell.
       tags: [overdose, damage, oxy, stun]
@@ -2852,7 +2852,7 @@ recipes:
           - Chicken Soup
           - Strange Reagent
           - Blood
-          - !step Heat to 374 K.
+          - Heat to 374 K.
       heat_to: Heat to 374 K.
       reaction_message: The substance turns an airy sky-blue and foams up into a new shape.
       info:
