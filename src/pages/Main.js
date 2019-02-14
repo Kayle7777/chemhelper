@@ -4,10 +4,13 @@ import { Button } from '@material-ui/core';
 import AppBar from '../components/AppBar';
 import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
-import ChemTable from '../components/ChemTable';
-import Recipes from '../utils/recipes';
+import ItemTable from '../components/ItemTable';
 import TagCollapse from '../components/TagCollapse';
-const { tags, recipes } = Recipes;
+import TopicNavSelect from '../components/TopicNavSelect';
+// import Recipes from '../utils/recipes.yaml';
+import Recipes from '../utils/recipes.json';
+// eslint-disable-next-line
+import Construction from '../utils/construction.yaml';
 
 const styles = theme => ({
     container: {
@@ -62,19 +65,24 @@ const styles = theme => ({
 
 const Main = props => {
     const { classes } = props;
+    //eslint-disable-next-line
+    const [topic, changeTopic] = useState('chemistry');
     const [hideButton, doHideButton] = useState(true);
     const [searchInput, typeSearch] = useState('');
     const [tagState, doTags] = useState([]);
-    const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
-    const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
     const [collapseIn, doCollapse] = useState(false);
 
+    // This is current stuff not changed yet
+    const { tags, recipes } = Recipes;
+    const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
+    const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
     return (
         <>
             <AppBar />
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
+                        <TopicNavSelect />
                         <SearchBar
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
@@ -82,7 +90,7 @@ const Main = props => {
                         />
                         <TagCollapse tagStatePassed={[tagState, doTags]} tags={tags} open={collapseIn} />
                         <div className={classes.recipeBox}>
-                            <ChemTable
+                            <ItemTable
                                 collapseState={[collapseIn, doCollapse]}
                                 recipes={filteredRecipes}
                                 chemState={[selectedChem, controlSelectChem]}

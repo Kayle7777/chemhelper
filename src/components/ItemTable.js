@@ -48,7 +48,7 @@ const styles = theme => ({
     },
 });
 
-const ChemTable = props => {
+const ItemTable = props => {
     const { classes, recipes, chemState, collapseState } = props;
     const [selectedChem, controlSelectChem] = chemState;
     const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
@@ -154,4 +154,4 @@ const ChemTable = props => {
     }
 };
 
-export default withStyles(styles)(ChemTable);
+export default withStyles(styles)(ItemTable);

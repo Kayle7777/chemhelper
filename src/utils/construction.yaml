@@ -1,0 +1,1750 @@
+# List of most public construction recipes for mysha's recipe manager.
+# Adapted from: "Construction" on the Goonstation Wiki (various contributors)
+# Compiled by: Mysha, updated and restructured by Convair880/Pistoleer
+#
+# Structure:
+# - Bombs
+# - Weapons
+# - Cyborgs
+# - Robots
+# - Misc assemblies
+# - Basic construction
+# - Advanced construction
+# - Misc fixes
+# - Hacks
+# - Deconstructions
+# - Misc interactions
+#
+# Special tags:
+# [make] A craftable item.
+# [bomb] It's a bomb.
+# [floor] It's a floor.
+# [wall] It's a wall.
+# [window] It's a window.
+# [computer] It's a computer.
+# [robot] It's a robot or cyborg.
+# [door] It's a door.
+# [fix] It's a How2Fix guide.
+# [hack] A hacking guide.
+# [disassemble] A disassembly guide.
+
+name: Construction
+tags:
+    medical:
+        heal: To do with healing.
+        bleeding: To cause or remove bleeding.
+        medical: To do with the medical system.
+    building:
+        wall: It's a wall.
+        door: It's a door.
+        window: It's a window.
+        floor: It's a floor.
+        dissassemble: A dissassembly guide.
+    item:
+        make: A craftable item.
+        bomb: It's a bomb
+        armor: To do with armor, equippable or no.
+        equip: Equippable item.
+        clothes: Wearable clothes.
+        weapon: A weapon.
+    misc:
+        fix: To fix, or repair.
+        burning: To do with burning.
+        stun: To do with stunning.
+        light: To light or remove light.
+        speed: To do with speed (???).
+        container: A container for other items.
+    computer:
+        robot: It's a robot or cyborg.
+        computer: It's a computer. H4x0r.
+        hack: A hacking guide.
+
+recipes:
+    # Bombs
+
+    - name: Butt bomb
+      ingredients:
+          - <Butt> (any type)
+          - Timer
+          - Add the timer to the butt.
+      info:
+          notes: Harmless prank. Works like a grenade.
+      tags: [make, bomb]
+
+    - name: Rigged light tube
+      ingredients:
+          - Light tube
+          - <Syringe> full of <Plasma>
+          - Inject the light tube with plasma.
+      info:
+          notes: A rather uncommon and creative way to booby-trap machinery or whole rooms. It is not a bad idea to turn the power off before installing the rigged light tube.
+      tags: [make, bomb]
+
+    - name: Rigged power cell
+      ingredients:
+          - Power cell
+          - <Syringe> full of <Plasma>
+          - Inject the power cell with plasma.
+      info:
+          notes: A rather uncommon and creative way to booby-trap machinery or whole rooms. It is not a bad idea to turn the power off before installing the rigged power cell.
+      tags: [make, bomb]
+
+    - name: Suicide bomb vest
+      unsorted: true
+      info:
+          notes: |
+              The payload will be triggered upon death of whoever is wearing the vest, heating the mixture inside the beaker by 30 K when so equipped.
+
+              If required, the payload can be removed and the entire suit taken apart with a wrench.
+      tags: [bomb, make, armor, equip, clothes]
+      ingredients:
+          - Body Armor
+          - Health analyzer
+          - Igniter
+          - <Beaker> OR <Grenade> (any) OR <Pipe bomb> (any)
+          - Screwdriver
+          - <Wrench> (optional)
+          - Use a screwdriver on the igniter.
+          - Combine the igniter with the health analyzer.
+          - Secure the assembly with the screwdriver.
+          - Combine the assembly with the vest.
+          - If you intend to use the beaker, prepare a chemical mix of your choice.
+          - Attach the payload to the vest.
+
+    - name: Pipe bomb
+      unsorted: true
+      info:
+          notes: |
+              Not to be confused with the version traitors can order. Other materials can be used in place of welding fuel if available. Ordered by explosive power - phlogiston, CLF3, black powder or NI3. 
+
+              Plasmastone and erebite work differently in that they are crafted from custom metal sheets, then combined with one of the listed reagents.
+      tags: [bomb, make]
+      ingredients:
+          - 3x <Metal Sheet>
+          - Wire
+          - Igniter
+          - Timer
+          - <Welding Fuel> (20 units)
+          - Welder
+          - Screwdriver
+          - Turn the 3 <Metal sheet>s into a pipe frame.
+          - Use the welder on the frame.
+          - Fill the frame with welding fuel from the beaker/glass/container.
+          - Add some wires.
+          - Use a screwdriver on the igniter.
+          - Combine the igniter with the timer.
+          - Add the timer/igniter assembly to the pipe frame.
+
+    - name: Mousetrap bomb
+      ingredients:
+          - Mousetrap
+          - <Pipe bomb> (any) OR <Grenade> (any)
+          - <Wrench> (optional)
+          - Attach the pipe bomb or grenade to the mousetrap.
+          - Arm the mousetrap by clicking on it before use.
+      info:
+          notes: |
+              Compatible with pipe bombs (regular, Syndicate) and grenades. They can be used as makeshift mines or to booby-trap backpacks and other containers.
+
+              Can be taken apart with a wrench if required.
+      tags: [bomb, make]
+
+    - name: Mousetrap car
+      ingredients:
+          - 3x <Metal Sheet>
+          - <Mousetrap bomb> (grenade or pipe bomb only)
+          - <Wrench> (optional)
+          - Turn the metal sheets into a pipe frame.
+          - Combine the mousetrap bomb with the pipe frame.
+      info:
+          notes: |
+              A mousetrap bomb on wheels. Once set in motion, the cart will scoot off in whichever direction you're facing and detonate the grenade upon impact with a large object or unfortunate bystander.
+
+              Can be taken apart with a wrench if required.
+      tags: [bomb, make]
+
+    - name: Mousetrap pie launcher
+      ingredients:
+          - Mousetrap
+          - Left or right arm (any type)
+          - Pie (any type)
+          - <Wrench> (optional)
+          - Attach the arm to the mousetrap.
+          - Add the pie.
+          - Don't forget to arm the mousetrap by clicking on it before use.
+      info:
+          notes: |
+              For the seasoned prankster. Go on...open it!
+
+              Can be taken apart with a wrench if required.
+      tags: [bomb, make]
+
+    - name: Single tank bomb
+      unsorted: true
+      info:
+          notes: Also known as plasma tank assemblies. Less powerful than transfer valve bombs, but they still fit in backpacks. You'll have to discover suitable gas mixtures yourself.
+      tags: [bomb, make]
+      ingredients:
+          - Gas tank
+          - Igniter
+          - <Timer> OR <Proximity Sensor> OR <Remote Signaler>
+          - Screwdriver
+          - Welder
+          - Fill the plasma tank with a gas mixture of your choice.
+          - Use a screwdriver on the igniter.
+          - Combine the igniter with the timer, proximity sensor or remote signaller.
+          - Secure the assembly with the screwdriver.
+          - Attach the assembly to the plasma tank.
+          - Weld a hole in the tank.
+
+    - name: Transfer valve bomb
+      unsorted: true
+      info:
+          notes: Big bombs for a big bang. Again, this guide won't tell you how to create the perfect explosive mix, so feel free to sign up as a scientist and mess around with the equipment in the plasma research laboratory. You should also use the mainframe and VR goggles to run simulations instead of testing your bombs on the station.
+      tags: [bomb, make]
+      ingredients:
+          - <Gas Tank> of heated gas
+          - <Gas Tank> of a reactive gas
+          - Tank Transfer Valve
+          - <Timer> OR <Proximity Sensor> OR <Remote Signaler>
+          - Connect the first tank to the transfer valve.
+          - Do the same with the other tank.
+          - Attach the timer, proximity sensor or remote signaller to the transfer valve.
+
+    - name: Transfer valve butt
+      unsorted: true
+      info:
+          notes: A mostly harmless gimmick bomb. Keep the pressure in the other tank high for a truly horrific blast.
+      tags: [bomb, make]
+      ingredients:
+          - <Gas Tank> of heated gas
+          - <Butt> (any type)
+          - Tank Transfer Valve
+          - <Timer> OR <Proximity Sensor> OR <Remote Signaler>
+          - Connect the first tank to the transfer valve.
+          - Do the same with the butt.
+          - Attach the timer, proximity sensor or remote signaller to the transfer valve.
+
+    - name: Canister bomb
+      unsorted: true
+      info:
+          notes: |
+              Massive bombs. As usual, the gas mixture is not revealed, only the assembly process. The detonator assembly may have up to 3 attachment class items. Each attachment adds an additional wire to the assembly, each having a unique effect. You may have more than one of any type of attachment. 
+
+              Detonators may be disassembled if necessary. A screwdriver is required to unscrew and a crowbar is required to pry out the plasma tank, and everything else can be cut apart with the wirecutters. Attachments may be removed from the assembly with a screwdriver.
+      tags: [bomb, make]
+      ingredients:
+          - <Gas canister> full of an explosive gas mixture.
+          - Plasma <Gas tank> filled to at least 700 kPa of pure plasma.
+          - Timer
+          - Igniter
+          - Wire
+          - Screwdriver
+          - Multitool
+          - <Station bounced radio> (optional) - Creates a command report upon priming.
+          - <Remote Signaler> (optional)
+          - <Crowbar> (optional)
+          - <Wirecutters> (optional)
+          - <Atmospheric analyzer> (att. class item) - Detonates the bomb if gas is leaking from the canister.
+          - <Power Cell> (att. class item) - Adds an additional detonation wire.
+          - <Flash> (att. class item) - Occasionally flashes nearby people.
+          - <Paper> (att. class item) - Adds a note to the canister bomb interface.
+          - <Bike horn> (att. class item)
+          - <Vuvuzela> (att. class item)
+          - Use the screwdriver to unsecure the igniter.
+          - Add the multitool to the igniter.
+          - Add the plasma tank to the assembly.
+          - Secure the assembly with a screwdriver.
+          - Use the cable coil on the assembly.
+          - Add the timer to the assembly.
+          - Optionally, add the station bounced radio to your assembly.
+          - Optionally, add a remote signalling device to your assembly.
+          - Optionally, add up to three attachment class items to your assembly.
+          - Use the assembly on the canister.
+
+    # Weapons
+
+    - name: Flash/cell assembly
+      ingredients:
+          - Flash
+          - Screwdriver
+          - Charged <Power Cell>
+          - <Wrench> (optional)
+          - Open the flash's battery compartment with the screwdriver.
+          - Attach the power cell to the flash.
+      info:
+          notes: |
+              In addition to stunning people like any other flash, this overcharged version also sets them on fire. Unlike a regular flash, it will only work once.
+              If required, the assembly can be taken apart by using a screwdriver followed by a wrench.
+      tags: [make, weapon]
+
+    - name: Stun gloves
+      info:
+          notes: Insulated gloves armed with a powerful shock to briefly stun whomever they touch. Your intent must be set to harm in order for this to work. Craftable stun gloves only hold one charge at a time.
+      tags: [make, weapon, equip, clothes]
+      ingredients:
+          - <Insulated Gloves> OR <Power Gloves>
+          - Charged <Power Cell>
+          - Wire
+          - Add some wiring to the gloves.
+          - Use the power cell on the gloves to charge them.
+
+    - name: Antique laser gun (fix)
+      info:
+          notes: Starts off as a deactivated display model in the captain's quarters. Replacement parts of average quality will make a reskinned laser gun, while above-average and top-notch parts can increase the weapon's energy output or add a burst-fire mode respectively.
+      tags: [fix, weapon]
+      ingredients:
+          - Antique laser gun
+          - Charged <Power Cell, small>
+          - Coil (Small)
+          - Lens
+          - Wire
+          - Screwdriver
+          - Multitool
+          - Soldering iron
+          - Open the maintenance panel with the screwdriver.
+          - Add wiring.
+          - Install the small coil.
+          - Solder the coil into place.
+          - Install the lens.
+          - Use the multitool.
+          - Install the power cell.
+          - Close the maintenance panel with the screwdriver.
+
+    - name: Zip gun
+      info:
+          notes: You can use different types of ammunition, of which .38 Special is easiest to obtain from a hacked general manufacturer. The zip gun holds two rounds at a time.
+      tags: [make, weapon]
+      ingredients:
+          - 3x <Metal sheet>
+          - Welder
+          - Staple gun
+          - Turn the metal sheets into a pipe frame.
+          - Use the welder on the frame.
+          - Combine the the staple gun with the frame.
+
+    - name: Flamethrower
+      unsorted: true
+      info:
+          notes: Welding fuel is a solid choice. You can also fill the tank with other reagents, so there is plenty of room for experimentation.
+      tags: [make, weapon]
+      ingredients:
+          - Welder
+          - 1x <Rods>
+          - Igniter
+          - <Gas Tank> OR <Oxygen Tank>
+          - Fuel Tank
+          - Screwdriver
+          - Use the screwdriver on the welder.
+          - Attach the rod to the welder.
+          - Combine the igniter with the welder/rod assembly.
+          - Secure the assembly with the screwdriver.
+          - Attach the air mix or oxygen tank to the assembly.
+          - Add the fuel tank to the assembly.
+
+    - name: Poisoned surgery tool
+      ingredients:
+          - <Scalpel> OR <Circular saw> OR <Enucleation Spoon>
+          - Filled <Beaker>
+          - Dip the scalpel, saw or spoon in the beaker.
+      info:
+          notes: Certain surgery tools can be dipped in a poison or other reagent for fun and wacky effects upon stabbing.
+      tags: [make, weapon]
+
+    # Cyborgs
+
+    - name: Cyborg frame
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Traitors can order Syndicate frames with hacked laws.
+
+    - name: Cyborg head (Light)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg head (Standard)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers.
+
+    - name: Cyborg chest (Light)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg chest (Standard)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg arm (Light)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg arm (Standard)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers.
+
+    - name: Cyborg leg (Light)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg leg (Standard)
+      tags: []
+      info:
+          notes: Available from robotics manufacturers. Cannot be reinforced.
+
+    - name: Cyborg treads
+      tags: []
+      info:
+          notes: Available from robotics manufacturers, which provide treads in pairs (left and right). Cannot be reinforced.
+
+    - name: Cyborg head (Sturdy)
+      tags: [make, robot]
+      ingredients:
+          - Cyborg head (Standard)
+          - <Metal Sheet> (Steel)
+          - Use two metal sheets on the cyborg head.
+      info:
+          notes: At the moment, steel is the only suitable material.
+
+    - name: Cyborg head (Heavy)
+      tags: [make, robot]
+      ingredients:
+          - Cyborg head (Sturdy)
+          - <Metal Sheet, reinforced> (Steel)
+          - Use two reinforced metal sheets on the cyborg head.
+      info:
+          notes: At the moment, steel is the only suitable material.
+
+    - name: Cyborg arm (Sturdy)
+      tags: [make, robot]
+      ingredients:
+          - Cyborg arm (Standard)
+          - <Metal Sheet> (Steel)
+          - Use two metal sheets on the cyborg arm.
+      info:
+          notes: At the moment, steel is the only suitable material.
+
+    - name: Cyborg arm (Heavy)
+      tags: [make, robot]
+      ingredients:
+          - Cyborg arm (Sturdy)
+          - <Metal Sheet, reinforced> (Steel)
+          - Use two reinforced metal sheets on the cyborg arm.
+      info:
+          notes: At the moment, steel is the only suitable material.
+
+    - name: Cyborg
+      unsorted: true
+      tags: [make, robot]
+      ingredients:
+          - Cyborg frame
+          - Cyborg head (any type)
+          - Cyborg chest (any type)
+          - Cyborg arm, left and right (any type)
+          - <Cyborg treads> OR Cyborg leg, left and right (any type)
+          - Charged <Power Cell>
+          - <Brain> OR <AI interface board>
+          - Wire
+          - Wrench
+          - Insert the power cell into the cyborg chest.
+          - Use the cable coil on the cyborg chest.
+          - Attach the cyborg chest to the frame.
+          - Attach the arms and legs (or treads) to the frame.
+          - Insert the brain or interface board into the cyborg head.
+          - Attach the cyborg head to the frame.
+          - Optionally, the wrench can be used to partially disassemble frames. See notes.
+          - To activate the cyborg, click on the finished frame with the wrench.
+      info:
+          notes: |
+              Cyborg parts are classified as light, standard, sturdy or heavy. Durability increases with heavier parts, but mobility decreases. Overweight cyborgs will also use slightly more power.
+
+              For the most part, the game will prevent you from inserting unsuitable (job-banned etc.) brains automatically. If you use an AI interface board instead of a brain, the AI will be able to assume control of the cyborg body at will.
+
+              Remove limbs: use the wrench on the frame, then select the appropriate cyborg part.
+              Remove brain: detach the cyborg head first, then click on it with the wrench.
+
+    - name: Cyborg, brain replacement (fix)
+      unsorted: true
+      tags: [fix, robot]
+      ingredients:
+          - Cyborg
+          - Brain
+          - ID card with robotics access
+          - Screwdriver
+          - Unlock the cyborg's interface with the ID card.
+          - Open its head compartment with the screwdriver.
+          - Click on the cyborg with an empty hand to remove the brain.
+          - Insert the replacement brain.
+          - Close the head compartment with the screwdriver.
+          - Lock the cyborg's interface with the ID card.
+      info:
+          notes: For the most part, the game will prevent you from inserting unsuitable (job-banned etc.) brains automatically.
+
+    - name: Cyborg, limb replacement (fix)
+      unsorted: true
+      tags: [fix, robot]
+      ingredients:
+          - Cyborg
+          - Cyborg arm, left and right (any type)
+          - <Cyborg treads> OR Cyborg leg, left and right (any type)
+          - ID card with robotics access
+          - Crowbar
+          - Screwdriver
+          - Wrench
+          - Unlock the cyborg's interface with the ID card.
+          - Open its cover with the crowbar.
+          - Expose the wires with the screwdriver.
+          - Optionally, use the wrench and select the appropriate cyborg part to remove.
+          - Attach the missing arms or legs to the cyborg.
+          - Secure the wiring with the screwdriver.
+          - Close the cover with the crowbar.
+          - Lock the cyborg's interface with the ID card.
+      info:
+          notes: |
+              Cyborg parts are classified as light, standard, sturdy or heavy. Durability increases with heavier parts, but mobility decreases. Overweight cyborgs will also use slightly more power.
+
+    - name: Cyborg, brute damage (fix)
+      tags: [fix, robot]
+      ingredients:
+          - Cyborg
+          - Welder
+          - Use the welder on the cyborg; several times if necessary.
+      info:
+          notes: The 'Repair Structural Damage' function of docking stations does the same.
+
+    - name: Cyborg, burn damage (fix)
+      tags: [fix, robot]
+      ingredients:
+          - Cyborg
+          - ID card with robotics access
+          - Wire
+          - Crowbar
+          - Screwdriver
+          - Unlock the cyborg's interface with the ID card.
+          - Open its cover with the crowbar.
+          - Expose the wires with the screwdriver.
+          - Use the cable coil on the cyborg to repair its wiring.
+          - Secure the wiring with the screwdriver.
+          - Close the cover with the crowbar.
+          - Lock the cyborg's interface with the ID card.
+      info:
+          notes: The 'Repair Burn Damage' function of docking stations does the same.
+
+    # Robots
+
+    - name: AI shell
+      unsorted: true
+      tags: [make, robot]
+      ingredients:
+          - AI shell frame
+          - Charged <Power Cell>
+          - AI interface board
+          - Metal Sheet
+          - Wire
+          - Station bounced radio
+          - Wrench
+          - Add some metal to the shell frame.
+          - Insert wires.
+          - Insert the shell power cell.
+          - Install the interface board.
+          - Use the radio on the shell frame.
+          - Activate the robot with the wrench.
+      info:
+          notes: These are simple robots used by the AI for reconnaissance or interacting directly with certain pieces of machinery, e.g. pods or manufacturers. Cyborg bodies can also be remote-controlled by the AI when equipped with an interface board instead of human brain.
+
+    - name: AI shell, brute damage (fix)
+      tags: [fix, robot]
+      ingredients:
+          - AI shell
+          - Welder
+          - Use the welder on the shell; several times if necessary.
+
+    - name: AI shell, burn damage (fix)
+      tags: [fix, robot]
+      ingredients:
+          - AI shell
+          - Wire
+          - Use the cable coil on the shell; several times if necessary.
+
+    - name: Medbot
+      unsorted: true
+      tags: [make, robot, heal]
+      ingredients:
+          - Empty <Medkit> (any colour)
+          - Proximity Sensor
+          - <Cyborg arm (Standard)> (left or right)
+          - Health analyzer
+          - <Pen> (optional)
+          - Use the cyborg arm on the empty medkit.
+          - Use the health analyzer on the resulting assembly.
+          - Optionally, you may use a pen to rename the finished robot.
+          - Use the proximity sensor to finish the robot.
+      info:
+          notes: |
+              Medbots will detect nearby people and inject them with helpful drugs to slowly bring them back to health. They are a supplement to medical doctors, not a replacement. When emagged, the medbot will enthusiastically inject everyone with massive amounts of poison regardless of injury or not.
+              Medbots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+    - name: Floorbot
+      unsorted: true
+      tags: [make, robot, floor]
+      ingredients:
+          - Empty <Toolbox (Mechanical)>
+          - Proximity Sensor
+          - <Cyborg arm (Standard)> (left or right)
+          - Floor tile
+          - Use the floor tile on the empty toolbox.
+          - Use the proximity sensor to finish the robot.
+          - Use the cyborg arm on the resulting assembly.
+      info:
+          notes: |
+              Floorbots will detect nearby areas of space and tirelessly use their very finite supply of floor tiles to turn it into walkable floors. When emagged, floorbots will rip up floors equally as tirelessly, quickly turning habitable parts of a station into cold, airless tombs. Floorbots may also be produced outright at a robotics fabricator (where they will spawn with 10 tiles) or ordered from the cargo bay.
+
+              If you use more than 10 floor tiles, the finished floorbot will have however many you put in. If you use less than 10, the floorbot will have 10. Therefore, it is most efficient to use 1-2 in creation and load the rest after the floorbot is done.
+
+    - name: Firebot
+      unsorted: true
+      tags: [make, robot, burning]
+      ingredients:
+          - Empty <Toolbox (Emergency)>
+          - Proximity Sensor
+          - <Cyborg arm (Standard)> (left or right)
+          - Fire extinguisher
+          - <Pen> (optional)
+          - Use the cyborg arm on the toolbox.
+          - Use the fire extinguisher on the resulting assembly.
+          - Optionally, you may use a pen to rename the finished robot.
+          - Use the proximity sensor to finish the robot.
+      info:
+          notes: Firebots will detect nearby fires, whether on tiles or on people, and put them out. When emagged, firebots will ram anyone nearby, knocking them down with surprising efficiency. Firebots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+    - name: Cleanbot
+      unsorted: true
+      tags: [make, robot]
+      ingredients:
+          - Bucket
+          - Proximity Sensor
+          - <Cyborg arm (Standard)> (left or right)
+          - Use the sensor on the bucket.
+          - Use the cyborg arm on the resulting assembly.
+      info:
+          notes: Cleanbots will clean the floor around them automatically. When emagged, cleanbots will apply space lube to as many nearby floors as they can. Cleanbots may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+
+    - name: Securitron
+      unsorted: true
+      tags: [make, robot, stun]
+      ingredients:
+          - Remote Signaler
+          - Security Helmet
+          - Proximity Sensor
+          - <Cyborg arm (Standard)> (left or right)
+          - Stun baton
+          - Screwdriver
+          - Welder
+          - <Pen> (optional)
+          - Use the screwdriver on the remote signaler.
+          - Use the signaler on the helmet.
+          - Weld them together with the welding tool.
+          - Add the proximity sensor to the assembly.
+          - Attach the cyborg arm to the assembly.
+          - Optionally, you may use a pen to rename the finished robot.
+          - Add the stun baton.
+      info:
+          notes: |
+              Securitrons network into the station's security computer, identify criminals, and arrest them. Securitrons may also be produced outright at a robotics fabricator or ordered from the cargo bay.
+              When emagged, securitrons arrest everyone they see. In addition, if emagged a second time, securitrons literally flip the fuck out, repeatedly stunning anyone that enters their sights.
+
+    - name: Guardbuddy
+      unsorted: true
+      tags: [make, robot, stun]
+      ingredients:
+          - Guardbuddy frame
+          - Guardbuddy mainboard
+          - <Guardbuddy tool module> (any)
+          - Charged <Power Cell>
+          - <Cyborg arm (Standard)> (left or right)
+          - <Pen> (optional)
+          - Insert the power cell into the frame.
+          - Insert the tool module.
+          - Optionally, you may use a pen on the mainboard to rename the finished robot.
+          - Insert the mainboard.
+          - Add the robot arm.
+      info:
+          notes: Utilizes the DWAINE terminals to conduct operations. To properly use them, one must manually enter commands via the DWAINE terminals in the research sector. Some modules can malfunction dangerously when exposed to EMP grenades.
+
+    - name: Buttbot
+      tags: [make, robot]
+      ingredients:
+          - Butt
+          - <Cyborg arm (Standard)> (left or right)
+          - Attach the cyborg arm to the butt.
+      info:
+          notes: Buttbots...should be seen instead of explained. When emagged, they produce an amazing amount of enjoyment to bystanders.
+
+    - name: Amusing duck
+      tags: [make, robot]
+      ingredients:
+          - Bike horn
+          - <Cyborg arm (Standard)> (left or right)
+          - Combine the bike horn with the robot arm.
+      info:
+          notes: |
+              Amusing ducks will slowly move around at random, quacking and emitting a playful jingle. They will occasionally lay eggs (similar, but not identical to Easter eggs), which in turn may contain fun items.
+
+              When emagged, they lay eggs and quack more frequently. However, they will also play their jingle on dissonant chords, giving them a distinctly 'wrong' and slightly unsettling sound. Amusing ducks can be colossally annoying when a lot of them are stacked into a small area and can easily inspire some to violence to make the quacking stop.
+
+    - name: Chefbot
+      tags: [make, robot]
+      ingredients:
+          - Dramatic bike horn
+          - <Cyborg arm (Standard)> (left or right)
+          - Combine the dramatic bike horn with the robot arm.
+      info:
+          notes: The impartial judge of fine cuisine.
+
+    - name: Skullbot
+      tags: [make, robot]
+      ingredients:
+          - Skull
+          - <Cyborg leg (Standard)> (left or right)
+          - Attach the cyborg leg to the skull.
+      info:
+          notes: Spooky. When emagged, they provide a wide variety of skeleton puns.
+
+    - name: Mulebot (hack)
+      unsorted: true
+      tags: [hack, robot]
+      ingredients:
+          - Screwdriver
+          - Multitool
+          - Wirecutters
+          - Unlock the MULE's interface (QM access or EMAG required).
+          - Click 'Toggle Power' to switch off the MULE.
+          - Use the screwdriver to open the maintenance panel.
+          - Click on the MULE with an empty hand to access the hacking GUI.
+          - Pulse the wires with the multitool to figure out what they do.
+          - Cut the appropiate cables with the wirecutters.
+          - Close the maintenance panel with the screwdriver.
+          - Click 'Toggle Power' to switch on the MULE.
+          - Lock the MULE's interface with your ID card or EMAG.
+      info:
+          notes: |
+              Once you've opened the maintenance panel, pulse the wires to figure out their function and then bypass the safety by cutting the corresponding cables. They are randomized for every bot.
+
+              Power cell = Click this with an empty hand to remove the cell for recharging or upgrading.
+
+              You hear a radio crackle. = Leave those wires alone. Used for navigation and to interface with PDAs.
+
+              The charge light flickers. =  Leave as is. Both wires need to be intact or the bot will be immobilized.
+
+              The load platform clunks. =  Pointless. Out of the box, any type of cargo can be loaded onto the MULE now.
+
+              The drive motor whines briefly. = Disables the speed limiter. Highly recommended, but make sure to only cut one of the two wires!
+
+              The external warning lights flash briefly. = When cut, the machine will knock and run over anybody in its path. This wire has no impact as far as prone people are concerned, as the MULE never tries to avoid them.
+
+    # Misc assemblies
+
+    - name: Igniter assembly
+      ingredients:
+          - Igniter
+          - <Timer> OR <Proximity sensor> OR <Remote signaller>
+          - Screwdriver
+          - Use the screwdriver on the igniter.
+          - If you intend to employ a signaller, use the screwdriver on it as well.
+          - Combine the igniter with the timer, proximity sensor or signaller.
+          - Secure the assembly with the screwdriver.
+      info:
+          notes: The bread-and-butter choice for most situations.
+      tags: [make]
+
+    - name: Signaller assembly
+      ingredients:
+          - Remote signaller
+          - <Proximity sensor> OR <Timer> OR <Bike horn>
+          - Screwdriver
+          - Use the screwdriver on the signaller (not required for horn assembly).
+          - Attach the signaller to the proximity sensor, timer or bike horn.
+          - Secure the assembly with the screwdriver (not required for horn assembly).
+      info:
+          notes: A standalone, proximity- or timer-activated radio. Doesn't work as an attachment, but can come in handy to remotely trigger bombs or door bolts. The bike horn assembly is only useful for noise pollution, though.
+      tags: [make]
+
+    - name: Beaker assembly
+      ingredients:
+          - Beaker
+          - Igniter assembly
+          - Screwdriver
+          - If the assembly has been secured beforehand, undo that with the screwdriver.
+          - Prepare a chemical mix of your choice.
+          - Combine the igniter assembly with the beaker.
+          - Secure the beaker assembly with the screwdriver.
+      info:
+          notes: These assemblies are quite popular to release chemical smoke from a safe distance - for the user at least. Deadly in the hands of a skilled chemist. When triggered, the igniter will heat the mixture by 30 K. To detach the beaker, place the whole thing on the floor and use the context menu by right-clicking on it.
+      tags: [make]
+
+    - name: Chemical grenade
+      ingredients:
+          - Grenade starter kit
+          - <Beaker> (up to two)
+          - Screwdriver
+          - Add the fuse to the grenade casing.
+          - Prepare a chemical mix of your choice.
+          - Add the beaker(s) to the unsecured grenade.
+          - Secure it with the screwdriver.
+      info:
+          notes: The starter kit generally can't be acquired without a traitor scientist's PDA. You can't retrieve the beakers after securing the grenade, so make sure your chemical mix works beforehand!
+      tags: [make]
+
+    - name: Chemical grenade assembly
+      ingredients:
+          - <Chemical grenade> (Any type. Everything that looks like a flashbang is compatible.)
+          - Igniter assembly
+          - Combine the igniter assembly with the chem grenade.
+      info:
+          notes: Combines the advantages of chem grenades (two beakers) with the versatility of beaker assemblies.
+      tags: [make]
+
+    - name: Jack-o'-lantern
+      info:
+          notes: Click the jack-o'-lantern to light it
+      tags: [make, light]
+      ingredients:
+          - Pumpkin
+          - <Chainsaw> OR <Knife>
+          - Flashlight
+          - Use the chainsaw or knife on the pumpkin to carve it
+          - Use the flashlight on the carved pumpkin
+
+    - name: Cardboard box disguise
+      tags: [make, equip, clothes]
+      ingredients:
+          - Cardboard box
+          - <Fake moustache> (optional)
+          - <Scissors> OR <Wirecutters>
+          - Cut eye holes with the scissors or wirecutters.
+          - Optionally, attach the moustache to the cardboard box.
+
+    - name: Ghost disguise
+      tags: [make, equip, clothes]
+      ingredients:
+          - Bedsheet
+          - <Scissors> OR <Wirecutters>
+          - Cut eye holes with the scissors or wirecutters.
+
+    - name: Cape
+      tags: [make, equip, clothes]
+      ingredients:
+          - Bedsheet
+          - Wires
+          - <Scissors> OR <Wirecutters> (optional)
+          - Use the cable coil on the bedsheet.
+      info:
+          notes: If required, the cable holding the cape together can be cut apart with wirecutters or scissors.
+
+    - name: Bandage
+      tags: [make, heal, bleeding, medical]
+      ingredients:
+          - <Bedsheet> OR <Cape> OR <Towel>
+          - <Scissors> OR <Wirecutters>
+          - Cut the base material apart with the wirecutters or scissors.
+      info:
+          notes: |
+              You get three bandages for every piece of fabric.
+
+              Reduces the amount of bleeding, hence repeated application might be necessary to bandage a wound completely. Bandages alone aren't sufficient for mending surgical incisions, however. Bandages can be removed with wirecutters or scissors if the patient doesn't like the cosmetic overlay on their mob.
+
+    - name: Skull mask
+      tags: [make, equip, clothes]
+      ingredients:
+          - Skull
+          - Circular saw
+          - Hollow out the skull with the circular saw.
+      info:
+          notes: Custom masks are named after the former owner of the skull.
+
+    - name: Skull chalice
+      tags: [make, container]
+      ingredients:
+          - Skull
+          - Rods
+          - Use the rod on the skull.
+
+    - name: Paper mask
+      tags: [make, equip, clothes]
+      ingredients:
+          - Paper
+          - Wire
+          - <Scissors> OR <Wirecutters>
+          - <Pen> (optional)
+          - Cut the paper with the scissors or wirecutters.
+          - Use the cable coil on the unfinished mask.
+          - Optionally, colour the mask with the pen.
+      info:
+          notes: Standard pens contain black ink, and you can also use a red or blue marker.
+
+    - name: Bucket helmet
+      tags: [make, equip, clothes]
+      ingredients:
+          - Bucket
+          - Wirecutters
+          - Cut eye holes with the wirecutters.
+
+    - name: Armored biosuit
+      tags: [make, armor, equip, clothes]
+      ingredients:
+          - Body armor
+          - Biosuit
+          - Attach the body armor to the biosuit.
+      info:
+          notes: A biosuit with a piece of body armor attached.
+
+    - name: Armored paramedic suit
+      tags: [make, armor, equip, clothes]
+      ingredients:
+          - Body armor
+          - Paramedic suit
+          - Attach the body armor to the paramedic suit.
+      info:
+          notes: A paramedic suit with a piece of body armor attached.
+
+    - name: Armored firesuit
+      tags: [make, armor, equip, clothes]
+      ingredients:
+          - Body armor
+          - Firesuit
+          - Attach the body armor to the firesuit.
+      info:
+          notes: A firesuit with a piece of body armor attached.
+
+    - name: Rocket shoes
+      info:
+          notes: How many uses you get out of these depend on the type of tank = 2 (emergency O2), 4 (large air or O2) or 6 (jetpack). Do not expect much in the way of steering either way. Rocket shoes are technically disposable, but you can build another pair by taping a replacement gas tank to it.
+      tags: [make, equip, clothes, speed]
+      ingredients:
+          - <Jetpack> OR <Gas Tank> OR <Emergency oxygen tank>
+          - Shoes (any type)
+          - Use the gas tank on the shoes.
+
+    - name: Shackles
+      info:
+          notes: Forces the wearer to move at walking speed. Shackles can be taken apart by holding them in an active hand and clicking on them.
+      tags: [make, equip, clothes]
+      ingredients:
+          - Orange shoes
+          - Handcuffs
+          - Use the handcuffs on the orange shoes.
+
+    - name: Electric chair
+      info:
+          notes: |
+              To change the default frequency/code, you must click on the electropack while you're holding it, and modify it from the pop-up interface. Electric chairs can be remotely activated, but must be toggled on before usage (right click, and select "controls").
+              Said power can come from two sources: the local APC (capped at ~80 BURN) or a direct, wired connection to the power grid (scales with the engine's output, and can even vaporize somebody).
+
+              To disassemble the chair, use a wrench.
+      tags: [make]
+      ingredients:
+          - Electropack
+          - Security Helmet
+          - 1x <Metal Sheet>
+          - <Wire> (optional)
+          - <Remote Signaler> (optional)
+          - <Wrench> (optional)
+          - Optionally, lay wires using the cable coil to create a direct connection to the power grid.
+          - Click on the metal while you're holding it.
+          - Build a chair. Optionally, place it on the same tile as the prepared wiring.
+          - Optionally, change the electropack's default frequency and code.
+          - Use the helmet on the electropack.
+          - Attach the helmet/electropack assembly to the chair.
+
+    - name: Light fixture
+      info:
+          notes: These fixtures, installed by Nanotrasen or otherwise, are controlled by the local APC. Light tubes and bulbs may be obtained from boxes (ask the janitor) or a general manufacturer.
+      tags: [make, light]
+      ingredients:
+          - <Wall, regular> OR <Wall, reinforced>
+          - 2x <Metal Sheet>
+          - <Light tube> or <Light bulb>
+          - Turn the metal sheets into one set of light fixture parts.
+          - Attach the parts to a wall.
+          - Insert the light tube or bulb, depending on the type of fixture.
+
+    - name: Heads on a spike
+      info:
+          notes: Heads can be removed by clicking on the spike with an empty hand.
+      tags: [make]
+      ingredients:
+          - Rods
+          - <Severed head> (up to 3)
+          - <Welder> (optional)
+          - Impale the head(s) on the rod.
+          - Optionally, secure the spike by welding it to the ground.
+
+    - name: Space pod
+      unsorted: true
+      info:
+          notes: |
+              Be advised that you have to stand adjacent to the south west corner of the pod in order to construct it, since it is a 64x64 sprite. Use a bottle of champagne on the finished pod to give it a unique name.
+
+              To add extras, use a crowbar on the south west corner of the pod and add any system. To replace an existing system (like the engine), click the pod with an empty hand while the maintenance panel is open to bring up an interface for adding and removing installed systems. 
+
+              You can also change the gas mix used for the engine and the gas mix used for the pod's life support system, though this doesn't have much of a use other then to suffocate the people in the pod with plasma.
+      tags: [make]
+      ingredients:
+          - Pod frame kit
+          - Pod circuitry
+          - Pod control interface
+          - Engine manifold
+          - Pod armor
+          - Paint job kit (optional)
+          - Wires
+          - 5x <Metal Sheet>
+          - 5x <Glass Sheet, reinforced>
+          - Wrench
+          - Welder
+          - Deploy the frame kit by clicking on the box.
+          - Wrench the jumble of metal. It should look less like a pile of junk.
+          - Wrench again. It should look like a functional but unsecured frame of a space pod.
+          - Use the welder.
+          - Insert wires.
+          - Place the circuitry inside the frame.
+          - Add metal to the frame.
+          - Install the engine manifold.
+          - Put armor on the pod frame.
+          - Use the welder.
+          - Install the control interface.
+          - Add the reinforced glass sheets.
+          - Optionally, use the paint job kit on the finished pod.
+
+    - name: MiniPutt
+      unsorted: true
+      info:
+          notes: |
+              Use a bottle of champagne on the finished MiniPutt to give it a unique name.
+
+              MiniPutts use the same armour plating as the larger pods, and can be upgraded with the same components.
+      tags: [make]
+      ingredients:
+          - MiniPutt frame kit
+          - MiniPutt circuitry
+          - MiniPutt control interface
+          - MiniPutt Engine manifold
+          - Pod armor
+          - Paint job kit (optional)
+          - Wires
+          - 3x <Metal Sheet>
+          - 3x <Glass Sheet, reinforced>
+          - Wrench
+          - Welder
+          - Deploy the frame kit by clicking on the box.
+          - Wrench the jumble of metal. It should look less like a pile of junk.
+          - Wrench again. It should look like a functional but unsecured frame of a MiniPutt.
+          - Use the welder.
+          - Insert wires.
+          - Place the circuitry inside the frame.
+          - Add metal to the frame.
+          - Install the engine manifold.
+          - Put armor on the MiniPutt frame.
+          - Use the welder.
+          - Install the control interface.
+          - Add the reinforced glass sheets.
+          - Optionally, use the paint job kit on the finished MiniPutt.
+
+    # Basic construction
+
+    - name: Closet
+      info:
+          notes: Widely used around the station. Can hold almost anything inside them, and may be secured by an ID lock or with the help of a welding tool. If you see one of them shaking like crazy, that means a person is trying to get out of a welded or locked closet. Doing flips has a chance to damage and eventually break them open from the inside.
+      tags: [make]
+      ingredients:
+          - 2x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Closet.
+
+    - name: Bed
+      info:
+          notes: Sleepy? Buckle yourself to a bed and use the 'sleep in' command. To wake up, click the rest button on your HUD.
+      tags: [make]
+      ingredients:
+          - 2x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Bed.
+
+    - name: Stool
+      info:
+          notes: Small stool for decoration purposes.
+      tags: [make]
+      ingredients:
+          - 1x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Stool.
+
+    - name: Chair
+      info:
+          notes: People are effectively immobilized when buckled to the chair. Folding chairs can be folded up and carried around. They can also be climbed and jumped from, perfect for wrestlers!
+      tags: [make]
+      ingredients:
+          - 1x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Chair.
+
+    - name: Barricades
+      tags: [make]
+      info:
+          notes: Barricades can only be made in space.
+      ingredients:
+          - Rods
+          - Use rods first on empty space, creating a lattice.
+          - Use more rods on the lattice to create the barricade.
+          - Reinforce with even more rods.
+
+    - name: Table
+      tags: [make]
+      info:
+          notes: Tables of the same type (i.e. regular or reinforced) snap into place and connect with each other automatically when build. Not the most formidable obstacle overall, though. Can be used for impromptu surgery if the patient is unconscious.
+      ingredients:
+          - 2x <Metal Sheet> OR 2x <Metal Sheet, reinforced>
+          - Click on the metal while you're holding it.
+          - Choose Table Parts.
+          - Pick up and click on the parts to build a table.
+
+    - name: Rack
+      tags: [make]
+      ingredients:
+          - 1x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Rack Parts.
+          - Pick up and click on the parts to build a rack.
+
+    - name: Floor tile
+      ingredients:
+          - Metal Sheet
+      tags: [make, floor]
+      info:
+          notes: Make these from regular metal or just crowbar them right out from under people's feet. Damaged floor tiles are automatically discarded upon removal.
+
+    - name: Floors
+      tags: [make, floor]
+      ingredients:
+          - Rods
+          - Floor tile
+          - Use rods first on empty space, creating a lattice.
+          - Place a floor tile on top of it.
+          - Use another floor tile on the plating to create a regular floor.
+          - Alternatively, reinforced floors can be made using 1 floor tile and 1 rod on the lattice.
+
+    - name: Metal Sheet, reinforced
+      ingredients:
+          - 1x <Metal Sheet>
+          - 1X <Rods>
+          - Combine the rods with the metal sheets.
+      tags: [make]
+      info:
+          notes: Stronger metal. Make them yourself by combining regular metal sheets and rods or have a fabricator build them straight from processed ore.
+
+    - name: Wall, regular
+      tags: [make, wall]
+      info:
+          notes: While a variety of metals may be used to create sheets and rods, different materials can't be used interchangeably within the same construction project. For example, it's impossible to add mauxite plating to a steel girder.
+      ingredients:
+          - 4x <Metal Sheet>
+          - Click on the metal while you're holding it.
+          - Choose Wall Girders.
+          - Add plating by clicking on the girder with the metal.
+
+    - name: Wall, reinforced
+      tags: [make, wall]
+      info:
+          notes: While a variety of metals may be used to create sheets and rods, different materials can't be used interchangeably within the same construction project. For example, it's impossible to add mauxite plating to a steel girder.
+      ingredients:
+          - 2x <Metal Sheet>
+          - 2x <Metal Sheet, reinforced>
+          - Click on the regular metal while you're holding it.
+          - Choose Wall Girders.
+          - Click on the girder with the reinforced metal to reinforce it.
+          - Use the remaining reinforced metal sheets to add the plating.
+
+    - name: Hidden door (regular wall)
+      tags: [make, wall, door]
+      info:
+          notes: While a variety of metals may be used to create sheets and rods, different materials can't be used interchangeably within the same construction project. For example, it's impossible to add mauxite plating to a steel girder.
+      ingredients:
+          - 4x <Metal Sheet>
+          - Crowbar
+          - Click on the metal while you're holding it.
+          - Choose Wall Girders.
+          - Use the crowbar on the girder to dislodge it.
+          - Add plating by clicking on the girder with the metal.
+
+    - name: Hidden door (reinforced wall)
+      tags: [make, wall, door]
+      info:
+          notes: While a variety of metals may be used to create sheets and rods, different materials can't be used interchangeably within the same construction project. For example, it's impossible to add mauxite plating to a steel girder.
+      ingredients:
+          - 2x <Metal Sheet>
+          - 2x <Metal Sheet, reinforced>
+          - Crowbar
+          - Click on the regular metal while you're holding it.
+          - Choose Wall Girders.
+          - Use the crowbar on the girder to dislodge it.
+          - Use the reinforced metal sheets on the girder to add the plating.
+
+    - name: Grille
+      tags: [make]
+      ingredients:
+          - 2x <Rods>
+          - <Screwdriver> (optional)
+          - Click on the rods while you're holding them.
+          - Optionally, unsecure the grille by using the screwdriver to reposition it.
+      info:
+          notes: They are fastened to the floor by default.
+
+    - name: Glass Sheet, reinforced
+      ingredients:
+          - Glass Sheet
+          - Rods
+      tags: [make]
+      info:
+          notes: Made by adding rods to glass or by using a general manufacturer.
+
+    - name: Grille/window combination
+      tags: [make, window]
+      ingredients:
+          - Grille
+          - 2x <Glass Sheet> OR 2x <Glass Sheet, reinforced>
+          - Position yourself with regard to what you want to do.
+          - If you're inside the grille, the window will be build in the direction your mob is facing.
+          - If you're adjacent to it, the window will be build facing the tile you're standing on.
+          - If you're diagonal to it, a full window will be build.
+          - Click with the glass sheet on the grille.
+      info:
+          notes: The window is fastened to the floor by default.
+
+    - name: Window, regular (one direction)
+      info:
+          notes: Windows will be build in the direction your mob is facing. They are fastened to the floor by default.
+      tags: [make, window]
+      ingredients:
+          - 1x <Glass Sheet>
+          - <Screwdriver> (optional)
+          - <Crowbar> (optional)
+          - Click on the glass while you're holding it.
+          - Choose Thin Window.
+          - Optionally, unsecure the window (see 'Window (disassembly)') to reorient it.
+
+    - name: Window, regular (full)
+      info:
+          notes: They are fastened to the floor by default.
+      tags: [make, window]
+      ingredients:
+          - 2x <Glass Sheet>
+          - <Screwdriver> (optional)
+          - <Crowbar> (optional)
+          - Click on the glass while you're holding it.
+          - Choose Large Window.
+          - Optionally, unsecure the window (see 'Window (disassembly)') to reorient it.
+
+    - name: Window, reinforced (one direction)
+      info:
+          notes: Windows will be build in the direction your mob is facing. They are fastened to the floor by default.
+      tags: [make, window]
+      ingredients:
+          - 1x <Glass Sheet, reinforced>
+          - <Screwdriver> (optional)
+          - <Crowbar> (optional)
+          - Click on the glass while you're holding it.
+          - Choose Thin Window.
+          - Optionally, unsecure the window (see 'Window (disassembly)') to reorient it.
+
+    - name: Window, reinforced (full)
+      info:
+          notes: They are fastened to the floor by default.
+      tags: [make, window]
+      ingredients:
+          - 2x <Glass Sheet, reinforced>
+          - <Screwdriver> (optional)
+          - <Crowbar> (optional)
+          - Click on the glass while you're holding it.
+          - Choose Large Window.
+          - Optionally, unsecure the window (see 'Window (disassembly)') to reorient it.
+
+    # Advanced construction
+
+    - name: Computer, console
+      unsorted: true
+      info:
+          notes: Intended for computers built from a single circuit board. Console frames don't accept mainboards and peripheral cards.
+      tags: [make, computer]
+      ingredients:
+          - 5x <Metal Sheet>
+          - 2x <Glass Sheet>
+          - Wire
+          - Wrench
+          - Screwdriver
+          - 1x Circuit board
+          - Click on the metal and choose 'Console frame'.
+          - Wrench the frame into place.
+          - Insert the circuit board.
+          - Use the screwdriver.
+          - Add wires.
+          - Use the glass on the frame.
+          - Connect the monitor with the screwdriver.
+
+    - name: Computer, terminal
+      unsorted: true
+      info:
+          notes: |
+              Useful for computers built from components and peripherals. Wired computers (as in part of a network) will need to be positioned over a data terminal (deployable with the help of a mechanic), which in turn has to be connected to the power grid.
+
+              An ID scanner module is pretty much mandatory.
+      tags: [make, computer]
+      ingredients:
+          - 3x <Metal Sheet>
+          - 1x <Glass Sheet>
+          - Wire
+          - Wrench
+          - Screwdriver
+          - <Peripheral card> (up to 2)
+          - Storage drive
+          - Computer mainboard
+          - Click on the metal and choose choose 'Computer terminal frame'.
+          - Wrench the frame into place.
+          - Insert the computer mainboard.
+          - Use the screwdriver.
+          - Insert the peripheral cards (up to 2).
+          - Add wires.
+          - Insert the storage drive.
+          - Use the glass on the frame.
+          - Connect the monitor with the screwdriver.
+
+    - name: Computer, heavy
+      unsorted: true
+      info:
+          notes: |
+              Useful for computers built from components and peripherals. Wired computers (as in part of a network) will need to be positioned over a data terminal (deployable with the help of a mechanic), which in turn has to be connected to the power grid.
+
+              An ID scanner module is pretty much mandatory.
+      tags: [make, computer]
+      ingredients:
+          - 5x <Metal Sheet>
+          - 2x <Glass Sheet>
+          - Wire
+          - Wrench
+          - Screwdriver
+          - <Peripheral card> (up to 3)
+          - Storage drive
+          - Computer mainboard
+          - Click on the metal and choose choose 'Computer frame'.
+          - Wrench the frame into place.
+          - Insert the computer mainboard.
+          - Use the screwdriver.
+          - Insert the peripheral cards (up to 3).
+          - Add wires.
+          - Insert the storage drive.
+          - Use the glass on the frame.
+          - Connect the monitor with the screwdriver.
+
+    - name: Disposal pipes
+      info:
+          notes: Replacement pipe segments can be obtained from a pipe dispenser. For more information, see the accompanying text file.
+      tags: [fix]
+      ingredients:
+          - Pipe segment
+          - Wrench
+          - Welder
+          - Crowbar (optional)
+          - If required, remove the floor tile with the crowbar.
+          - If required, unweld the broken pipe segment at all ends.
+          - Move new/replacement pipe segment into place and use the wrench.
+          - Use the welding tool on the pipe segment.
+
+    - name: Entire rooms (ABC-U)
+      info:
+          notes: You don't need to replicate entire rooms. You can pick a section of it or multiple sections to create different rooms. The blueprint marker can create multiple blueprints before running out of energy. This way you can pick all the pieces you want in advance and put them together in a new configuration. Remember to save them with their own names so you don't get them mixed.
+      tags: [make, wall, window, door]
+      ingredients:
+          - ABC-U (Automated Blueprint Construction Unit)
+          - Blueprint marker
+          - Plenty of <Metal Sheet> and <Glass Sheet>
+          - Select tiles using blueprint marker.
+          - Print a blueprint from the marker and put it in the ABC-U.
+          - Check the material cost on the ABC-U and load accordingly.
+          - Drag the ABC-U in position, lock it down and make it start building. ABC-Us can only make new rooms on space tiles.
+
+    # Miscellaneous fixes
+
+    - name: Microwave (fix)
+      info:
+          notes: If the microwave is merely dirty, use a spray bottle of space cleaner. A completely broken unit has to be fixed with some tools.
+      tags: [fix]
+      ingredients:
+          - Microwave
+          - Screwdriver
+          - Wrench
+          - Use the screwdriver on the microwave.
+          - Finish the job with a wrench.
+
+    - name: Manufacturer (fix)
+      ingredients:
+          - Screwdriver
+          - <Welder> OR <Wire>
+          - Open the maintenance panel with the screwdriver.
+          - Depending on the severity of the damage, use the welder (light) or cable coil (heavy).
+          - Use the screwdriver again to close the panel.
+      tags: [fix]
+
+    - name: APC (fix)
+      info:
+          notes: This is for APCs that have been completely broken (They have a damaged sprite and the area is left unpowered), not APCs that have had their wires shorted.
+      tags: [fix]
+      ingredients:
+          - Screwdriver
+          - Wrench
+          - Multitool
+          - 4x <Wire>
+          - Use the screwdriver on the APC.
+          - Add the wire.
+          - Wrench the APC.
+          - Apply the mulitool.
+          - Finally, use the screwdriver on it again.
+
+    # Hacks
+
+    - name: Airlock (hack)
+      unsorted: true
+      tags: [hack, door]
+      ingredients:
+          - Screwdriver
+          - Multitool
+          - Wirecutters
+          - Crowbar
+          - <Insulated gloves> (recommended)
+          - Use the screwdriver on the airlock.
+          - Click the airlock (without screwdriver in hand) to open the GUI.
+          - Have the multitool in hand to test which wire does what.
+          - Have the wirecutters in hand to cut or mend desired wire(s).
+          - If the test light is on and the bolts are down, pulse the wires to raise them.
+          - Use the screwdriver on the airlock when finished.
+          - Crowbar opens powered doors whose test lights are off, and the bolts up.
+          - Crowbar also opens unpowered doors with raised bolts.
+      info:
+          notes: |
+              Door wiring is randomized per game, but all doors have the same wires. Main and backup power functions are tied to the local APC, and using a multitool to pulse wires will only work if the door has power.
+
+              Main power = Disables main power temporarily (pulsed) or permanentely (cut).
+
+              Backup power = Comes online 10 seconds after main power fails. If both main and backup power are down (by APC failure or cutting both wires), the door can be pried open if the door isn't bolted, welded shut or emagged.
+
+              Electrify = The door becomes electrified temporarily (pulsed) or permanentely (cut), shocking anybody who tries to open or interact with it.
+
+              ID scan = Identifiable with multitool ("access denied" animation plays). Scans the ID of people trying to bump-open a restricted door, and will deny them access when the wire is cut. All-access airlocks don't use ID scan.
+
+              AI control = Disables control temporarily (pulsed) or permanentely (cut). There's a lengthy-but-automatic hacking procedure that allows AIs and cyborgs to regain control provided that at least one of the power wires is still intact.
+
+              Open/close = If ID scan is disabled or unnecessary, pulsing this wire will trigger the open/close cycle. Cutting the wire disables the motor that drives the mechanism.
+
+              Bolts = Toggles (pulsed) or drops (cut) the bolts. A bolted airlock will remain closed or open until it is unbolted (a multitool is therefore very handy for hacking), and not even the crowbar is enough to move it. The bolts can fall if the door has no power, but they can't be retracted in that state.
+
+              Quick & dirty method = Find a random airlock, cut every wire until the bolts drop, make a note of which color does this. Proceed to target airlock, cut every other wire except that one, then use the crowbar.
+
+    - name: Vending machine (hack)
+      unsorted: true
+      tags: [hack]
+      ingredients:
+          - Screwdriver
+          - Multitool
+          - Wirecutters
+          - <Insulated gloves> (recommended)
+          - Use the screwdriver on the vendor.
+          - Click the vendor (without screwdriver in hand) to open the GUI.
+          - Have the multitool in hand to test which wire does what.
+          - Have the wirecutters in hand to cut or mend desired wire(s).
+          - Use the screwdriver on the vendor when finished.
+      info:
+          notes: |
+              Vending machines have four wires and four lights on them. The function of each wire is randomized each round, but the same for all vending machines.
+
+              Inventory (green light) = Unlocks hidden items when pulsed (light is on). Not every vendor has unlisted inventory.
+
+              ID check (purple/yellow light) = Disables access restrictions when cut (light turns yellow), allowing anybody to vend items. Doesn't work on machines that ask for money.
+
+              Electrify (orange light) = Electrifies the vendor temporarily (pulsed; light is on) or permanentely (cut).
+
+              Malfunction (red light) =  Causes the vendor to randomly launch items at nearby people when pulsed (light is blinking) or cut.
+
+    - name: Manufacturer (hack)
+      unsorted: true
+      tags: [hack]
+      ingredients:
+          - Screwdriver
+          - Multitool
+          - Wirecutters
+          - <Insulated gloves> (recommended)
+          - Use the screwdriver on the manufacturer.
+          - Click the manufacturer (without screwdriver in hand) to open the GUI.
+          - Have the multitool in hand to test which wire does what.
+          - Have the wirecutters in hand to cut or mend desired wire(s).
+          - Use the screwdriver on the manufacturer when finished.
+      info:
+          notes: |
+              Manufacturers have four wires and four lights on them. The function of each wire is randomized each round, but the same for all manufacturers.
+
+              Inventory (white light) = Unlocks higher speed settings (up to 5) and hidden items when pulsed (light is on). Not every manufacturer has unlisted inventory.
+
+              Power (red light) = Controls the power supply. Shocks the hacker when pulsed, and disables the machine when cut.
+
+              Electrify (yellow light) = Electrifies the manufacturer temporarily (pulsed; light is on) or permanentely (cut).
+
+              Malfunction (blue light) = When pulsed or cut (light is blinking), the machine will malfunction, working more slowly and making awful grinding noises.
+
+    - name: APC (hack)
+      unsorted: true
+      tags: [hack]
+      ingredients:
+          - Screwdriver
+          - Multitool
+          - Wirecutters
+          - <Insulated gloves> (recommended)
+          - Use the screwdriver on the APC.
+          - Click the APC (without screwdriver in hand) to open the GUI.
+          - Have the multitool in hand to test which wire does what.
+          - Have the wirecutters in hand to cut or mend desired wire(s).
+          - Use the screwdriver on the APC when finished.
+      info:
+          notes: |
+              APCs have four wires, although two wires are identical. Unlike other devices, APC wires can be bitten, which acts the same as wirecutters - but remember that if you don't have the real thing, you can't mend them again. Killing the power to an APC also automatically cuts the power to doors and machinery in the area controlled by that APC, meaning you can use this as a faster means for door hacking if you don't plan on using any powered devices for a short period.
+
+              ID lock = Unlocks the interface temporarily (pulsed) or permanentely (cut), bypassing the need for an ID with engineering access.
+
+              AI control = Disables control temporarily (pulsed) or permanentely (cut).
+
+              Power - Disrupts the APC's ability to supply electricity to the associated area temporarily (pulsed) or permanentely (cut). If you pulsed the wire by accident, cut and mend the cable to restore power instantly.
+
+    # Deconstructions
+
+    - name: Light fixture (disassembly)
+      ingredients:
+          - Light fixture
+          - Screwdriver
+          - ID card with engineering access
+          - Unlock the local APC and turn off the lighting circuit.
+          - Remove the light tube or bulb.
+          - Use the screwdriver on the light fixture to disassemble it.
+      tags: [disassemble, light]
+
+    - name: Manufacturer (break)
+      ingredients:
+          - Wrench
+          - Crowbar
+          - Wirecutters
+          - Open the outer cover with the wrench.
+          - Use the crowbar to pry off the cover.
+          - Remove the wiring with the wirecutters.
+          - Undo the final bolts with the wrench.
+      info:
+          notes: Keep in mind that completely dismantled fabricators can't be replaced without the help of electronics!
+      tags: [disassemble]
+
+    - name: Computer, console (disassembly)
+      unsorted: true
+      info:
+          notes: Not all computers can be dismantled.
+      tags: [disassemble, computer]
+      ingredients:
+          - Screwdriver
+          - Crowbar
+          - Wirecutters
+          - Wrench
+          - Welder
+          - Disconnect the monitor with the screwdriver.
+          - Remove the monitor with the crowbar.
+          - Remove the cables with the wirecutters.
+          - Unfasten the circuit board with the screwdriver.
+          - Pry out the circuit board with the crowbar.
+          - Loosen the frame's bolts with the wrench.
+          - Cut apart the frame with the welder.
+
+    - name: Computer, terminal/heavy (disassembly)
+      unsorted: true
+      info:
+          notes: Not all computers can be dismantled.
+      tags: [disassemble, computer]
+      ingredients:
+          - Screwdriver
+          - Crowbar
+          - Wirecutters
+          - Wrench
+          - Welder
+          - Disconnect the monitor with the screwdriver.
+          - Remove the monitor with the crowbar.
+          - Remove the hard disk drive with the crowbar.
+          - Remove the cables with the wirecutters.
+          - Remove all peripheral boards with the crowbar.
+          - Unfasten the mainboard with the screwdriver.
+          - Pry out the mainboard with the crowbar.
+          - Loosen the frame's bolts with the wrench.
+          - Cut apart the frame with the welder.
+
+    - name: Wall, regular (disassembly)
+      tags: [disassemble, wall]
+      ingredients:
+          - Welder
+          - Wrench
+          - <Screwdriver> (optional)
+          - Use the welder on the wall.
+          - Use the wrench to dismantle the girder.
+          - Optionally, use the screwdriver on the girder to dislodge it instead.
+
+    - name: Wall, reinforced (disassembly)
+      unsorted: true
+      info:
+          notes: Each step requires you to stand still from 4 to 10 seconds.
+      tags: [disassemble, wall]
+      ingredients:
+          - Wirecutter
+          - Screwdriver
+          - Welder
+          - Wrench
+          - Crowbar
+          - Remove the outer rods with the wirecutters.
+          - Unsecure the support lines with the screwdriver.
+          - Slice the metal cover with the welder.
+          - Pry off the metal cover with the crowbar.
+          - Loosen the support rods with the wrench.
+          - Detach the support rods with the welder.
+          - Pry off the outer sheath with the crowbar, revealing the girder.
+          - Loosen the girder's support rods with the screwdriver.
+          - Cut apart the girder's support rods with the wirecutters.
+          - Use the wrench to dismantle the girder.
+
+    - name: Hidden door (disassembly)
+      tags: [disassemble, door]
+      ingredients:
+          - Screwdriver
+          - Wrench
+          - Use the screwdriver on the wall.
+          - Use the wrench to dismantle the girder.
+
+    - name: Grille (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wirecutters
+          - <Insulated gloves> (recommended)
+          - <Screwdriver> (optional)
+          - Cut the grille apart with the wirecutters.
+          - Optionally, use the screwdriver on the grille to dislodge it instead.
+      info:
+          notes: Some grilles are electrified, as such it would be wise to have insulated gloves on before attempting to destroy or dislodge it. Alternatively, hit it repeatedly with a shard of glass to avoid being shocked.
+
+    - name: Window (disassembly)
+      tags: [disassemble, window]
+      ingredients:
+          - Screwdriver
+          - Crowbar
+          - Loosen the window with the screwdriver.
+          - Use the crowbar to pry the window out of the frame.
+          - Unfasten the frame from the floor with the screwdriver.
+          - The window can now be moved...
+          - ...or rotated (right click verb; one-directional window only).
+          - You can use the tools in reverse order to re-secure the window.
+      info:
+          notes: This procedure applies to every type of window.
+
+    - name: Table (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - Dismantle the table with the wrench.
+
+    - name: Table, reinforced (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Welder
+          - Wrench
+          - Weaken the table's supports with the welder.
+          - Dismantle the table with the wrench.
+
+    - name: Rack (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - Dismantle the rack with the wrench.
+
+    - name: Closet (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - Open the closet or locker.
+          - Take it apart with the wrench.
+
+    - name: Bed (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - <Screwdriver> (optional)
+          - Take the bed apart with the wrench.
+          - Optionally, roller beds can be unfastened with the screwdriver instead.
+      info:
+          notes: Only roller beds are moveable.
+
+    - name: Stool (disassembly)
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - Take the stool apart with the wrench.
+
+    - name: Chair (disassembly)
+      info:
+          notes: Some chairs cannot be disassembled or folded up.
+      tags: [disassemble]
+      ingredients:
+          - Wrench
+          - Take the chair apart with the wrench.
+          - Alternatively, folding chairs can be folded up by clicking them with an empty hand.
+
+    # Misc interactions
+
+    - name: Closet (welded)
+      tags: [disassemble]
+      ingredients:
+          - Welder
+          - Weld or unweld the closet. It can't be opened when welded shut.
+
+    - name: Airlock (welded)
+      tags: [door]
+      ingredients:
+          - Welder
+          - Weld or unweld the airlock. It can't be opened when welded shut.
+
+    - name: Firelock (welded)
+      tags: [door]
+      ingredients:
+          - Welder
+          - Weld or unweld the firelock. It can't be opened when welded shut.
+
+    - name: Fire alarm
+      tags: [fix]
+      ingredients:
+          - Wirecutters
+          - Re- or disconnect the fire alarm with the wirecutters.
+      info:
+          notes: Disabled fire alarms don't react to heat sources (such as plasma fires).
+
+    - name: Security camera
+      tags: [fix]
+      ingredients:
+          - Wirecutters
+          - Re- or disconnect the camera with the wirecutters.
+      info:
+          notes: Disabled cameras cannot be accessed by the AI or through a CCTV monitor.
+
+    - name: Air monitor
+      tags: [fix]
+      ingredients:
+          - Wirecutters
+          - Re- or disconnect the air monitor with the wirecutters.
