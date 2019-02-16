@@ -1,0 +1,328 @@
+# List of all workbench recipes for mysha's recipe manager.
+# Compiled by: Convair880/Pistoleer
+#
+# Structure:
+# - Ore processing machinery
+# - Base materials
+# - Base components
+# - Weapons
+# - Armor
+# - Misc assemblies
+#
+# Special tags:
+# [metallurgy] Tool or machinery related to ore processing.
+# [rawmaterial] It's a raw material of some sort.
+# [workbench] Used in workbench-specific recipes.
+
+name: Workbench
+recipes:
+    # Ore processing machinery
+
+    - name: Arc smelter
+      info:
+          notes: |
+              Processes raw material into material bars suitable for manufacturers. Up to two materials can be loaded to make a combination alloy that combines the functionality of both materials (i.e. combining a metal and a crystal will have it be recognized as both metal and crystal.
+
+              Note that every use of the smelter causes slag to build up inside of it which, if not removed, will decrease the quality of each successive alloy and cause smoke to billow out of the smelter until it's fixed. Remove slag by clicking the smelter with the slag shovel.
+      tags: [metallurgy]
+
+    - name: Auto loom
+      info:
+          notes: Accepts fibrilith, cotton and other fabrics. You can also recycle regular jumpsuits and shoes.
+      tags: [metallurgy]
+
+    - name: Workbench
+      info:
+          notes: Can turn raw materials and processed alloys into usable items or combine certain items, depending on the recipe. Different materials have unique properties that differentiate crafted items from their regular (spawned) counterparts.
+      tags: [metallurgy, workbench]
+
+    - name: Slag shovel
+      info:
+          notes: Removes slag from the arc smelter.
+      tags: [metallurgy, tool]
+
+    # Base materials
+
+    - name: Material piece (Metal)
+      sources:
+          - Mining
+          - Certain merchants (QM)
+      info:
+          notes: Material such as mauxite, bohrum or gold. Both raw ore and processed material bars from the arc smelter are suitable.
+      tags: [rawmaterial]
+
+    - name: Material piece (Crystal)
+      sources:
+          - Mining
+          - Certain merchants (QM)
+      info:
+          notes: Material such as molitz or gemstones. Both raw ore and processed material bars from the arc smelter are suitable.
+      tags: [rawmaterial]
+
+    - name: Material piece (Fabric)
+      sources:
+          - Mining
+          - Certain merchants (QM)
+          - Hydroponics
+      ingredients:
+          - Fabric-type material
+          - Auto loom
+          - Put the raw material in the auto loom.
+      info:
+          notes: Material such as fibrilith or cotton. You can also recycle jumpsuits and shoes in the auto loom.
+      tags: [rawmaterial, produce]
+
+    # Currently not used anywhere but spawned cable coils.
+    - name: Material piece (Rubber)
+      #    sources:
+      #      - Mining
+      ingredients:
+          - <Wire> (synthrubber-insulated)
+          - Auto loom
+          - Put the cable coil in the auto loom.
+      info:
+          notes: Material such as latex or synthrubber.
+      tags: [rawmaterial]
+
+    - name: Material piece (Organic)
+      sources:
+          - Mining
+          - Blobs
+          - Commit suicide with the arc smelter
+      ingredients:
+          - Organic-type material
+          - Auto loom
+          - Put the raw material in the auto loom.
+      info:
+          notes: Material such as human flesh, pieces of blob or viscerite.
+      tags: [rawmaterial]
+
+    - name: Material piece (Energy)
+      sources:
+          - Mining
+          - Certain merchants (QM)
+      info:
+          notes: Material such as cerenkite, erebite or telecrystal. Both raw ore and processed material bars from the arc smelter are suitable.
+      tags: [rawmaterial]
+
+    # Base components
+
+    - name: Lens
+      ingredients:
+          - Material piece (Crystal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench]
+
+    - name: Gears
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench]
+
+    - name: Coil (Small)
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench]
+
+    - name: Coil (Large)
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench]
+
+    - name: Metal sheet (Dynamic)
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      info:
+          notes: Specific properties depend on the type of material used. Usually interchangeable with default metal sheets in other construction blueprints.
+      tags: [make, workbench]
+
+    - name: Glass sheet (Dynamic)
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      info:
+          notes: Specific properties depend on the type of material used. Usually interchangeable with default glass sheets in other construction blueprints.
+      tags: [make, workbench]
+
+    - name: Wire (Dynamic)
+      ingredients:
+          - Material piece (any type)
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the two material pieces to the workbench.
+          - The conductor must be a metal.
+      info:
+          notes: Specific properties depend on the type of material used. Usually interchangeable with default cable coils in other construction blueprints.
+      tags: [make, workbench]
+
+    - name: Fuel pellet
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench]
+
+    - name: Power Cell, small (Dynamic)
+      ingredients:
+          - Material piece (Energy)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      info:
+          notes: Specific properties depend on the type of material used, but it should also be conductive in any case (i.e. a custom alloy will be required). Usually interchangeable with regular power cells in energy guns and stun batons.
+      tags: [make, workbench]
+
+    - name: Power Cell (Dynamic)
+      ingredients:
+          - Material piece (Energy)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      info:
+          notes: Specific properties depend on the type of material used. Usually interchangeable with regular power cells in APCs, cyborgs etc.
+      tags: [make, workbench]
+
+    # Weapons
+
+    - name: Flash (Dynamic)
+      ingredients:
+          - Power Cell, small (Dynamic)
+          - Material piece (Metal)
+          - Lens
+          - Workbench
+          - Select the appropiate recipe and add the listed components to the workbench.
+      info:
+          notes: Specific properties (range, stun duration etc) depend on the type of materials used.
+      tags: [make, workbench, weapon]
+
+    - name: Arrowhead
+      ingredients:
+          - <Material piece (Metal)> OR <Material piece (Crystal)>
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      info:
+          notes: You'll get four of these per material piece.
+      tags: [make, workbench, weapon]
+
+    - name: Arrow
+      unsorted: true
+      ingredients:
+          - Long object (rods, stun baton, crowbar etc)
+          - Arrowhead
+          - Workbench
+          - Select the "Improvised weapon" recipe on the workbench.
+          - Add the long object as the "core" and the arrowhead as the "head".
+      info:
+          notes: Useless without a bow.
+      tags: [make, workbench, weapon]
+
+    - name: Poisoned arrow
+      ingredients:
+          - Arrow
+          - Filled <Beaker>
+          - Dip the arrow in the beaker.
+      tags: [make, workbench, weapon]
+
+    - name: Spear
+      unsorted: true
+      ingredients:
+          - Long object (rods, stun baton, crowbar etc)
+          - Sharp object (shard, scalpel, kitchen knife, scissors etc)
+          - Workbench
+          - Select the "Improvised weapon" recipe on the workbench.
+          - Add the long object as the "core" and the sharp object as the "head".
+      tags: [make, workbench, weapon]
+
+    - name: Energy gun cell swap
+      ingredients:
+          - Energy gun (any type)
+          - Power Cell, small
+          - Select the appropiate recipe and add the listed components to the workbench.
+      tags: [workbench, weapon]
+
+    - name: Stun baton cell swap
+      ingredients:
+          - Stun Baton
+          - Power Cell, small
+          - Select the appropiate recipe and add the listed components to the workbench.
+      tags: [workbench, weapon]
+
+    # Armor
+
+    - name: Armor plates
+      ingredients:
+          - 3x <Floor tile>
+          - 5x <Rods>
+          - Workbench
+          - Select the appropiate recipe and add the listed components to the workbench.
+      tags: [make, workbench, armor]
+
+    - name: Heavy armor
+      ingredients:
+          - Armor plates
+          - 5x <Rods>
+          - Workbench
+          - Select the appropiate recipe and add the listed components to the workbench.
+      info:
+          notes: Degree of protection depends on the type of materials used.
+      tags: [make, workbench, armor, clothes, equip]
+
+    - name: Pod armor
+      ingredients:
+          - Armor plates
+          - Gears
+          - 5x <Rods>
+          - Material piece (Crystal)
+          - Workbench
+          - Select the appropiate recipe and add the listed components to the workbench.
+      info:
+          notes: Degree of protection depends on the type of materials used, and they also affect the top speed of the pod.
+      tags: [make, workbench, armor]
+
+    # Misc assemblies
+
+    - name: Flashlight (Dynamic)
+      ingredients:
+          - Power Cell
+          - Lens
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the listed components to the workbench.
+      info:
+          notes: Luminous color depends on the type of materials used.
+      tags: [make, workbench, light]
+
+    - name: Jumpsuit
+      ingredients:
+          - Material piece (Fabric)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench, clothes, equip]
+
+    - name: Horse mask
+      ingredients:
+          - Material piece (any type)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench, clothes, equip]
+
+    - name: Gas canister (Dynamic)
+      ingredients:
+          - Material piece (Metal)
+          - Workbench
+          - Select the appropiate recipe and add the material piece to the workbench.
+      tags: [make, workbench, tank]
+
+    - name: Tripod
+      ingredients:
+          - 3x <Rods>
+          - Workbench
+          - Select the appropiate recipe and add the rods to the workbench.
+      tags: [make, workbench]

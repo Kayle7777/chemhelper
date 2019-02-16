@@ -1,0 +1,216 @@
+name: Objects
+recipes:
+    - name: Screwdriver
+      tags: [tool]
+      info:
+          notes: One of the most, if not the most essential tool. Used in moving windows and grilles, building computers, opening maintenance panels in electronics, fixing microwaves, modifying small devices, opening cyborg heads and more.
+
+    - name: Wirecutters
+      tags: [tool]
+      info:
+          notes: Used in wiring, hacking, deconstructing computers, etc. Live wires should always be handled with insulated gloves.
+
+    - name: Multitool
+      tags: [tool]
+      info:
+          notes: An electrician's precision tool. Known mostly for being a cornerstone of hacking, it's also essential for finishing APC repairs.
+
+    - name: Wrench
+      tags: [tool]
+      info:
+          notes: Used in building computers, activating cyborgs, deconstructing walls and furniture etc.
+
+    - name: Crowbar
+      tags: [tool]
+      info:
+          notes: A general-purpose opener. Used to pry open firelocks and unpowered doors, prying up or out floor tiles, window frames, wall girders, computer modules and so on.
+
+    - name: Body Armor
+      tags: [clothes, armor, equip]
+      info:
+          notes: Provides moderate protection to the torso. Will help you survive psychotic murderers wielding blunt objects, revolvers and energy weapons slightly longer, and prevent bleeding from pipe bomb shrapnels.
+
+    - name: Welder
+      tags: [tool]
+      info:
+          notes: A heavy engineering tool. An active welder will ignite plasma, break light bulbs, set off nearby fire alarms and do horrible things when swung at a person. Must be activated to work and has a limited supply of fuel. Has nearly as many uses as screwdrivers and crowbars, but operating one will cause eye damage without proper protection.
+
+    - name: Security Helmet
+      tags: [clothes, armor, equip]
+      info:
+          notes: Provides moderate protection to the head, though you can still be rendered unconscious from repeated trauma.
+
+    - name: Chainsaw
+      info:
+          notes: An electric chainsaw to keep weeds in check. Passable emergency weapon, but not very durable.
+      tags: [tool, weapon]
+
+    - name: Wire
+      info:
+          notes: Spare cable, found plentifully in yellow toolkits and boxes marked "Cable Storage". Used in constructing computers, repairing damaged wiring under floors and much more.
+
+    - name: Power Cell
+      tags: []
+      info:
+          notes: Main power for cyborgs and backup juice for APCs before the lights go out. Several types of these high-capacity batteries can be found on the station, differing in maximum capacity or other properties. If depleted, you can hook them up to specialized chargers.
+
+    - name: Light Tube
+      tags: [light]
+      info:
+          notes: In addition to windows and floor tiles, the incandescent tubes are usually the first casualties of rampant chemistry in the science wing or the cafeteria. Boxes of replacement lights are available in e.g. tool storage and the janitor's closet. They can also be fabricated in a rainbow of colors, including black light.
+
+    - name: Metal Sheet
+      tags: []
+      info:
+          notes: Used for many construction projects. Available in numerous places, and the cargo bay can handle enormous bulk orders. Can only be assembled in stacks of up to 50 by hand.
+
+    - name: Glass Sheet
+      tags: []
+      info:
+          notes: Used for many construction projects. Available in numerous places, and the cargo bay can handle enormous bulk orders. Can only be assembled in stacks of up to 50 by hand.
+
+    - name: Rods
+      tags: []
+      info:
+          notes: Used for many constructions projects. Made from regular metal, and available in e.g. tool storage and engineering's stash.
+
+    - name: Beaker
+      tags: [container]
+      info:
+          notes: Holds up to 50 units of chemicals, though larger beakers (100 units) also exist. Standard equipment for chemistry, but medbay has some as well. You generally can't examine the exact contents without spectroscopic goggles, a PDA reagent scanner or by using certain machinery.
+
+    - name: Staple gun
+      tags: [weapon, tool]
+      info:
+          notes: Used to reattach limbs. As with the other surgery tools, staplers are available from robotics manufacturers.
+
+    - name: Flashlight
+      tags: [light]
+      info:
+          notes: Illuminates dark areas. Found in emergency toolboxes and the warehouse, among other places. Small enough to fit in a pocket or on your belt. Multiple light sources on your person will stack, lighting the area with greater luminosity.
+
+    - name: Gas Tank
+      tags: [tank]
+      info:
+          notes: These large tanks hold up to 1013 kPa of gaseous elements. By default, they contain an air mixture (white), O2 (blue w/ white stripe), N2O (white w/ red stripe) or plasma (special sprite). With the exception of the latter, they can be worn on the back slot. Compatible with the connector port of air pumps, air scrubbers, tank transfer valves and gas canisters.
+
+    - name: Fuel Tank
+      tags: [container]
+      info:
+          notes: This small tank has been designed specifically for holding flammable compounds. As such, they contain welding fuel by default. Essential component of flamethrowers.
+
+    - name: Flash
+      tags: [weapon]
+      info:
+          notes: |
+              The flash has two applications. Using the flash on someone without adequate eye protection will stun them and obscure their screen with a white flash.
+              The other use is area flash, activated by clicking on the weapon when it's in your active hand. This will briefly obscure the screen of everyone nearby with a white overlay but not stun them. Area flashes also have a chance of disrupting active cloaking devices as well as holographic disguisers in a 3x3 radius.
+
+              Every time the flash is used, the bulb has a chance of burning out, rendering it permanently useless. They can be found in security lockers, dispensed from the vending machines and manufactured in robotics. 
+
+    - name: Remote Signaler
+      tags: [tool]
+      info:
+          notes: Sends out a radio signal of a given code on a set frequency, and when attached to something, will activate when it receives that signal.
+
+    - name: Proximity Sensor
+      tags: [tool]
+      info:
+          notes: When armed, it will activate whenever it detects motion adjacent to it.
+
+    - name: Timer
+      tags: [tool]
+      info:
+          notes: Activates once the timer hits 0.
+
+    - name: Igniter
+      tags: [tool]
+      info:
+          notes: If used as an attachment, igniters heat the beaker or other assembly when activated. Can also be used to light cigarettes, or manually heat reagent containers.
+
+    - name: Electropack
+      tags: []
+      info:
+          notes: Goes on the back slot of a monkey or other victim; it cannot be removed by the wearer. Set a remote signaler and the pack to the same frequency and code, then turn it on. When a signal is received, the pack delivers a debilitating jolt of electricity to whomever is wearing it.
+
+    - name: Biosuit
+      tags: [equip, clothes]
+      info:
+          notes: Provides good protection against diseases and viral hazards.
+
+    - name: Paramedic suit
+      tags: [equip, clothes]
+      info:
+          notes: An insulated suit which offers moderate thermal and biological protection. It may be helpful to reach patients trapped in bombed-out parts of the station.
+
+    - name: Firesuit
+      tags: [equip, clothes]
+      info:
+          notes: Protects the wearer from extreme heat/cold and from catching fire. The suit can deteriorate from prolonged exposure to extreme conditions, so don't go wading into that scorching plasma fire. The suit is also not effective against hard vacuum and will slow down your running speed when you're wearing it. Available in engineering storage.
+
+    - name: Bedsheet
+      tags: [equip, clothes]
+      info:
+          notes: A sheet for a bed. Can be worn over your body so you can act like a ghost. Be sure to cut some eye-holes first. Comes in various colors.
+
+    - name: Insulated Gloves
+      tags: [equip, clothes]
+      info:
+          notes: For handling live wires. Highly coveted for their ability to allow door hacking. Found in engineering and mechanics, and can be ordered by the quartermaster.
+
+    - name: Mousetrap
+      tags: []
+      info:
+          notes: Sometimes used by jerks to kill the chef's only friend. You can also hide these in containers such as backpacks or emergency boxes to make traps for unsuspecting victims! For the ultimate party gag, try to combine them with certain other items...oh, the possibilities of a single mousetrap! Make sure to arm it by clicking on it in your hand before putting it down!
+
+    - name: Fire extinguisher
+      tags: [container]
+      info:
+          notes: Useful for firefighting, as an impromptu jetpack and the weapon of choice for seasoned greyshirts. Just remember to disable the safety first and that against any fire which is still being fueled, you won't make much progress. Once emptied, you don't necessarily have to refill it with regular foam either...
+
+    - name: Gas canister
+      tags: [tank]
+      info:
+          notes: Large storage containers of gas. Smaller tanks can be attached to them, to either draw or put in their contents. They can also be fixed to appropriate connector ports with a wrench.
+
+    - name: Atmospheric analyzer
+      tags: [tool]
+      info:
+          notes: Instant atmospheric analysis. Lists the temperature, pressure and the proportions of gases either in the open air or inside pipes and canisters. Abundantly available in blue toolboxes, but every PDA has this feature built-in.
+
+    - name: Bike horn
+      tags: []
+      info:
+          notes: Honk honk!
+
+    - name: Station bounced radio
+      tags: []
+      info:
+          notes: Essentially a handheld transceiver. Less versatile than a regular headset, but it can be clipped to your belt. Found in every emergency toolbox. Cyborgs use these to talk over the radio.
+
+    - name: Paper
+      tags: []
+      info:
+          notes: Use a pen on it to write stuff, examine it to read. Click on a noticeboard to pin it there. You can also hold paper up to a camera to discreetly send messages to the AI.
+
+    - name: Vuvuzela
+      tags: []
+
+    - name: Health analyzer
+      tags: [tool]
+      info:
+          notes: Scan humans or monkeys to get a report of their health, damage taken, any viruses and other ailments. Regular analyzers can be upgraded with a reagent scanner, which can be toggled on/off and only works on mobs. The medical PDA provides the same functionality with two separate programs, though its reagent scanner is more flexible and doesn't have the same restrictions.
+
+    - name: Pen
+      tags: []
+      info:
+          notes: Used for writing on said paper, or leaving graffiti on the floor and walls. Variants include the sleepy pen traitor item and I-pen to leave infrared messages that can only be read with the help of optical meson scanners.
+
+    - name: Stun baton
+      tags: [weapon]
+      info:
+          notes: |
+              A melee weapon which delivers an incapacitating shock to the target, knocking them to the ground. It is also effective against cyborgs.
+              The stun baton has an On/Off function, and is on by default. Attempting to use it with the harm intent when the battery hasn't been drained yet will instead stun YOU, leaving you at the mercy of whoever you were pursuing. A switched-off baton is completely inert unless you use the harm intent, which results in a good old beating, draining stamina and dealing brute damage.
+
+              They hold ten charges (examine the baton to see the number of charges left) and are available in security lockers. The VIP gimmick job spawns with a compact baton known as the stun cane for personal protection. There's no functional difference aside from the smaller battery (five charges) and icon.

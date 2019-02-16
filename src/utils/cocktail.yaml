@@ -1,0 +1,827 @@
+# List of all public cocktail recipes for mysha's recipe manager.
+# Adapted from: "Foods and Drinks" on the Goonstation Wiki (maintained by Convair880/Pistoleer)
+# Compiled by: Convair880/Pistoleer
+#
+# Structure:
+# - Kitchen machinery
+# - Vending machine and dispenser drinks
+# - Ingredient processing
+# - Cocktails
+#
+# Special tags:
+# [drink] It's a drink.
+
+name: Drinks and cocktails
+recipes:
+    # Kitchen machinery
+
+    - name: Still
+      tags: [kitchen]
+
+    # Vending machine and dispenser drinks
+
+    - name: Bo Jack Daniel's
+      tags: [drink]
+      sources:
+          - Bar
+      info:
+          notes: A real man's drink!
+
+    - name: Stinkeye's Special Reserve
+      tags: [drink]
+      info:
+          notes: A favourite of captains everywhere.
+
+    - name: Hobo Wine
+      tags: [drink]
+      info:
+          notes: Contains wine plus a number of random chemicals.
+
+    - name: Beer (Fancy)
+      tags: [drink]
+      sources:
+          - Bar
+      info:
+          notes: Contains beer plus a number of random chemicals.
+
+    - name: Robust-Eez
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Contains methamphetamine.
+
+    - name: Grife-O
+      tags: [drink]
+      sources:
+          - Vendor
+
+    - name: Dr. Pubber
+      tags: [drink]
+      sources:
+          - Vendor
+
+    - name: Grones Soda
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Comes in random flavours.
+
+    - name: Spooky Dan's
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Two flavours on offer. Neither are industrial runoff, nope!
+
+    - name: Orange-Aid
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Contains oculine.
+
+    - name: Lime-Aid
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Contains antihol.
+
+    - name: Coffee
+      sources:
+          - Vendor
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          per_cycle: Minor stamina regeneration buff, 50% chance of 1x stun reduction. Causes jitteriness and increases body temperature slightly, reduces drowsiness and dizziness.
+          Addiction probability (INGEST): 5%
+          notes: Safe and easy to obtain stimulant.
+      tags: [drink, drug, stamina, stun, jitter, temperature, drowsiness, dizziness, addictive]
+
+    - name: Chocolate
+      tags: [drink]
+      sources:
+          - Vendor
+
+    - name: Chicken Soup
+      sources:
+          - Vendor
+      info:
+          depletion_rate: 0.2
+          penetrates_skin: No
+          per_cycle: 10% chance each the cold, the flu and food poisoning
+          notes: Safe remedy for minor diseases.
+      tags: [drink, medical, heal, disease]
+
+    - name: Weight-Loss Shake
+      tags: [drink]
+      sources:
+          - Vendor
+      info:
+          notes: Contains lipolicide.
+
+    - name: Vermouth
+      sources:
+          - Base booze from the alcohol dispenser.
+      tags: [drink]
+
+    - name: Bitters
+      sources:
+          - Base booze from the alcohol dispenser.
+      tags: [drink]
+
+    - name: Gin
+      sources:
+          - Base booze from the alcohol dispenser.
+          - Bar
+      tags: [drink]
+
+    - name: Tequila
+      sources:
+          - Base booze from the alcohol dispenser.
+          - Bar
+      tags: [drink]
+
+    - name: Tonic Water
+      sources:
+          - Base drink from the alcohol dispenser.
+      tags: [drink]
+
+    - name: Champagne
+      sources:
+          - Base booze from the alcohol dispenser.
+          - Bar
+      tags: [drink]
+      info:
+          notes: Hit pods, segways or other vehicles with the 'harm' intent to rename them.
+
+    - name: Vanilla
+      sources:
+          - Base drink from the soda fountain.
+      tags: [drink]
+
+    - name: Cherry Juice
+      sources:
+          - Base drink from the soda fountain.
+      tags: [drink]
+
+    - name: Cranberry Juice
+      sources:
+          - Base drink from the soda fountain.
+      tags: [drink]
+
+    - name: Tomato Juice
+      sources:
+          - Base drink from the soda fountain.
+          - Extracted from unmutated tomatoes.
+      tags: [drink]
+
+    - name: Pineapple Juice
+      sources:
+          - Base drink from the soda fountain.
+      tags: [drink]
+
+    - name: Milk (Coconut)
+      sources:
+          - Base drink from the soda fountain.
+      tags: [drink]
+
+    - name: Orange Juice
+      sources:
+          - Base drink from the soda fountain.
+          - Use an orange on a drinking glass.
+          - Extracted from all oranges.
+      tags: [drink]
+
+    - name: Lime Juice
+      sources:
+          - Base drink from the soda fountain.
+          - Use a lime on a drinking glass.
+          - Extracted from unmutated limes.
+      tags: [drink]
+
+    - name: Lemon Juice
+      sources:
+          - Base drink from the soda fountain.
+          - Use a lemon on a drinking glass.
+          - Extracted from unmutated lemons.
+      tags: [drink]
+
+    - name: Strawberry Juice
+      sources:
+          - Extracted from unmutated strawberries.
+      tags: [drink]
+
+    - name: Pickle Juice
+      tags: [drink]
+
+    # Ingredient processing
+
+    - name: Fruit wedge
+      ingredients:
+          - <Orange> OR <Lime> OR <Lemon>
+          - Knife
+          - Cut the orange, lime or lemon into smaller pieces with the knife.
+      tags: [food]
+      sources:
+          - Bar
+
+    - name: Beer
+      ingredients:
+          - <Wheat> OR <Wheat (Steel)>
+          - Still
+          - Stuff the wheat in the still.
+      tags: [drink]
+      sources:
+          - Base drink from the alcohol dispenser.
+          - Bar
+      info:
+          notes: Steel wheat also produces iron.
+
+    - name: Beepskybräu
+      ingredients:
+          - Roburger
+          - Still
+          - Stuff the roburger in the still.
+      tags: [drink]
+
+    - name: Cider
+      ingredients:
+          - Apple
+          - Still
+          - Stuff the apple in the still.
+      tags: [drink]
+      sources:
+          - Base drink from the alcohol dispenser.
+          - Bar
+
+    - name: Mead
+      ingredients:
+          - Honey
+          - Still
+          - Stuff the honey in the still.
+      tags: [drink]
+      sources:
+          - Bar
+
+    - name: Wine
+      ingredients:
+          - <Grape> (any type)
+          - Still
+          - Stuff the grapes in the still.
+      tags: [drink]
+      sources:
+          - Base drink from the alcohol dispenser.
+          - Bar
+      info:
+          notes: Green grapes make white wine.
+
+    - name: Vodka
+      ingredients:
+          - Potato
+          - Still
+          - Stuff the potato in the still.
+      tags: [drink]
+      sources:
+          - Base drink from the alcohol dispenser.
+          - Bar
+
+    - name: Bourbon
+      ingredients:
+          - Corn
+          - Still
+          - Stuff the corn in the still.
+      tags: [drink]
+      sources:
+          - Base drink from the alcohol dispenser.
+
+    - name: Rum
+      ingredients:
+          - <Sugarcane> OR <Sugar>
+          - Still
+          - Stuff the sugar or sugarcane in the still.
+      sources:
+          - Base booze from the alcohol dispenser.
+          - Bar
+      tags: [drink]
+
+    - name: Tea
+      ingredients:
+          - Asomna
+          - Still
+          - Stuff the asomna bark in the still.
+      tags: [drink]
+      sources:
+          - Vendor
+          - Base drink from the soda fountain.
+
+    - name: Bread (Reagent)
+      sources:
+          - Use a loaf or slice of bread (any type) on a beaker.
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          application_effect: 5+ UNITS = Creates bread slices when applied to floor tiles.
+
+    # Cocktails
+
+    - name: Fancy cocktail
+      ingredients:
+          - Drinking glass (any type)
+          - <Fruit wedge> or any other cocktail accessory
+          - Use the fruit wedge/umbrella/etc. on the drinking glass.
+      tags: [drink]
+      info:
+          notes: Cocktail accessories are available in the bar.
+
+    - name: Cola
+      ingredients:
+          - Sugar
+          - Water
+          - Carbon
+          - Oxygen
+      reaction_message: The mixture begins to fizz.
+      tags: [drink]
+      info:
+          notes: It is cola.
+      sources:
+          - Base drink from the soda fountain.
+
+    - name: Cosmopolitan
+      ingredients:
+          - Vodka Gimlet
+          - Cranberry Juice
+      reaction_message: The drink turns a bright pink.
+      tags: [drink]
+
+    - name: Vodka Gimlet
+      ingredients:
+          - Vodka
+          - Lime Juice
+      reaction_message: The drink comes together and swiftly infuriates cocktail nerds.
+      tags: [drink]
+
+    - name: Screwdriver (Drink)
+      ingredients:
+          - Vodka
+          - Orange Juice
+      reaction_message: The vodka and orange juice mix together nicely.
+      tags: [drink]
+
+    - name: Bloody Mary
+      ingredients:
+          - Vodka
+          - Tomato Juice
+      reaction_message: The vodka and tomato juice mix together nicely.
+      tags: [drink]
+
+    - name: Manhattan
+      ingredients:
+          - Bourbon
+          - Vermouth
+          - Bitters
+      reaction_message: The unmistakable smell of a power lunch wafts from the container.
+      tags: [drink]
+
+    - name: Gin and Tonic
+      ingredients:
+          - Gin
+          - Tonic Water
+      reaction_message: The tonic water and gin mix together perfectly.
+      tags: [drink]
+
+    - name: Triple Citrus
+      ingredients:
+          - Lemon juice
+          - Lime juice
+          - Orange juice
+      reaction_message: The citrus juices begin to blend together.
+      tags: [drink]
+
+    - name: Lemonade
+      ingredients:
+          - Lemon juice
+          - Sugar
+      reaction_message: The sugar dissolves into the lemon juice.
+      tags: [drink]
+
+    - name: Tea (Sweet)
+      ingredients:
+          - Tea
+          - Sugar
+      reaction_message: The tea sweetens. Visually. Somehow.
+      tags: [drink]
+
+    - name: Half and Half
+      ingredients:
+          - Tea (Sweet)
+          - Lemon Juice
+      reaction_message: The tea and lemonade combine without much fuss.
+      tags: [drink]
+
+    - name: Vodka Martini
+      ingredients:
+          - Vodka
+          - Vermouth
+      reaction_message: James Bond would be ashamed.
+      tags: [drink]
+
+    - name: Vodka Tonic
+      ingredients:
+          - Vodka
+          - Tonic water
+      reaction_message: The tonic water and vodka mix together perfectly.
+      tags: [drink]
+
+    - name: Mind Eraser
+      ingredients:
+          - Vodka Tonic
+          - Coffee
+      reaction_message: The coffee, tonic, and vodka separate into dangerously drinkable layers.
+      tags: [drink]
+
+    - name: Sex on the Beach
+      ingredients:
+          - Screwdriver (Drink)
+          - Cranberry juice
+      reaction_message: You die a little inside after making that.
+      tags: [drink]
+
+    - name: Suicider
+      sources:
+          - Extracted or distilled from omega cannabis leaves.
+      ingredients:
+          - Vodka
+          - Cider
+          - Epinephrine
+          - Welding fuel
+      reaction_message: The drinks and chemicals mix together, emitting a potent smell.
+      tags: [drink]
+
+    - name: Port
+      ingredients:
+          - Vodka
+          - Wine
+          - Sugar
+          - Iron
+      reaction_message: The liquid darkens and emits a strong smell of alcohol.
+      tags: [drink]
+      info:
+          notes: Has a chance to teleport you at random.
+
+    - name: Bilk
+      ingredients:
+          - Beer
+          - Milk
+      reaction_message: The mixture turns an offensive brown colour and begins fizzing.
+      tags: [drink]
+
+    - name: Beepskybräu
+      ingredients:
+          - Beer
+          - Nanomachines
+      reaction_message: The beer is filled briefly by thousands of brilliant, tiny electrical arcs before growing calm and dark.
+      tags: [drink]
+
+    - name: BOOrbon
+      ingredients:
+          - Bourbon
+          - Ectoplasm
+      reaction_message: The bourbon and ectoplasm mix together, forming a HORRIFYING BLEND.
+      tags: [drink]
+
+    - name: Whiskey Sour
+      ingredients:
+          - Bourbon
+          - Lemonade
+      reaction_message: The alcohol burn sneakily disguises itself in the sweet and sour mix.
+      tags: [drink]
+
+    - name: Space-Cuba Libre
+      ingredients:
+          - Rum
+          - Lime juice
+          - Cola
+      reaction_message: You shed a single patriotic tear as the drink comes together.
+      tags: [drink]
+
+    - name: Pink Gin and Tonic
+      ingredients:
+          - Gin and Tonic
+          - Bitters
+      reaction_message: The gin and tonic gets even more bitter. Way to go!
+      tags: [drink]
+
+    - name: Gin and Sonic
+      ingredients:
+          - Gin and Tonic
+          - Methamphetamine
+      reaction_message: The drink turns electric blue and starts quivering violently.
+      tags: [drink]
+      info:
+          notes: Decays into meth as well as ethanol.
+
+    - name: Gimlet
+      ingredients:
+          - Gin
+          - Lime juice
+      reaction_message: The gin attempts to hide its pine cone flavor in the lime juice.
+      tags: [drink]
+
+    - name: Martini
+      ingredients:
+          - Gin
+          - Vermouth
+      reaction_message: James Bond would be proud.
+      tags: [drink]
+
+    - name: Irish Coffee
+      ingredients:
+          - Coffee
+          - Sugar
+          - Milk
+          - Bourbon
+      reaction_message: The drink turns a rich brown and smells like a hangover.
+      tags: [drink]
+
+    - name: Bloody Scary
+      ingredients:
+          - Vodka
+          - Blood (Changeling)
+      reaction_message: The blood feverishly tries to escape the burn of the vodka, but eventually succumbs.
+      tags: [drink]
+
+    - name: Daiquiri
+      ingredients:
+          - Lime Juice
+          - Sugar
+          - Rum
+      reaction_message: The rum pairs nicely with the sugar and lime.
+      tags: [drink]
+
+    - name: Egg nog
+      ingredients:
+          - Egg
+          - Milk
+          - Sugar
+      reaction_message: The eggs nog together. Pretend that "nog" is a verb.
+      tags: [drink]
+      sources:
+          - Bar, Kitchen
+
+    - name: Egg nog
+      ingredients:
+          - 3x <Egg>
+          - Milk
+          - Oven
+          - Put the three eggs and bottle of milk in the oven.
+          - Cook for 5 seconds, low.
+      heat_to: 5 seconds, low
+      tags: [drink]
+      sources:
+          - Bar, Kitchen
+
+    - name: Squeeze
+      ingredients:
+          - Welding Fuel
+          - Bread (Reagent)
+      reaction_message: The fuel is filtered through the bread and makes something vaguely consumable.
+      tags: [drink, stun, disease]
+      info:
+          notes: Stuns and infects the consumer with food poisoning.
+
+    - name: Old Fashioned
+      ingredients:
+          - Bourbon
+          - Bitters
+          - Sugar
+          - Water
+      reaction_message: The cocktail gets back to basics.
+      tags: [drink]
+
+    - name: Jean Harlow
+      ingredients:
+          - Rum
+          - Vermouth
+      reaction_message: The ghosts of starlets past waft by.
+      tags: [drink]
+
+    - name: Gin and Chronic
+      ingredients:
+          - Gin and Tonic
+          - Tetrahydrocannabinol (THC)
+      reaction_message: Dude. Dude. You're, like, a genius.
+      tags: [drink]
+      info:
+          notes: Decays into THC as well as ethanol.
+
+    - name: Tequini
+      ingredients:
+          - Tequila
+          - Vermouth
+      reaction_message: James Bond would be deeply confused.
+      tags: [drink]
+
+    - name: Brave Bull
+      ingredients:
+          - Tequila
+          - Coffee
+      reaction_message: The coffee and tequila mix together. Liqueur? Who needs it?
+      tags: [drink]
+
+    - name: Prairie Fire
+      ingredients:
+          - Tequila
+          - Capsaicin
+      reaction_message: The hot sauce and tequila mix to create a frat boy's worst nightmare.
+      tags: [drink]
+      info:
+          notes: Decays into capsaicin as well as ethanol.
+
+    - name: Tea (Honey)
+      ingredients:
+          - Tea
+          - Honey
+      reaction_message: The tea somehow smells even nicer than before.
+      tags: [drink]
+
+    - name: Gin Fizz
+      ingredients:
+          - Gin
+          - Lemon Juice
+          - Water
+      reaction_message: The mixed drink starts fizzing on its own. Somehow.
+      tags: [drink]
+
+    - name: Planter's Punch
+      ingredients:
+          - Rum
+          - Lemonade
+      reaction_message: A nicely Jamaican smell wafts out of the container.
+      tags: [drink]
+
+    - name: Mai Tai
+      ingredients:
+          - Rum
+          - Lime Juice
+          - Orange Juice
+      reaction_message: A little pink umbrella magically appears in the drink.
+      tags: [drink]
+
+    - name: Margarita
+      ingredients:
+          - Tequila
+          - Orange Juice
+          - Lime Juice
+      reaction_message: The tequila and citrus pair together like old, alcoholic friends.
+      tags: [drink]
+
+    - name: Long Island Iced Tea
+      ingredients:
+          - Tequila
+          - Screwdriver (Drink)
+          - Rum
+          - Gin
+          - Lemon Juice
+          - Cola
+      reaction_message: The frightening amount of liquor in the container balances out with the cola and sours.
+      tags: [drink]
+
+    - name: Long Beach Iced Tea
+      ingredients:
+          - Tequila
+          - Sex on the Beach
+          - Rum
+          - Gin
+          - Lemon Juice
+      reaction_message: The frightening amount of liquor in the container balances out with the lemon juice and sours.
+      tags: [drink]
+
+    - name: Hunchback
+      ingredients:
+          - Bourbon
+          - Cola
+          - Tomato Juice
+      reaction_message: The chunks of tomato paste hang in the bourbon and cola as an emulsion. It looks as horrible as that sounds.
+      tags: [drink, medical, depletion, damage, tox, disease]
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          per_cycle: |
+              Increases all depletion rates by 8. 10% chance of contracting food poisoning.
+              If above +10 health = +2 TOX
+          notes: Flushes other chemicals more rapidly than calomel, but does so at significant risk to the consumer. Aside from constant and violent vomiting, the health cap and depletion rate are significantly lower.
+
+    - name: Piña Colada
+      ingredients:
+          - Rum
+          - Milk (Coconut)
+          - Pineapple Juice
+      reaction_message: The drink gives off the smell of a rainy beach.
+      tags: [drink]
+
+    - name: Ecto Cooler
+      ingredients:
+          - Orange Juice
+          - Ectoplasm
+          - Uranium
+      reaction_message: The orange juice turns an unsettlingly vibrant shade of green.
+      tags: [drink]
+      info:
+          notes: Decays into VHFCS and has a chance to produce strange green goop as well, which allows you to see ghosts.
+
+    - name: Chocolate milk
+      ingredients:
+          - Chocolate
+          - Milk
+      reaction_message: The mixture turns a nice brown color.
+      tags: [drink]
+
+    - name: Strawberry milk
+      ingredients:
+          - Strawberry Juice
+          - Milk
+      reaction_message: The mixture turns a nice pink color.
+      tags: [drink]
+
+    - name: Black Russian
+      ingredients:
+          - Vodka
+          - Coffee
+      reaction_message: The drink turns a deep brown as the coffee settles in.
+      tags: [drink]
+
+    - name: White Russian
+      ingredients:
+          - Black Russian
+          - Milk
+      reaction_message: The drink abides.
+      tags: [drink]
+
+    - name: Mimosa
+      ingredients:
+          - Champagne
+          - Orange Juice
+      reaction_message: The drink fizzes as the pulp settles to the top.
+      tags: [drink]
+
+    - name: French 75
+      ingredients:
+          - Gin
+          - Champagne
+          - Lemonade
+      reaction_message: The drink fizzes and turns a dark gold.
+      tags: [drink]
+
+    - name: Negroni
+      ingredients:
+          - Martini
+          - Bitters
+      reaction_message: The drink turns a deep red and gives off a hit of sweetness.
+      tags: [drink]
+
+    - name: Necroni
+      ingredients:
+          - Negroni
+          - Ectoplasm
+      reaction_message: The drink gives off a haunting stench! What did you make?
+      tags: [drink]
+
+    - name: Dragon's Breath
+      tags: [drink, stun, burning, gib, damage]
+      reaction_message: A tiny mushroom cloud erupts from the container. That's not worrying at all!
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          per_cycle: |
+              Decays into 20 units of ethanol. 50% chance of stunning briefly, 8% chances of various funny text messages.
+
+              Severe effects scale with volume = [2% * volume] chance of +99 BURNING if victim is already on fire, [1% * volume] chance of burning them up completely (fire-gibbed)
+          application_effect: INGEST - If already on fire = 20% chance of +30 BURNING
+          notes: Neutralized by milk. Higher doses can be extremely lethal, ideal for use in a sleepy pen.
+
+    - name: Grog
+      tags: [drink, damage, tox, hair, brute]
+      reaction_message: The substance mixes together, emitting a rank piratey odor and seemingly dissolving some of the container...
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          per_cycle: Decays into 20 units of ethanol. 15% chance of +1 TOX.
+          application_effect: |
+              Makes you a pirate captain complete with dreadlocks, full beard, eyepatch and matching name.
+
+              TOUCH - 75% chance of +25 BRUTE and disfiguring the victim's face, 25% of +5 BRUTE. 20% chance of melting items.
+          notes: More of a gimmick chem than legitimately destructive.
+
+    - name: Mugwort
+      tags: [drink, medical, heal, losebreath, oxy, tox, brute, burn]
+      sources:
+          - Wizard shuttle.
+      info:
+          depletion_rate: 0.4
+          penetrates_skin: No
+          application_effect: |
+              INGEST - If target is wizard = 85% chance of -1 LOSEBREATH. 45% chances for each of -1 OXY, -1 TOX, -6 BRUTE and -6 BURN
+          notes: Can patch up minor injuries of magic users.

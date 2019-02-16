@@ -7,10 +7,8 @@ import InfoPanel from '../components/InfoPanel';
 import ItemTable from '../components/ItemTable';
 import TagCollapse from '../components/TagCollapse';
 import TopicNavSelect from '../components/TopicNavSelect';
-import Recipes from '../utils/recipes.yaml';
-// import Recipes from '../utils/recipes.json';
 // eslint-disable-next-line
-import Construction from '../utils/construction.yaml';
+import { Recipes, Construction } from '../utils';
 
 const styles = theme => ({
     container: {
