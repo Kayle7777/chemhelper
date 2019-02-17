@@ -32,11 +32,6 @@ const SearchBar = props => {
 
     return (
         <div className={classes.container} data-testid="searchbar">
-            {/* <Tooltip title="Filter by Tags" placement="top">
-                    <Button className={classes.tagSearchButton} variant="outlined" onClick={filterCollapse}>
-                        Tags
-                    </Button>
-                </Tooltip> */}
             <Input
                 className={!searchInput ? classes.inputNoText : ''}
                 placeholder="Search by name"

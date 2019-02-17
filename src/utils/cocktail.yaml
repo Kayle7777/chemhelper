@@ -12,6 +12,36 @@
 # [drink] It's a drink.
 
 name: Drinks and cocktails
+tags:
+    general:
+        kitchen: It's a kitchen
+        food: It's a food
+        drink: It's a drink
+    drug:
+        jitter: It's a jitter
+        drowsiness: It's a drowsiness
+        dizziness: It's a dizziness
+        addictive: It's a addictive
+    medical:
+        disease: It's a disease
+        medical: It's a medical
+        drug: It's a drug
+        stamina: It's a stamina
+        heal: It's a heal
+        depletion: It's a depletion
+    damage:
+        stun: It's a stun
+        damage: It's a damage
+        burning: It's a burning
+        brute: It's a brute
+        tox: It's a tox
+        gib: It's a gib
+        losebreath: It's a losebreath
+        oxy: It's a oxy
+        burn: It's a burn
+    misc:
+        temperature: It's a temperature
+        hair: It's a hair
 recipes:
     # Kitchen machinery
 

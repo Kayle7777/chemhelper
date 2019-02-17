@@ -5,18 +5,27 @@ import { Button } from '@material-ui/core';
 const styles = theme => ({});
 
 const TopicNavSelect = props => {
-    const {} = props;
+    const { topicNames, topicState } = props;
+    //eslint-disable-next-line
+    const [topic, changeTopic] = topicState;
     return (
         <span>
-            {['chemistry', 'construction'].map(name => {
+            {topicNames.map(name => {
                 return (
-                    <Button size="small" variant="outlined" key={`${name}_button`}>
+                    <Button onClick={topicClick} size="small" variant="outlined" key={`${name}_button`} value={name}>
                         {name}
                     </Button>
                 );
             })}
         </span>
     );
+
+    function topicClick(e) {
+        const {
+            currentTarget: { value },
+        } = e;
+        return changeTopic(value);
+    }
 };
 
 export default withStyles(styles)(TopicNavSelect);

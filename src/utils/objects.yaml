@@ -1,4 +1,16 @@
 name: Objects
+tags:
+    wearable:
+        armor: it's an armor
+        equip: equippable
+        clothes: it's a clothes
+    handheld:
+        weapon: it's a weapon
+        tool: it's a tool
+    misc:
+        light: it's a light
+        container: it's a container
+        tank: it's a tank
 recipes:
     - name: Screwdriver
       tags: [tool]

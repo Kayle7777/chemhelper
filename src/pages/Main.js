@@ -8,7 +8,7 @@ import ItemTable from '../components/ItemTable';
 import TagCollapse from '../components/TagCollapse';
 import TopicNavSelect from '../components/TopicNavSelect';
 // eslint-disable-next-line
-import { Recipes, Construction } from '../utils';
+import { Cocktails, Construction, Food, Objects, Chemistry, Workbench } from '../utils';
 
 const styles = theme => ({
     container: {
@@ -71,8 +71,8 @@ const Main = props => {
     const [collapseIn, doCollapse] = useState(false);
 
     // This is current stuff not changed yet
-    const { tags, recipes } = Recipes;
-    const filteredRecipes = filterRecipes(recipes, searchInput, tagState);
+    const { tags, recipes } = findTopic();
+    const filteredRecipes = filterItems(recipes, searchInput, tagState);
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
     return (
         <>
@@ -80,7 +80,12 @@ const Main = props => {
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
-                        <TopicNavSelect />
+                        <TopicNavSelect
+                            topicNames={'Chemistry, Cocktails, Construction, Food, Objects, Workbench'
+                                .toLowerCase()
+                                .split(', ')}
+                            topicState={[topic, changeTopic]}
+                        />
                         <SearchBar
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
@@ -115,7 +120,19 @@ const Main = props => {
         </>
     );
 
-    function filterRecipes(recipes, searchInput, stateTags) {
+    function findTopic(currentTopic = topic) {
+        const switcher = {
+            cocktails: Cocktails,
+            construction: Construction,
+            food: Food,
+            objects: Objects,
+            chemistry: Chemistry,
+            workbench: Workbench,
+        };
+        return switcher[topic];
+    }
+
+    function filterItems(recipes, searchInput, stateTags) {
         return recipes.filter(recipe => {
             const { name, tags: recipeTagsList } = recipe;
             return checkMatchingInput(searchInput, name) && checkMatchingTags(stateTags, recipeTagsList);

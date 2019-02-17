@@ -15,6 +15,24 @@
 # [workbench] Used in workbench-specific recipes.
 
 name: Workbench
+tags:
+    metallurgy:
+        metallurgy:
+        rawmaterial:
+    make:
+        tool:
+        make:
+        workbench:
+        produce:
+    use:
+        weapon:
+    wear:
+        clothes:
+        equip:
+        armor:
+    misc:
+        light:
+        tank:
 recipes:
     # Ore processing machinery
 
