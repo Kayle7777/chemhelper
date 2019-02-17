@@ -6,7 +6,6 @@ import SearchBar from '../components/SearchBar';
 import InfoPanel from '../components/InfoPanel';
 import ItemTable from '../components/ItemTable';
 import TagCollapse from '../components/TagCollapse';
-import TopicNavSelect from '../components/TopicNavSelect';
 // eslint-disable-next-line
 import { Cocktails, Construction, Food, Objects, Chemistry, Workbench } from '../utils';
 
@@ -70,7 +69,6 @@ const Main = props => {
     const [tagState, doTags] = useState([]);
     const [collapseIn, doCollapse] = useState(false);
 
-    // This is current stuff not changed yet
     const { tags, recipes } = findTopic();
     const filteredRecipes = filterItems(recipes, searchInput, tagState);
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
@@ -80,12 +78,6 @@ const Main = props => {
             <div className={classes.container}>
                 {hideButton && (
                     <div className={classes.leftContainer}>
-                        <TopicNavSelect
-                            topicNames={'Chemistry, Cocktails, Construction, Food, Objects, Workbench'
-                                .toLowerCase()
-                                .split(', ')}
-                            topicState={[topic, changeTopic]}
-                        />
                         <SearchBar
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
@@ -94,6 +86,7 @@ const Main = props => {
                         <TagCollapse tagStatePassed={[tagState, doTags]} tags={tags} open={collapseIn} />
                         <div className={classes.recipeBox}>
                             <ItemTable
+                                topicState={[topic, changeTopic]}
                                 collapseState={[collapseIn, doCollapse]}
                                 recipes={filteredRecipes}
                                 chemState={[selectedChem, controlSelectChem]}

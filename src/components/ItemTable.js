@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper, Toolbar, Typography, IconButton, Tooltip } from '@material-ui/core';
+import { Paper, Toolbar, Typography, IconButton } from '@material-ui/core';
 import { FilterList as FilterListIcon } from '@material-ui/icons';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import MuiTable from 'mui-virtualized-table';
 import { AutoSizer } from 'react-virtualized';
+import TopicNavSelect from './TopicNavSelect';
 
 const styles = theme => ({
     '@global': {
@@ -26,6 +27,9 @@ const styles = theme => ({
             '-webkit-border-radius': '100px',
         },
     },
+    root: {
+        flexGrow: 1,
+    },
     highlight:
         theme.palette.type === 'light'
             ? {
@@ -37,39 +41,52 @@ const styles = theme => ({
                   backgroundColor: theme.palette.secondary.dark,
               },
     paperContainer: {},
-    spacer: {
-        flex: '1 1 100%',
-    },
     actions: {
         color: theme.palette.text.secondary,
     },
     title: {
+        flexGrow: 1,
+    },
+    dropdown: {
         flex: '0 0 auto',
+    },
+    navSelectGrow: {
+        flexGrow: 1,
+    },
+    menuTag: {
+        paddingRight: '1rem',
     },
 });
 
 const ItemTable = props => {
-    const { classes, recipes, chemState, collapseState } = props;
+    const { classes, recipes, chemState, collapseState, topicState } = props;
     const [selectedChem, controlSelectChem] = chemState;
     const [orderBy, changeOrder] = useState({ name: 'name', direction: true });
     const [hovered, mouseOver] = useState(false);
     const [collapseIn, doCollapse] = collapseState;
+    const [topic, changeTopic] = topicState;
 
     return (
         <>
-            <Toolbar>
-                <div className={classes.title}>
-                    <Typography variant="h6">Chemical Table</Typography>
-                </div>
-                <div className={classes.spacer} />
-                <div className={classes.actions}>
-                    <Tooltip title="Filter list" placement="top">
-                        <IconButton aria-label="Filter List" onClick={filterCollapse}>
-                            <FilterListIcon />
-                        </IconButton>
-                    </Tooltip>
-                </div>
-            </Toolbar>
+            <div className={classes.root}>
+                <Toolbar>
+                    <span className={classes.title}>
+                        <TopicNavSelect
+                            topicNames={'Chemistry, Cocktails, Construction, Food, Objects, Workbench'
+                                .toLowerCase()
+                                .split(', ')}
+                            topicState={[topic, changeTopic]}
+                        />
+                    </span>
+                    <Typography className={classes.menuTag} variant="body1">
+                        Filter by tag
+                    </Typography>
+                    <IconButton aria-label="Filter List" onClick={filterCollapse}>
+                        <FilterListIcon />
+                    </IconButton>
+                </Toolbar>
+            </div>
+
             <AutoSizer>
                 {({ width, height }) => (
                     <Paper

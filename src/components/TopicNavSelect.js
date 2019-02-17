@@ -1,26 +1,23 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
-
-const styles = theme => ({});
+import { FormControl, Select } from '@material-ui/core';
 
 const TopicNavSelect = props => {
     const { topicNames, topicState } = props;
     //eslint-disable-next-line
     const [topic, changeTopic] = topicState;
     return (
-        <span>
-            {topicNames.map(name => {
-                return (
-                    <Button onClick={topicClick} size="small" variant="outlined" key={`${name}_button`} value={name}>
-                        {name}
-                    </Button>
-                );
-            })}
-        </span>
+        <FormControl>
+            <Select native value={topic} onChange={topicChange} inputProps={{ name: 'topic' }}>
+                {topicNames.map(topic => (
+                    <option key={`${topic}_dropdown_option`} value={topic}>
+                        {topic}
+                    </option>
+                ))}
+            </Select>
+        </FormControl>
     );
 
-    function topicClick(e) {
+    function topicChange(e) {
         const {
             currentTarget: { value },
         } = e;
@@ -28,4 +25,4 @@ const TopicNavSelect = props => {
     }
 };
 
-export default withStyles(styles)(TopicNavSelect);
+export default TopicNavSelect;
