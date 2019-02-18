@@ -72,7 +72,7 @@ const ItemTable = props => {
                 <Toolbar>
                     <span className={classes.title}>
                         <TopicNavSelect
-                            topicNames={'Chemistry, Cocktails, Construction, Food, Objects, Workbench'
+                            topicNames={'All, Chemistry, Cocktails, Construction, Food, Objects, Workbench'
                                 .toLowerCase()
                                 .split(', ')}
                             topicState={[topic, changeTopic]}

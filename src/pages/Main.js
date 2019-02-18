@@ -129,7 +129,7 @@ const Main = props => {
 
     function allTopics(...allTopics) {
         return {
-            tags: allTopics.reduce((accu, topic) => [...accu, ...topic.tags], []),
+            tags: allTopics.reduce((accu, topic) => ({ ...accu, ...topic.tags }, {})),
             recipes: allTopics.reduce((accu, topic) => [...accu, ...topic.recipes], []),
         };
     }
