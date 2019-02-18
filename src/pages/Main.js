@@ -63,12 +63,13 @@ const styles = theme => ({
 const Main = props => {
     const { classes } = props;
     //eslint-disable-next-line
-    const [topic, changeTopic] = useState('chemistry');
+    const [topic, changeTopic] = useState('all');
     const [hideButton, doHideButton] = useState(true);
     const [searchInput, typeSearch] = useState('');
     const [tagState, doTags] = useState([]);
     const [collapseIn, doCollapse] = useState(false);
 
+    // All topics at once if none?
     const { tags, recipes } = findTopic();
     const filteredRecipes = filterItems(recipes, searchInput, tagState);
     const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
@@ -115,6 +116,7 @@ const Main = props => {
 
     function findTopic(currentTopic = topic) {
         const switcher = {
+            all: allTopics(Cocktails, Construction, Food, Objects, Chemistry, Workbench),
             cocktails: Cocktails,
             construction: Construction,
             food: Food,
@@ -123,6 +125,13 @@ const Main = props => {
             workbench: Workbench,
         };
         return switcher[topic];
+    }
+
+    function allTopics(...allTopics) {
+        return {
+            tags: allTopics.reduce((accu, topic) => [...accu, ...topic.tags], []),
+            recipes: allTopics.reduce((accu, topic) => [...accu, ...topic.recipes], []),
+        };
     }
 
     function filterItems(recipes, searchInput, stateTags) {
