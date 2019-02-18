@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography, Table, TableRow, TableHead, TableBody, TableCell } from '@material-ui/core';
 // import { Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core';
 
 const styles = theme => ({
@@ -22,48 +22,28 @@ const InfoPanel = props => {
                     <Typography gutterBottom variant="h5">
                         {content.name}
                     </Typography>
-                    {getSafe(() => ifContent(content.info.notes))}
-                    <hr />
                     {ifContent(content.ingredients, undefined, 'INGREDIENTS: ')}
                     {ifContent(content.sources, 'overline', 'SOURCES: ')}
-                    {/* <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Depletion Rate</TableCell>
-                                <TableCell>Skin Penetration</TableCell>
-                                <TableCell>Overdose Threshhold</TableCell>
-                                <TableCell>Units to Infect</TableCell>
-                                <TableCell>Addiction Probability</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            <TableRow>
-                                {[
-                                    'depletion_rate',
-                                    'penetrates_skin',
-                                    'overdose_threshhold',
-                                    'units_to_infect',
-                                    'addiction_probability_ingest',
-                                ].map(value => (
-                                    <TableCell key={`${content}_${value}`}>
-                                        {getSafe(() => ifContent(content.info[value]))}
-                                    </TableCell>
+                    {content.info && (
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>key</TableCell>
+                                    <TableCell>value</TableCell>
+                                </TableRow>
+                                {Object.keys(content.info).map(infoKey => (
+                                    <TableRow key={`${infoKey}_generated_row`}>
+                                        <TableCell>{infoKey}</TableCell>
+                                        <TableCell>{content.info[infoKey]}</TableCell>
+                                    </TableRow>
                                 ))}
-                            </TableRow>
-                        </TableBody>
-                    </Table> */}
+                            </TableHead>
+                        </Table>
+                    )}
                 </CardContent>
             )}
         </Card>
     );
-
-    function getSafe(fn, defaultVal = '') {
-        try {
-            return fn();
-        } catch (err) {
-            return defaultVal;
-        }
-    }
 
     function ifContent(optional, variant = 'subtitle1', precedingText = '') {
         if (optional === undefined) return '';
