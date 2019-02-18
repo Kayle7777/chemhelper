@@ -72,7 +72,9 @@ const Main = props => {
     // All topics at once if none?
     const { tags, recipes } = findTopic();
     const filteredRecipes = filterItems(recipes, searchInput, tagState);
-    const [selectedChem, controlSelectChem] = useState(filteredRecipes[0]);
+    const [selectedChem, controlSelectChem] = useState(
+        filteredRecipes[Math.floor(Math.random() * filteredRecipes.length)]
+    );
     return (
         <>
             <AppBar />

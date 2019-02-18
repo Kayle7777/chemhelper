@@ -26,10 +26,16 @@ const InfoPanel = props => {
                     {ifContent(content.sources, 'overline', 'SOURCES: ')}
                     {content.info && (
                         <Table>
-                            <TableHead>
+                            {/* <TableHead>
                                 <TableRow>
                                     <TableCell>key</TableCell>
                                     <TableCell>value</TableCell>
+                                </TableRow>
+                            </TableHead> */}
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>ingredients</TableCell>
+                                    <TableCell>{content.ingredients && content.ingredients}</TableCell>
                                 </TableRow>
                                 {Object.keys(content.info).map(infoKey => (
                                     <TableRow key={`${infoKey}_generated_row`}>
@@ -37,7 +43,7 @@ const InfoPanel = props => {
                                         <TableCell>{content.info[infoKey]}</TableCell>
                                     </TableRow>
                                 ))}
-                            </TableHead>
+                            </TableBody>
                         </Table>
                     )}
                 </CardContent>
