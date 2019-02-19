@@ -15,59 +15,45 @@ const styles = theme => ({
 
 const InfoPanel = props => {
     const { classes, content } = props;
+    const flatContent = condenseContent(content);
     return (
         <Card className={classes.card}>
             {content && (
                 <CardContent>
                     <Typography gutterBottom variant="h5">
-                        {content.name}
+                        {flatContent.name}
                     </Typography>
-                    {ifContent(content.ingredients, undefined, 'INGREDIENTS: ')}
-                    {ifContent(content.sources, 'overline', 'SOURCES: ')}
-                    {content.info && (
-                        <Table>
-                            {/* <TableHead>
-                                <TableRow>
-                                    <TableCell>key</TableCell>
-                                    <TableCell>value</TableCell>
-                                </TableRow>
-                            </TableHead> */}
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell>ingredients</TableCell>
-                                    <TableCell>{content.ingredients && content.ingredients}</TableCell>
-                                </TableRow>
-                                {Object.keys(content.info).map(infoKey => (
-                                    <TableRow key={`${infoKey}_generated_row`}>
-                                        <TableCell>{infoKey}</TableCell>
-                                        <TableCell>{content.info[infoKey]}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    )}
+                    <Table>
+                        <TableBody>
+                            {Object.keys(flatContent).map(infoKey => {
+                                if (['id', 'name'].includes(infoKey)) return;
+                                else
+                                    return (
+                                        <TableRow key={`${infoKey}_generated_row`}>
+                                            <TableCell>{infoKey}</TableCell>
+                                            <TableCell>{flatContent[infoKey]}</TableCell>
+                                        </TableRow>
+                                    );
+                            })}
+                        </TableBody>
+                    </Table>
                 </CardContent>
             )}
         </Card>
     );
 
-    function ifContent(optional, variant = 'subtitle1', precedingText = '') {
-        if (optional === undefined) return '';
-        else {
-            if (Array.isArray(optional)) {
-                if (optional.some(each => typeof each === 'object'))
-                    optional = optional.reduce((accu, ing, i) => {
-                        if (typeof ing === 'object') {
-                            const name = Object.keys(ing)[0];
-                            ing = `${name}: ${ing[name]} parts`;
-                        }
-                        accu += ing + (i + 1 !== optional.length ? ', ' : '.');
-                        return accu;
-                    }, '');
-                else optional = optional.join(', ');
-            }
-            return <Typography variant={variant}>{precedingText + String(optional)}</Typography>;
-        }
+    function condenseContent(unflattenedObject) {
+        // In unflattenedObject, some values may be arrays or objects
+        let newObj = {};
+        Object.keys(unflattenedObject).forEach(key => {
+            let currentVal = unflattenedObject[key];
+            if (Array.isArray(currentVal)) currentVal = `[${currentVal.join(', ')}]`;
+            if (typeof currentVal === 'boolean') currentVal = currentVal.toString();
+            if (typeof currentVal === 'object' && !Array.isArray(currentVal)) {
+                newObj = { ...newObj, ...currentVal };
+            } else newObj = { ...newObj, [key]: currentVal };
+        });
+        return newObj;
     }
 };
 
