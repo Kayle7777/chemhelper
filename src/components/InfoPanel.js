@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography, Table, TableRow, TableHead, TableBody, TableCell } from '@material-ui/core';
+import { Card, CardContent, Typography, Table, TableRow, TableBody, TableCell } from '@material-ui/core';
 // import { Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core';
 
 const styles = theme => ({
@@ -16,7 +16,7 @@ const styles = theme => ({
         fontWeight: 'bold',
     },
     emphasizeBody: {
-        fontSize: '130%',
+        fontSize: '117%',
     },
 });
 
@@ -34,7 +34,7 @@ const InfoPanel = props => {
                         <TableBody>
                             {Object.keys(flatContent).map(infoKey => {
                                 const highlight = ['ingredients', 'sources', 'notes'].includes(infoKey);
-                                if (['id', 'name'].includes(infoKey)) return;
+                                if (['id', 'name'].includes(infoKey)) return undefined;
                                 else
                                     return (
                                         <TableRow key={`${infoKey}_generated_row`}>

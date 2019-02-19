@@ -127,13 +127,13 @@ const Main = props => {
             workbench: Workbench,
         };
         return switcher[topic];
-    }
 
-    function allTopics(...allTopics) {
-        return {
-            tags: allTopics.reduce((accu, topic) => ({ ...accu, ...topic.tags }, {})),
-            recipes: allTopics.reduce((accu, topic) => [...accu, ...topic.recipes], []),
-        };
+        function allTopics(...allTopics) {
+            return {
+                tags: allTopics.reduce((accu, topic) => ({ ...accu, ...topic.tags })),
+                recipes: allTopics.reduce((accu, topic) => [...accu, ...topic.recipes], []),
+            };
+        }
     }
 
     function filterItems(recipes, searchInput, stateTags) {
