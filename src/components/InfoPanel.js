@@ -11,6 +11,13 @@ const styles = theme => ({
             marginTop: 0,
         },
     },
+    emphasizeTitle: {
+        color: theme.palette.secondary.light,
+        fontWeight: 'bold',
+    },
+    emphasizeBody: {
+        fontSize: '130%',
+    },
 });
 
 const InfoPanel = props => {
@@ -26,12 +33,17 @@ const InfoPanel = props => {
                     <Table>
                         <TableBody>
                             {Object.keys(flatContent).map(infoKey => {
+                                const highlight = ['ingredients', 'sources', 'notes'].includes(infoKey);
                                 if (['id', 'name'].includes(infoKey)) return;
                                 else
                                     return (
                                         <TableRow key={`${infoKey}_generated_row`}>
-                                            <TableCell>{infoKey}</TableCell>
-                                            <TableCell>{flatContent[infoKey]}</TableCell>
+                                            <TableCell className={highlight ? classes.emphasizeTitle : ''}>
+                                                {infoKey}
+                                            </TableCell>
+                                            <TableCell className={highlight ? classes.emphasizeBody : ''}>
+                                                {flatContent[infoKey]}
+                                            </TableCell>
                                         </TableRow>
                                     );
                             })}
