@@ -25,8 +25,9 @@ const styles = theme => ({
 });
 
 const SearchBar = props => {
-    const { classes, doHideButton, inputState, tagState } = props;
+    const { classes, doHideButton, inputState, tagState, collapseState } = props;
     const [searchInput, typeSearch] = inputState;
+    const [collapseIn, doCollapse] = collapseState;
     // eslint-disable-next-line
     const [tagStates, doTags] = tagState;
 
@@ -55,7 +56,8 @@ const SearchBar = props => {
     }
 
     function hideButton(_e) {
-        return doHideButton(prev => !prev);
+        if (collapseIn) return doCollapse(false);
+        else return doHideButton(prev => !prev);
     }
 
     function resetButton() {

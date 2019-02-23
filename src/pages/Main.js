@@ -82,6 +82,7 @@ const Main = props => {
                 {hideButton && (
                     <div className={classes.leftContainer}>
                         <SearchBar
+                            collapseState={[collapseIn, doCollapse]}
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
                             inputState={[searchInput, typeSearch]}
