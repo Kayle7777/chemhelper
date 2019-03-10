@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography, Table, TableRow, TableBody, TableCell } from '@material-ui/core';
-// import { Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core';
+import { Card, CardContent, Typography, Table, TableRow, TableBody, TableCell, Button } from '@material-ui/core';
 
 const styles = theme => ({
     card: {
@@ -10,6 +9,7 @@ const styles = theme => ({
             margin: theme.spacing.unit * 2,
             marginTop: 0,
         },
+        position: 'relative',
     },
     emphasizeTitle: {
         color: theme.palette.secondary.light,
@@ -18,13 +18,29 @@ const styles = theme => ({
     emphasizeBody: {
         fontSize: '117%',
     },
+    tagButtonGroup: {
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+    },
+    tagButton: {
+        // position: 'relative',
+        // margin: 'auto',
+        textAlign: 'center',
+        // marginLeft: theme.spacing.unit,
+        // marginRight: theme.spacing.unit,
+    },
 });
 
 const InfoPanel = props => {
-    const { classes, content } = props;
+    const { classes, content, passedTagState } = props;
+    const [tagState, doTags] = passedTagState;
     const flatContent = condenseContent(content);
+    console.log(content);
+    console.log(tagState);
     return (
         <Card className={classes.card}>
+            <div className={classes.tagButtonGroup}>{generateLinks(content.tags)}</div>
             {content && (
                 <CardContent>
                     <Typography gutterBottom variant="h5">
@@ -54,6 +70,33 @@ const InfoPanel = props => {
         </Card>
     );
 
+    function generateLinks(contentTags) {
+        return contentTags.map(eachTag => {
+            return highlightButton(
+                <Button
+                    className={classes.tagButton}
+                    key={`${eachTag}_infopanel_key`}
+                    variant={'text'}
+                    value={eachTag}
+                    onClick={buttonClick}
+                >
+                    {eachTag}
+                </Button>
+            );
+        });
+
+        function buttonClick(e) {
+            if (!tagState.includes(e.currentTarget.value)) return doTags(prev => [...prev, e.currentTarget.value]);
+            else return doTags(prev => prev.filter(each => each != e.currentTarget.value));
+        }
+
+        function highlightButton(element) {
+            if (tagState.includes(element.props.value))
+                return React.cloneElement(element, { variant: 'outlined', color: 'secondary' });
+            else return element;
+        }
+    }
+
     function condenseContent(unflattenedObject) {
         // In unflattenedObject, some values may be arrays or objects
         let newObj = {};
@@ -63,7 +106,8 @@ const InfoPanel = props => {
             if (typeof currentVal === 'boolean') currentVal = currentVal.toString();
             if (typeof currentVal === 'object' && !Array.isArray(currentVal)) {
                 newObj = { ...newObj, ...currentVal };
-            } else newObj = { ...newObj, [key]: currentVal };
+            } else if (key == 'tags') return;
+            else newObj = { ...newObj, [key]: currentVal };
         });
         return newObj;
     }

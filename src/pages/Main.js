@@ -112,7 +112,7 @@ const Main = props => {
                             Show Search
                         </Button>
                     )}
-                    <InfoPanel content={selectedChem} />
+                    <InfoPanel content={selectedChem} passedTagState={[tagState, doTags]} />
                 </div>
             </div>
         </>
