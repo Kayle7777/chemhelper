@@ -86,6 +86,7 @@ const Main = props => {
                             tagState={[tagState, doTags]}
                             doHideButton={doHideButton}
                             inputState={[searchInput, typeSearch]}
+                            changeTopic={changeTopic}
                         />
                         <TagCollapse tagStatePassed={[tagState, doTags]} tags={tags} open={collapseIn} />
                         <div className={classes.recipeBox}>

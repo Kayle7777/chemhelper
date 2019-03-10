@@ -25,7 +25,7 @@ const styles = theme => ({
 });
 
 const SearchBar = props => {
-    const { classes, doHideButton, inputState, tagState, collapseState } = props;
+    const { classes, doHideButton, inputState, tagState, collapseState, changeTopic } = props;
     const [searchInput, typeSearch] = inputState;
     const [collapseIn, doCollapse] = collapseState;
     // eslint-disable-next-line
@@ -62,6 +62,7 @@ const SearchBar = props => {
 
     function resetButton() {
         typeSearch('');
+        changeTopic('all');
         return doTags([]);
     }
 };
