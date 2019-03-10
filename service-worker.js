@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/chemhelper/precache-manifest.04bee08d17af7d4d2883006c12652cc2.js"
+  "/chemhelper/precache-manifest.5368450a59243d5bfbc34b347d1426e7.js"
 );
 
 workbox.clientsClaim();

@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/chemhelper/static/js/runtime~main.f0636d74.js"
   },
   {
-    "revision": "8734fa72dc9208736291",
-    "url": "/chemhelper/static/js/main.8734fa72.chunk.js"
+    "revision": "38ce24c8299423285f78",
+    "url": "/chemhelper/static/js/main.38ce24c8.chunk.js"
   },
   {
     "revision": "1745757a467d73fdbe78",
     "url": "/chemhelper/static/js/1.1745757a.chunk.js"
   },
   {
-    "revision": "e4351dfbad5706dbbde105d39c259405",
+    "revision": "3ea8e38a56fa31d762412b96c8282eb9",
     "url": "/chemhelper/index.html"
   }
 ];
