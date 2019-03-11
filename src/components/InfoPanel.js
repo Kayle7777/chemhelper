@@ -47,8 +47,6 @@ const InfoPanel = props => {
     const { classes, content, passedTagState } = props;
     const [tagState, doTags] = passedTagState;
     const flatContent = condenseContent(content);
-    console.log(content);
-    console.log(tagState);
     return (
         <Card className={classes.card}>
             {content && (
