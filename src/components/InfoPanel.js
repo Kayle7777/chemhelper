@@ -87,7 +87,7 @@ const InfoPanel = props => {
 
     function generateLinks(contentTags) {
         return contentTags.map(eachTag => {
-            return highlightButton(
+            return (
                 <FormControlLabel
                     control={<Switch checked={tagState.includes(eachTag)} onChange={buttonClick} value={eachTag} />}
                     className={classes.tagButton}
@@ -101,14 +101,11 @@ const InfoPanel = props => {
         });
 
         function buttonClick(e) {
-            if (!tagState.includes(e.target.value)) return doTags(prev => [...prev, e.target.value]);
-            else return doTags(prev => prev.filter(eachTag => eachTag != e.target.value));
-        }
-
-        function highlightButton(element) {
-            if (tagState.includes(element.props.value))
-                return React.cloneElement(element, { variant: 'outlined', color: 'secondary' });
-            else return element;
+            const {
+                target: { value },
+            } = e;
+            if (!tagState.includes(value)) return doTags(prev => [...prev, value]);
+            else return doTags(prev => prev.filter(eachTag => eachTag != value));
         }
     }
 
